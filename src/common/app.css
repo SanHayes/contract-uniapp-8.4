@@ -1,0 +1,18 @@
+page,view {display:block;box-sizing:border-box;}
+.content {max-width:640px;margin:0px auto;}
+.content img {max-width:100%;}
+.uni-tabbar {max-width:640px;margin:0px auto;}
+.hidden {display:none;}
+.uni-input-input, input {
+	-webkit-writing-mode: horizontal-tb !important;
+	text-rendering: auto;-webkit-rtl-ordering: logical;
+    cursor: text;touch-action: manipulation;
+	-webkit-appearance: none;
+	display: inline-block;user-select: text;
+	-webkit-user-select: text;
+   -webkit-touch-callout: none;
+   -webkit-user-select: none;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
