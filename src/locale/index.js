@@ -8,17 +8,17 @@ import vi from './vi.json'
 
 
 const messages = {
-	en,
-	'zh-TW': zhTW,
-	es,
-  hi,
-  IN,
-  ja,
-  vi
+    en,
+    'zh-TW': zhTW,
+    es,
+    hi,
+    IN,
+    ja,
+    vi
 }
 
 let i18nConfig = {
-  locale: uni.getLocale(),// 获取已设置的语言
-  messages
+    locale: uni.getLocale(),// 获取已设置的语言
+    messages
 }
 export default i18nConfig

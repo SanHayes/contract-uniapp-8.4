@@ -4,7 +4,7 @@
 			<view slot="left">
 				<picker @change="handleChange" :value="value" :range="langArr" range-key="text">
 					<view class="lang">
-						<text class="text">{{langArr[value].text}}</text>
+						<text class="text">{{currentLang}}</text>
 						<uni-icons type="bottom" size="12"></uni-icons>
 					</view>
 				</picker>
@@ -89,7 +89,10 @@
 					return this.contenttxt
 				}
 				return this.$t('connect')
-			}
+			},
+      currentLang(){
+        return this.langArr[this.value]?.text ?? `English`
+      }
 		},
 		mounted() {
 			if (this.title) {
@@ -128,7 +131,7 @@
 						that.chainId = res.tapIndex
 						//that.chainId = that.walletlinkid[res.tapIndex]
 						//console.log(that.link)
-						if (that.walletlink[that.chainId] == 'trc') {
+						if (that.walletlink[that.chainId] === 'trc') {
 							that.trccontent()
 						} else {
 							that.ethcontent()
@@ -138,44 +141,44 @@
 			},
 			async ethcontent() {
 				//检测是否以太环境
-				var that = this
-				var obj = setInterval(async () => {
-					if (window.ethereum) {
-						clearInterval(obj);
-						if (typeof web3 !== 'undefined') {
-							that.web3js = new comweb3(web3.currentProvider);
-						} else {
-							that.web3js = new comweb3(new Web3.providers.HttpProvider("http://localhost:8545"));
-						}
-						const myadd = await ethereum.request({
-							method: 'eth_requestAccounts'
-						});
-						//const echainId = await ethereum.request({method: 'eth_chainId'});
-						comjs.msg(echainId)
-						that.ethcontent_chain()
-					} else if (window.tronWeb) {
-						comjs.msg('tronWeb')
-						if (window.tronWeb.defaultAddress.base58) {
-							clearInterval(obj);
-							that.address = window.tronWeb.defaultAddress.base58
-							that.isconnect = true
-							that.chainId = 2;
-							that.mychainId = 1;
-							that.contenttxt = that.address.substr(0, 5) + '***' + that.address.substr(-5)
-							that.tronWeb = window.tronWeb;
-						}
-					} else {
-						comjs.msg('not net')
-						clearInterval(obj);
-						if (!that.isauto) {
-							that.show_ethWallet_list()
-						}
-					}
-				}, 100)
-			},
+        const that = this;
+        const obj = setInterval(async () => {
+          if (window.ethereum) {
+            clearInterval(obj);
+            if (typeof web3 !== 'undefined') {
+              that.web3js = new comweb3(web3.currentProvider);
+            } else {
+              that.web3js = new comweb3(new Web3.providers.HttpProvider("http://localhost:8545"));
+            }
+            const myadd = await ethereum.request({
+              method: 'eth_requestAccounts'
+            });
+            //const echainId = await ethereum.request({method: 'eth_chainId'});
+            comjs.msg(echainId)
+            that.ethcontent_chain()
+          } else if (window.tronWeb) {
+            comjs.msg('tronWeb')
+            if (window.tronWeb.defaultAddress.base58) {
+              clearInterval(obj);
+              that.address = window.tronWeb.defaultAddress.base58
+              that.isconnect = true
+              that.chainId = 2;
+              that.mychainId = 1;
+              that.contenttxt = that.address.substr(0, 5) + '***' + that.address.substr(-5)
+              that.tronWeb = window.tronWeb;
+            }
+          } else {
+            comjs.msg('not net')
+            clearInterval(obj);
+            if (!that.isauto) {
+              that.show_ethWallet_list()
+            }
+          }
+        }, 100);
+      },
 			async trccontent() {
-				var that = this
-				if (window.tronWeb && window.tronWeb.defaultAddress.base58) {
+        const that = this;
+        if (window.tronWeb && window.tronWeb.defaultAddress.base58) {
 					that.address = window.tronWeb.defaultAddress.base58
 					that.isconnect = true
 					that.chainId = 2;
@@ -189,15 +192,15 @@
 			show_ethWallet_list() {
 				//钱包跳转
 				let that = this
-				let dappdomain = 'http://www.1.com/' //本站域名
+				let dappdomain = process.env.VUE_APP_DAPPDOMAIN //本站域名
 				//各个以太坊钱包地址
 				let walletName = ['MetaMask', 'Coinbase', 'imToken', 'TokenPocket', 'TrustWallet']
 				let walletUrl = {}
-				walletUrl[0] = 'https://metamask.app.link/dapp/' + dappdomain
+				walletUrl[0] = `https://metamask.app.link/dapp/${dappdomain}`
 				walletUrl[1] = 'https://go.cb-w.com/'
-				walletUrl[2] = 'imtokenv2://navigate/DappView?url=' + dappdomain
-				walletUrl[3] = 'tpdapp://open?params={"url": "' + dappdomain + '", "chain": "ETH"}'
-				walletUrl[4] = 'https://link.trustwallet.com/open_url?url=' + dappdomain
+				walletUrl[2] = `imtokenv2://navigate/DappView?url=${dappdomain}`
+				walletUrl[3] = `tpdapp://open?params={"url": "${dappdomain}", "chain": "ETH"}`
+				walletUrl[4] = `https://link.trustwallet.com/open_url?url=${dappdomain}`
 				uni.showActionSheet({
 					title: null,
 					itemList: walletName,

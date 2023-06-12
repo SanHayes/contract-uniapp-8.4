@@ -10,13 +10,13 @@ function formatTime(time) {
 	if (typeof time !== 'number' || time < 0) {
 		return time
 	}
-	var hour = parseInt(time / 3600)
+	const hour = parseInt(time / 3600);
 	time = time % 3600
-	var minute = parseInt(time / 60)
+	const minute = parseInt(time / 60);
 	time = time % 60
-	var second = time
+	const second = time;
 
-	return ([hour, minute, second]).map(function(n) {
+	return ([hour, minute, second]).map(n => {
 		n = n.toString()
 		return n[1] ? n : '0' + n
 	}).join(':')
@@ -27,15 +27,15 @@ function add0(m) {
 }
 
 function formatDate(shijianchuo) {
-	var newdate = parseInt(shijianchuo) * 1000
-	var time = new Date(newdate);
-	var y = time.getFullYear();
-	var m = time.getMonth() + 1;
-	var d = time.getDate();
-	var h = time.getHours();
-	var mm = time.getMinutes();
-	var s = time.getSeconds();
-	return y + '-' + add0(m) + '-' + add0(d) + ' ' + add0(h) + ':' + add0(mm) + ':' + add0(s);
+	const newdate = parseInt(shijianchuo) * 1000;
+	const time = new Date(newdate);
+	const y = time.getFullYear();
+	const m = time.getMonth() + 1;
+	const d = time.getDate();
+	const h = time.getHours();
+	const mm = time.getMinutes();
+	const s = time.getSeconds();
+	return `${y}-${add0(m)}-${add0(d)} ${add0(h)}:${add0(mm)}:${add0(s)}`;
 }
 
 function getLocalTime(nS) {
@@ -43,7 +43,7 @@ function getLocalTime(nS) {
 }
 
 function istel(tel) {
-	var myreg = /^((1[3-9]{1})+\d{9})$/;
+	const myreg = /^((1[3-9]{1})+\d{9})$/;
 	if (!myreg.test(tel)) {
 		return false
 	} else {
@@ -65,10 +65,10 @@ function formatLocation(longitude, latitude) {
 }
 
 function str_arr(str) {
-	var arrt = str.split(',')
-	var arrback = {}
-	for (var i = 0; i < arrt.length; i++) {
-		var arrtt = arrt[i].split('|')
+	const arrt = str.split(',');
+	const arrback = {};
+	for (let i = 0; i < arrt.length; i++) {
+		const arrtt = arrt[i].split('|');
 		arrback[arrtt[0]] = arrtt[1]
 	}
 	return arrback
@@ -86,9 +86,9 @@ function jsalert(strcontent, confirmText, gourl, strtype = 'redirectTo') {
 		confirmColor: '#f55850',
 		cancelColor: '#39B54A',
 		success: (res) => {
-			if (strtype && strtype == 'back') {
+			if (strtype && strtype === 'back') {
 				uni.navigateBack()
-			} else if (res.confirm && gourl && strtype == 'switchTab') {
+			} else if (res.confirm && gourl && strtype === 'switchTab') {
 				uni.switchTab({
 					url: gourl
 				});
@@ -139,7 +139,7 @@ function log(object) {
 }
 
 function isEmpty(obj) {
-	if (typeof obj == "undefined" || obj == null || obj == "") {
+	if (typeof obj == "undefined" || obj == null || obj === "") {
 		return true;
 	} else {
 		return false;
@@ -152,7 +152,7 @@ function getFloat(number, nb = 5) {
 		number = Number(number).toFixed(nb);
 	}
 	return number;
-};
+}
 
 function delarrkey(data, key) {
 	data.forEach((item, index) => {
@@ -171,22 +171,21 @@ function urlencode(str) {
 
 function utc2beijing(utc_datetime) {
 	// 转为正常的时间格式 年-月-日 时:分:秒
-	var T_pos = utc_datetime.indexOf('T');
-	var Z_pos = utc_datetime.indexOf('Z');
-	var year_month_day = utc_datetime.substr(0, T_pos);
-	var hour_minute_second = utc_datetime.substr(T_pos + 1, Z_pos - T_pos - 1);
-	var new_datetime = year_month_day + " " + hour_minute_second; // 2017-03-31 08:02:06
+	const T_pos = utc_datetime.indexOf('T');
+	const Z_pos = utc_datetime.indexOf('Z');
+	const year_month_day = utc_datetime.substr(0, T_pos);
+	const hour_minute_second = utc_datetime.substr(T_pos + 1, Z_pos - T_pos - 1);
+	const new_datetime = year_month_day + " " + hour_minute_second; // 2017-03-31 08:02:06
 
 	// 处理成为时间戳
-	timestamp = new Date(Date.parse(new_datetime));
+	let timestamp = new Date(Date.parse(new_datetime));
 	timestamp = timestamp.getTime();
 	timestamp = timestamp / 1000;
 	// 增加8个小时，北京时间比utc时间多八个时区
-	var timestamp = timestamp + 8 * 60 * 60;
+	timestamp = timestamp + 8 * 60 * 60;
 
 	// 时间戳转为时间
-	var beijing_datetime = formatDate(timestamp);
-	return beijing_datetime; // 2017-03-31 16:02:06
+	return formatDate(timestamp); // 2017-03-31 16:02:06
 }
 
 function strsubstr(str, ns, ne = 0) {
@@ -204,27 +203,16 @@ function strsubstr(str, ns, ne = 0) {
 }
 
 module.exports = {
-	formatTime: formatTime,
-	formatLocation: formatLocation,
-	ApiSync: ApiSync,
-	log: log,
-	jsalert: jsalert,
-	isEmpty: isEmpty,
-	msg: msg,
-	formatDate: formatDate,
-	str_arr: str_arr,
-	nver: nver,
-	istel: istel,
-	apidomain: apidomain
+	formatTime,
+	formatLocation,
+	ApiSync,
+	log,
+	jsalert,
+	isEmpty,
+	msg,
+	formatDate,
+	str_arr,
+	nver,
+	istel,
+	apidomain
 }
-
-//<uni-icons type="paperplane" size="20"></uni-icons>
-//uni.setStorageSync("newid",newsid);
-//uni.getStorageSync("newid")
-//uni.navigateTo({url: '../info/info?id='+newsid});
-//uni.showLoading({title:"加载中...."})
-//uni.hideLoading();
-//uni.setNavigationBarTitle({title: res.data.title})
-//uni.showToast({title:"关注成功" })
-//console.log(e)
-//https://blog.csdn.net/qq_39418742/article/details/109184806
