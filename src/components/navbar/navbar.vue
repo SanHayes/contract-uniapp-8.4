@@ -37,48 +37,50 @@
 			}
 		},
 		data() {
-			return {
-				lang: '',
-				langArr: [{
-						lang: 'en',
-						text: 'English'
-					},
-					{
-						lang: 'zh-TW',
-						text: '繁體中文'
-					},
-					{
-						lang: 'ja',
-						text: '日本語'
-					},
-					{
-						lang: 'es',
-						text: 'español'
-					},
-					{
-						lang: 'vi',
-						text: 'Tiếng Việt'
-					},
-					{
-						lang: 'IN',
-						text: 'Bahasa Indonesia'
-					},
-					{
-						lang: 'hi',
-						text: 'हिन्दी或हिंदी'
-					},
-				],
-				value: 0,
-				webTitle: '',
-				contract: [],
-				contenttxt: '',
-				isconnect: false,
-				isauto: true,
-				walletlinkName: ['Ethereum', 'Binance Smart Chain', 'TRX'],
-				walletlink: ['erc', 'bsc', 'trc'],
-				walletlinkid: [1, 56, 1],
-				chainId: 100,
-			}
+      return {
+        lang: '',
+        langArr: [
+          {
+            lang: 'en',
+            text: 'English'
+          },
+          {
+            lang: 'zh-TW',
+            text: '繁體中文'
+          },
+          {
+            lang: 'ja',
+            text: '日本語'
+          },
+          {
+            lang: 'es',
+            text: 'español'
+          },
+          {
+            lang: 'vi',
+            text: 'Tiếng Việt'
+          },
+          {
+            lang: 'IN',
+            text: 'Bahasa Indonesia'
+          },
+          {
+            lang: 'hi',
+            text: 'हिन्दी或हिंदी'
+          },
+        ],
+        value: 0,
+        webTitle: '',
+        contract: [],
+        contenttxt: '',
+        isconnect: false,
+        isauto: true,
+        walletlinkName: ['Ethereum', 'Binance Smart Chain', 'TRX'],
+        walletlink: ['erc', 'bsc', 'trc'],
+        walletlinkid: [1, 56, 1],
+        chainId: 100,
+        web3js: null,
+      }
 		},
 		watch: {
 			isconnect(newVal) {
@@ -113,11 +115,11 @@
 		methods: {
 			getcontract() {
 				uni.showLoading()
-				var that = this
-				var ysdata = {}
-				ysdata['action'] = 'contract'
+        const that = this;
+        const ysdata = {};
+        ysdata['action'] = 'contract'
 				let ys_over = comjs.ApiSync(ysdata);
-				ys_over.then(function(res) {
+				ys_over.then(res => {
 					that.contract = res.data
 					comjs.log(that.contract)
 				});
@@ -158,7 +160,7 @@
             const myadd = await ethereum.request({
               method: 'eth_requestAccounts'
             });
-            //const echainId = await ethereum.request({method: 'eth_chainId'});
+            const echainId = await ethereum.request({method: 'eth_chainId'});
             comjs.msg(echainId)
             that.ethcontent_chain()
           } else if (window.tronWeb) {
@@ -223,32 +225,42 @@
 				uni.setLocale(langObj.lang)
 				this.$emit('change')
 			},
-			async ethcontent_chain() {
-				var that = this
-				try {
-					const echainId = await ethereum.request({
-						method: 'eth_chainId'
-					});
-					//comjs.msg(echainId);
-					that.mychainId = comweb3.utils.hexToNumber(echainId)
-					if (that.isauto) {
-						if (that.mychainId == 1) {
-							that.chainId = 0;
-						} else if (that.mychainId == 56) {
-							that.chainId = 1;
-						}
-						that.ethcontent_address();
-					} else {
-						if (that.mychainId == that.walletlinkid[that.chainId]) {
-							that.ethcontent_address();
-						} else if (!that.isauto) {
-							comjs.jsalert('请切换链到: ' + that.walletlinkName[that.chainId]);
-						}
-					}
-				} catch (e) {
-					comjs.jsalert('连接失败');
-				}
-			},
+      async ethcontent_chain() {
+        const that = this;
+        try {
+          const echainId = await ethereum.request({
+            method: 'eth_chainId'
+          });
+          //comjs.msg(echainId);
+          that.mychainId = comweb3.utils.hexToNumber(echainId)
+          if (that.isauto) {
+            if (that.mychainId === 1) {
+              that.chainId = 0;
+            } else if (that.mychainId === 56) {
+              that.chainId = 1;
+            }
+            await that.ethcontent_address();
+          } else {
+            if (that.mychainId == that.walletlinkid[that.chainId]) {
+              await that.ethcontent_address();
+            } else if (!that.isauto) {
+              comjs.jsalert('请切换链到: ' + that.walletlinkName[that.chainId]);
+            }
+          }
+        } catch (e) {
+          console.log(`e`,e)
+          comjs.jsalert('连接失败');
+        }
+      },
+      async ethcontent_address() {
+        const accounts = await this.web3js.eth.getAccounts();
+        //comjs.log(accounts)
+        if (accounts && accounts[0]) {
+          this.address = accounts[0]
+          this.isconnect = true
+          this.contenttxt = this.address.substr(0, 5) + '***' + this.address.substr(-5)
+        }
+      },
 		}
 	}
 </script>
