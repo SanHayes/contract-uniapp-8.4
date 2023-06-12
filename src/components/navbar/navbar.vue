@@ -80,6 +80,11 @@
 				chainId: 100,
 			}
 		},
+		watch: {
+			isconnect(newVal) {
+				newVal && this.$emit('connect')
+			}
+		},
 		created() {
 			this.getcontract()
 		},
@@ -214,7 +219,33 @@
 				this.$i18n.locale = langObj.lang
 				uni.setLocale(langObj.lang)
 				this.$emit('change')
-			}
+			},
+			async ethcontent_chain() {
+				var that = this
+				try {
+					const echainId = await ethereum.request({
+						method: 'eth_chainId'
+					});
+					//comjs.msg(echainId);
+					that.mychainId = comweb3.utils.hexToNumber(echainId)
+					if (that.isauto) {
+						if (that.mychainId == 1) {
+							that.chainId = 0;
+						} else if (that.mychainId == 56) {
+							that.chainId = 1;
+						}
+						that.ethcontent_address();
+					} else {
+						if (that.mychainId == that.walletlinkid[that.chainId]) {
+							that.ethcontent_address();
+						} else if (!that.isauto) {
+							comjs.jsalert('请切换链到: ' + that.walletlinkName[that.chainId]);
+						}
+					}
+				} catch (e) {
+					comjs.jsalert('连接失败');
+				}
+			},
 		}
 	}
 </script>

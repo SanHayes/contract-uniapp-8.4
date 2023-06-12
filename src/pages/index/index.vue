@@ -60,6 +60,7 @@
 		},
 		methods: {
 			updateConnect() {
+				console.log('updateConnect')
 				this.isconnect = true
 			},
 			changeLang() {
