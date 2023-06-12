@@ -80,9 +80,7 @@
             "coin_name": "ETH"
           }
         })
-        if (!res) returnconst {
-          data
-        } = res
+        const {data} = res
         const title = data?.title
         this.mining_pool = data?.mining_pool || {}
         this.earnings = data?.platform_earnings || []
