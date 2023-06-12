@@ -1,6 +1,15 @@
 import App from './App'
 import i18nConfig from './locale'
 
+if (process.env.NODE_ENV !== 'development') {
+	// eslint-disable-next-line no-console
+	console.log(
+		` %c contract-uniapp  %c LastBuildTime: ${__APP_INFO__['build_time']},commit:${__APP_INFO__['commit']} `,
+		'color: #fadfa3; background: #030307; padding:5px 0;',
+		'background: #fadfa3; padding:5px 0;'
+	)
+}
+
 // #ifndef VUE3
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
