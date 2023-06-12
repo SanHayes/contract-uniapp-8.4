@@ -21,14 +21,9 @@
 				timer: null
 			}
 		},
-		watch: {
-			timer(newVal) {
-				console.log('scroll timer', newVal)
-			}
-		},
 		props: {
 			data: {
-				type: Array,
+        type: [Array, Object],
 				default: []
 			},
 			showNum: {
@@ -89,7 +84,11 @@
 			data(outdata, newdata) {
 				this.clearTimer()
 				this.init();
-			}
+			},
+      timer(newVal) {
+        // @todo 这里不知道做什么一直在刷
+        // console.log('scroll timer', newVal)
+      },
 		},
 		beforeDestroy() {
 			this.clearTimer()

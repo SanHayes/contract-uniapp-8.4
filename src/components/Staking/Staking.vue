@@ -24,7 +24,7 @@
 		name: "Staking",
 		props: {
 			data: {
-				type: Array,
+        type: [Array, Object],
 				default: []
 			}
 		},

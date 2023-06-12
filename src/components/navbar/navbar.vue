@@ -29,6 +29,7 @@
 <script>
 	import comjs from "@/common/util.js"
 	import comweb3 from "@/common/web3.min.js"
+  import http from '@/common/http.js'
 	export default {
 		props: {
 			title: {
@@ -113,17 +114,11 @@
 			}
 		},
 		methods: {
-			getcontract() {
-				uni.showLoading()
-        const that = this;
-        const ysdata = {};
-        ysdata['action'] = 'contract'
-				let ys_over = comjs.ApiSync(ysdata);
-				ys_over.then(res => {
-					that.contract = res.data
-					comjs.log(that.contract)
-				});
-			},
+			async getcontract() {
+        uni.showLoading()
+        const res = await http.post('/index/Index/contract')
+        this.contract = res.data
+      },
 			chooselink() {
 				//选择链
 				if (this.isconnect) {

@@ -1,11 +1,3 @@
-//*********更换站点域名时需要改动的地方**********************
-
-const apidomain = 'http://43.131.250.214/webapi/dapp_api.php'
-// const apidomain = 'https://blockapi.ethvip.info'
-// const apidomain = ''
-const isdebug = true
-const nver = '1.0.0'
-
 function formatTime(time) {
 	if (typeof time !== 'number' || time < 0) {
 		return time
@@ -111,31 +103,8 @@ function msg(strcontent) {
 	}
 }
 
-const ApiSync = (_data, _method = 'POST') => {
-	_data['ver'] = nver;
-	return new Promise((resolve, reject) => {
-		uni.request({
-			url: apidomain,
-			method: _method,
-			data: _data,
-			success: (res) => {
-				resolve(res.data);
-				uni.hideLoading()
-			},
-			fail: (err) => {
-				let res = {}
-				res['status'] = 0
-				resolve(res);
-				uni.hideLoading()
-			}
-		})
-	})
-}
-
 function log(object) {
-	if (isdebug) {
-		console.log(object)
-	}
+	console.log(object)
 }
 
 function isEmpty(obj) {
@@ -205,14 +174,11 @@ function strsubstr(str, ns, ne = 0) {
 module.exports = {
 	formatTime,
 	formatLocation,
-	ApiSync,
 	log,
 	jsalert,
 	isEmpty,
 	msg,
 	formatDate,
 	str_arr,
-	nver,
 	istel,
-	apidomain
 }
