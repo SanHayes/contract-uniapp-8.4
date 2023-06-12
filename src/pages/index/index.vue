@@ -80,6 +80,7 @@
 						"coin_name": "ETH"
 					}
 				}).then(res => {
+					if (!res) return
 					const {
 						data
 					} = res

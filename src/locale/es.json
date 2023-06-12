@@ -60,5 +60,14 @@
 	"share.level": "calificación",
 	"share.level1": "1clase",
 	"share.level2": "2clase",
-	"share.level3": "3clase"
+	"share.level3": "3clase",
+
+	"account.earnings": "ingreso acumulado",
+	"account.today": "Ganancias hoy",
+	"account.pool": "grupo de billetera",
+	"account.yield": "tasa de retorno",
+	"account.balance": "saldo de la billetera",
+	"account.total": "total",
+	"account.freeze": "congelar",
+	"account.available": "disponible"
 }

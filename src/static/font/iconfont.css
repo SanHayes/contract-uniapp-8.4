@@ -12,6 +12,10 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-tixian:before {
+	content: "\e6e2";
+}
+
 .icon-record:before {
 	content: "\e6a1";
 }

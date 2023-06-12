@@ -60,5 +60,14 @@
 	"share.level": "Level",
 	"share.level1": "Level 1",
 	"share.level2": "Level 2",
-	"share.level3": "Level 3"
+	"share.level3": "Level 3",
+
+	"account.earnings": "Accumulated earnings",
+	"account.today": "Today's earnings",
+	"account.pool": "Pool Wallet",
+	"account.yield": "Yield",
+	"account.balance": "Wallet Balance",
+	"account.total": "Total",
+	"account.freeze": "Freeze",
+	"account.available": "Available"
 }

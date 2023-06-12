@@ -60,5 +60,14 @@
 	"share.level": "nilai",
 	"share.level1": "Tingkat 1",
 	"share.level2": "Tingkat 2",
-	"share.level3": "Tingkat 3"
+	"share.level3": "Tingkat 3",
+
+	"account.earnings": "pendapatan kumulatif",
+	"account.today": "Penghasilan hari ini",
+	"account.pool": "kolam dompet",
+	"account.yield": "tingkat pengembalian",
+	"account.balance": "saldo dompet",
+	"account.total": "total",
+	"account.freeze": "membekukan",
+	"account.available": "tersedia"
 }

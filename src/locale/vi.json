@@ -60,5 +60,14 @@
 	"share.level": "lớp",
 	"share.level1": "1lớp",
 	"share.level2": "2lớp",
-	"share.level3": "3lớp"
+	"share.level3": "3lớp",
+
+	"account.earnings": "thu nhập tích lũy",
+	"account.today": "Thu nhập hôm nay",
+	"account.pool": "nhóm ví",
+	"account.yield": "tỷ lệ lợi nhuận",
+	"account.balance": "số dư ví",
+	"account.total": "toàn bộ",
+	"account.freeze": "Đông cứng",
+	"account.available": "có sẵn"
 }

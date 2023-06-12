@@ -60,5 +60,14 @@
 	"share.level": "ग्रेड",
 	"share.level1": "स्तर 1",
 	"share.level2": "लेवल 2",
-	"share.level3": "स्तर 3"
+	"share.level3": "स्तर 3",
+
+	"account.earnings": "संचयी आय",
+	"account.today": "आज की कमाई",
+	"account.pool": "बटुआ पूल",
+	"account.yield": "प्रतिफल दर",
+	"account.balance": "वॉलेट बैलेंस",
+	"account.total": "संपूर्ण",
+	"account.freeze": "फ्रीज",
+	"account.available": "उपलब्ध"
 }

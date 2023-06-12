@@ -60,5 +60,14 @@
 	"share.level": "レベル",
 	"share.level1": "レベル 1",
 	"share.level2": "レベル 2",
-	"share.level3": "レベル 3"
+	"share.level3": "レベル 3",
+
+	"account.earnings": "累積所得",
+	"account.today": "今日の収益",
+	"account.pool": "ウォレットプール",
+	"account.yield": "利回り",
+	"account.balance": "ウォレットバランス",
+	"account.total": "合計",
+	"account.freeze": "フリーズ",
+	"account.available": "利用可能"
 }

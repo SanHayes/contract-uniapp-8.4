@@ -94,6 +94,15 @@
 		created() {
 
 		},
+		onTabItemTap() {
+			uni.removeStorageSync('index')
+		},
+		onShow() {
+			setTimeout(() => {
+				const index = uni.getStorageSync('index')
+				this.current = Number(index)
+			})
+		},
 		methods: {
 			changeTab(e) {
 				if (this.current !== e.currentIndex) {

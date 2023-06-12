@@ -49,7 +49,7 @@
 	"share.copy": "複製",
 	"share.desc": "分享您的邀請鏈接，當朋友通過您的鏈接加入節點後，即可獲得豐厚的代幣獎勵，活動詳情請諮詢在線客服",
 	"share.get": "獲取鏈接",
-	"share.invite": " 邀請朋友",
+	"share.invite": "邀請朋友",
 	"share.earn": "賺取加密貨幣",
 	"share.team": "團隊",
 	"share.size": "團隊規模",
@@ -60,5 +60,14 @@
 	"share.level": "等級",
 	"share.level1": "1級",
 	"share.level2": "2級",
-	"share.level3": "3級"
+	"share.level3": "3級",
+
+	"account.earnings": "累計收益",
+	"account.today": "今日收益",
+	"account.pool": "錢包礦池",
+	"account.yield": "收益率",
+	"account.balance": "錢包餘額",
+	"account.total": "總計",
+	"account.freeze": "凍結",
+	"account.available": "可用"
 }
