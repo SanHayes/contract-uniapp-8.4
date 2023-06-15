@@ -69,5 +69,13 @@
 	"account.balance": "số dư ví",
 	"account.total": "toàn bộ",
 	"account.freeze": "Đông cứng",
-	"account.available": "có sẵn"
+	"account.available": "có sẵn",
+
+	"record.income": "thu nhập = earnings",
+
+	"service.assistant": "trợ lý",
+	"service.tips": "Dịch vụ khách hàng trực tuyến của bạn luôn phục vụ bạn。",
+	"service.online": "Online",
+	"service.app": "WhatsApp",
+	"service.telegram": "Telegram"
 }

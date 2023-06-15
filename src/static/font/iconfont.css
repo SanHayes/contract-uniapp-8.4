@@ -12,6 +12,18 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-telegram:before {
+	content: "\e8db";
+}
+
+.icon-chat-smile--fill:before {
+	content: "\e6b3";
+}
+
+.icon-whatsapp:before {
+	content: "\e69c";
+}
+
 .icon-tixian:before {
 	content: "\e6e2";
 }

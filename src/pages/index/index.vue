@@ -17,6 +17,7 @@
 		<Staking :data="earnings"></Staking>
 		<question :data="problem"></question>
 		<partners :data="white"></partners>
+		<service></service>
 	</view>
 </template>
 

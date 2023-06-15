@@ -39,6 +39,13 @@
 				"enablePullDownRefresh": false
 			}
 
+		}, {
+			"path": "pages/records/records",
+			"style": {
+				"navigationBarTitleText": "%share.record%",
+				"enablePullDownRefresh": false
+			}
+
 		}
 	],
 	"globalStyle": {

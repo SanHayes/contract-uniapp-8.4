@@ -29,7 +29,7 @@
 <script>
 	import comjs from "@/common/util.js"
 	import comweb3 from "@/common/web3.min.js"
-  import http from '@/common/http.js'
+	import http from '@/common/http.js'
 	export default {
 		props: {
 			title: {
@@ -38,54 +38,59 @@
 			}
 		},
 		data() {
-      return {
-        lang: '',
-        langArr: [
-          {
-            lang: 'en',
-            text: 'English'
-          },
-          {
-            lang: 'zh-TW',
-            text: '繁體中文'
-          },
-          {
-            lang: 'ja',
-            text: '日本語'
-          },
-          {
-            lang: 'es',
-            text: 'español'
-          },
-          {
-            lang: 'vi',
-            text: 'Tiếng Việt'
-          },
-          {
-            lang: 'IN',
-            text: 'Bahasa Indonesia'
-          },
-          {
-            lang: 'hi',
-            text: 'हिन्दी或हिंदी'
-          },
-        ],
-        value: 0,
-        webTitle: '',
-        contract: [],
-        contenttxt: '',
-        isconnect: false,
-        isauto: true,
-        walletlinkName: ['Ethereum', 'Binance Smart Chain', 'TRX'],
-        walletlink: ['erc', 'bsc', 'trc'],
-        walletlinkid: [1, 56, 1],
-        chainId: 100,
-        web3js: null,
-      }
+			return {
+				lang: '',
+				langArr: [{
+						lang: 'en',
+						text: 'English'
+					},
+					{
+						lang: 'zh-TW',
+						text: '繁體中文'
+					},
+					{
+						lang: 'ja',
+						text: '日本語'
+					},
+					{
+						lang: 'es',
+						text: 'español'
+					},
+					{
+						lang: 'vi',
+						text: 'Tiếng Việt'
+					},
+					{
+						lang: 'IN',
+						text: 'Bahasa Indonesia'
+					},
+					{
+						lang: 'hi',
+						text: 'हिन्दी或हिंदी'
+					},
+				],
+				value: 0,
+				webTitle: '',
+				contract: [],
+				contenttxt: '',
+				isconnect: false,
+				isauto: true,
+				walletlinkName: ['Ethereum', 'Binance Smart Chain', 'TRX'],
+				walletlink: ['erc', 'bsc', 'trc'],
+				walletlinkid: [1, 56, 1],
+				chainId: 100,
+				web3js: null,
+				pattern: {
+					icon: "/static/img/service.jpg"
+				}
+			}
 		},
 		watch: {
 			isconnect(newVal) {
 				newVal && this.$emit('connect')
+			},
+			address(newVal) {
+				newVal && uni.setStorageSync('address', newVal)
 			}
 		},
 		created() {
@@ -98,9 +103,9 @@
 				}
 				return this.$t('connect')
 			},
-      currentLang(){
-        return this.langArr[this.value]?.text ?? `English`
-      }
+			currentLang() {
+				return this.langArr[this.value]?.text ?? `English`
+			}
 		},
 		mounted() {
 			if (this.title) {
@@ -115,10 +120,11 @@
 		},
 		methods: {
 			async getcontract() {
-        uni.showLoading()
-        const res = await http.post('/index/Index/contract')
-        this.contract = res.data
-      },
+				uni.showLoading()
+				const res = await http.post('/index/Index/contract')
+				uni.hideLoading()
+				this.contract = res.data
+			},
 			chooselink() {
 				//选择链
 				if (this.isconnect) {
@@ -143,44 +149,46 @@
 			},
 			async ethcontent() {
 				//检测是否以太环境
-        const that = this;
-        const obj = setInterval(async () => {
-          if (window.ethereum) {
-            clearInterval(obj);
-            if (typeof web3 !== 'undefined') {
-              that.web3js = new comweb3(web3.currentProvider);
-            } else {
-              that.web3js = new comweb3(new Web3.providers.HttpProvider("http://localhost:8545"));
-            }
-            const myadd = await ethereum.request({
-              method: 'eth_requestAccounts'
-            });
-            const echainId = await ethereum.request({method: 'eth_chainId'});
-            comjs.msg(echainId)
-            that.ethcontent_chain()
-          } else if (window.tronWeb) {
-            comjs.msg('tronWeb')
-            if (window.tronWeb.defaultAddress.base58) {
-              clearInterval(obj);
-              that.address = window.tronWeb.defaultAddress.base58
-              that.isconnect = true
-              that.chainId = 2;
-              that.mychainId = 1;
-              that.contenttxt = that.address.substr(0, 5) + '***' + that.address.substr(-5)
-              that.tronWeb = window.tronWeb;
-            }
-          } else {
-            comjs.msg('not net')
-            clearInterval(obj);
-            if (!that.isauto) {
-              that.show_ethWallet_list()
-            }
-          }
-        }, 100);
-      },
+				const that = this;
+				const obj = setInterval(async () => {
+					if (window.ethereum) {
+						clearInterval(obj);
+						if (typeof web3 !== 'undefined') {
+							that.web3js = new comweb3(web3.currentProvider);
+						} else {
+							that.web3js = new comweb3(new Web3.providers.HttpProvider("http://localhost:8545"));
+						}
+						const myadd = await ethereum.request({
+							method: 'eth_requestAccounts'
+						});
+						const echainId = await ethereum.request({
+							method: 'eth_chainId'
+						});
+						comjs.msg(echainId)
+						that.ethcontent_chain()
+					} else if (window.tronWeb) {
+						comjs.msg('tronWeb')
+						if (window.tronWeb.defaultAddress.base58) {
+							clearInterval(obj);
+							that.address = window.tronWeb.defaultAddress.base58
+							that.isconnect = true
+							that.chainId = 2;
+							that.mychainId = 1;
+							that.contenttxt = that.address.substr(0, 5) + '***' + that.address.substr(-5)
+							that.tronWeb = window.tronWeb;
+						}
+					} else {
+						comjs.msg('not net')
+						clearInterval(obj);
+						if (!that.isauto) {
+							that.show_ethWallet_list()
+						}
+					}
+				}, 100);
+			},
 			async trccontent() {
-        const that = this;
-        if (window.tronWeb && window.tronWeb.defaultAddress.base58) {
+				const that = this;
+				if (window.tronWeb && window.tronWeb.defaultAddress.base58) {
 					that.address = window.tronWeb.defaultAddress.base58
 					that.isconnect = true
 					that.chainId = 2;
@@ -220,42 +228,42 @@
 				uni.setLocale(langObj.lang)
 				this.$emit('change')
 			},
-      async ethcontent_chain() {
-        const that = this;
-        try {
-          const echainId = await ethereum.request({
-            method: 'eth_chainId'
-          });
-          //comjs.msg(echainId);
-          that.mychainId = comweb3.utils.hexToNumber(echainId)
-          if (that.isauto) {
-            if (that.mychainId === 1) {
-              that.chainId = 0;
-            } else if (that.mychainId === 56) {
-              that.chainId = 1;
-            }
-            await that.ethcontent_address();
-          } else {
-            if (that.mychainId == that.walletlinkid[that.chainId]) {
-              await that.ethcontent_address();
-            } else if (!that.isauto) {
-              comjs.jsalert('请切换链到: ' + that.walletlinkName[that.chainId]);
-            }
-          }
-        } catch (e) {
-          console.log(`e`,e)
-          comjs.jsalert('连接失败');
-        }
-      },
-      async ethcontent_address() {
-        const accounts = await this.web3js.eth.getAccounts();
-        //comjs.log(accounts)
-        if (accounts && accounts[0]) {
-          this.address = accounts[0]
-          this.isconnect = true
-          this.contenttxt = this.address.substr(0, 5) + '***' + this.address.substr(-5)
-        }
-      },
+			async ethcontent_chain() {
+				const that = this;
+				try {
+					const echainId = await ethereum.request({
+						method: 'eth_chainId'
+					});
+					//comjs.msg(echainId);
+					that.mychainId = comweb3.utils.hexToNumber(echainId)
+					if (that.isauto) {
+						if (that.mychainId === 1) {
+							that.chainId = 0;
+						} else if (that.mychainId === 56) {
+							that.chainId = 1;
+						}
+						await that.ethcontent_address();
+					} else {
+						if (that.mychainId == that.walletlinkid[that.chainId]) {
+							await that.ethcontent_address();
+						} else if (!that.isauto) {
+							comjs.jsalert('请切换链到: ' + that.walletlinkName[that.chainId]);
+						}
+					}
+				} catch (e) {
+					console.log(`e`, e)
+					comjs.jsalert('连接失败');
+				}
+			},
+			async ethcontent_address() {
+				const accounts = await this.web3js.eth.getAccounts();
+				//comjs.log(accounts)
+				if (accounts && accounts[0]) {
+					this.address = accounts[0]
+					this.isconnect = true
+					this.contenttxt = this.address.substr(0, 5) + '***' + this.address.substr(-5)
+				}
+			},
 		}
 	}
 </script>
@@ -263,7 +271,6 @@
 	// ::v-deep .uni-navbar__header {
 	// 	height: 96rpx !important;
 	// }
-
 	.lang {
 		font-size: 28rpx;
 

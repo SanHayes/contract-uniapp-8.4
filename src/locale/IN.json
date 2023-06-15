@@ -69,5 +69,13 @@
 	"account.balance": "saldo dompet",
 	"account.total": "total",
 	"account.freeze": "membekukan",
-	"account.available": "tersedia"
+	"account.available": "tersedia",
+
+	"reocrd.income": "penghasilan",
+
+	"service.assistant": "asisten",
+	"service.tips": "Layanan pelanggan online Anda selalu siap melayani Anda¡£",
+	"service.online": "Online",
+	"service.app": "WhatsApp",
+	"service.telegram": "Telegram"
 }

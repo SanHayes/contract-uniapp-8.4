@@ -69,5 +69,13 @@
 	"account.balance": "वॉलेट बैलेंस",
 	"account.total": "संपूर्ण",
 	"account.freeze": "फ्रीज",
-	"account.available": "उपलब्ध"
+	"account.available": "उपलब्ध",
+
+	"reocrd.income": "आय",
+
+	"service.assistant": "सहायक",
+	"service.tips": "आपकी ऑनलाइन ग्राहक सेवा हमेशा आपकी सेवा में है。",
+	"service.online": "Online",
+	"service.app": "WhatsApp",
+	"service.telegram": "Telegram"
 }

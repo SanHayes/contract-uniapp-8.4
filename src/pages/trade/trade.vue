@@ -8,7 +8,7 @@
 				<view class="card">
 					<view class="title">
 						<text>{{$t('trade.exchange')}}</text>
-						<view class="record">
+						<view class="record" @click="toRecord">
 							<uni-icons custom-prefix="iconfont" type="icon-record" size="16"></uni-icons>
 							<text>{{$t('trade.record')}}</text>
 						</view>
@@ -52,7 +52,7 @@
 				<view class="card">
 					<view class="title">
 						<text>{{$t('trade.withdraw')}}</text>
-						<view class="record">
+						<view class="record" @click="toRecord">
 							<uni-icons custom-prefix="iconfont" type="icon-record" size="16"></uni-icons>
 							<text>{{$t('trade.record')}}</text>
 						</view>
@@ -108,6 +108,11 @@
 				if (this.current !== e.currentIndex) {
 					this.current = e.currentIndex
 				}
+			},
+			toRecord() {
+				uni.navigateTo({
+					url: "/pages/records/records"
+				})
 			}
 		}
 	}

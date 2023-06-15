@@ -69,5 +69,13 @@
 	"account.balance": "Wallet Balance",
 	"account.total": "Total",
 	"account.freeze": "Freeze",
-	"account.available": "Available"
+	"account.available": "Available",
+
+	"record.income": "income",
+
+	"service.assistant": "Assistant",
+	"service.tips": "Your live assistant is always at your service",
+	"service.online": "Online",
+	"service.app": "WhatsApp",
+	"service.telegram": "Telegram"
 }

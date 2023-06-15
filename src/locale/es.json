@@ -69,5 +69,13 @@
 	"account.balance": "saldo de la billetera",
 	"account.total": "total",
 	"account.freeze": "congelar",
-	"account.available": "disponible"
+	"account.available": "disponible",
+
+	"reocrd.income": "ingreso",
+
+	"service.assistant": "asistente",
+	"service.tips": "Su servicio de atención al cliente en línea está siempre a su servicio。",
+	"service.online": "Online",
+	"service.app": "WhatsApp",
+	"service.telegram": "Telegram"
 }

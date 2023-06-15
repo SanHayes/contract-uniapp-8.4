@@ -8,7 +8,7 @@
 					<view class="label">{{$t("account.earnings")}}</view>
 					<view class="value">0.000000 ETH</view>
 				</view>
-				<view class="record">
+				<view class="record" @click="toRecord">
 					<uni-icons custom-prefix="iconfont" type="icon-record" size="16"></uni-icons>
 					<text>{{$t('trade.record')}}</text>
 				</view>
@@ -101,6 +101,11 @@
 				uni.setStorageSync('index', index)
 				uni.switchTab({
 					url: "/pages/trade/trade"
+				})
+			},
+			toRecord() {
+				uni.navigateTo({
+					url: "/pages/records/records"
 				})
 			}
 		}

@@ -69,5 +69,13 @@
 	"account.balance": "錢包餘額",
 	"account.total": "總計",
 	"account.freeze": "凍結",
-	"account.available": "可用"
+	"account.available": "可用",
+
+	"record.income": "收益",
+
+	"service.assistant": "助手",
+	"service.tips": "您的在線客服隨時為您服務。",
+	"service.online": "Online",
+	"service.app": "WhatsApp",
+	"service.telegram": "Telegram"
 }

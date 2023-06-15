@@ -69,5 +69,13 @@
 	"account.balance": "ウォレットバランス",
 	"account.total": "合計",
 	"account.freeze": "フリーズ",
-	"account.available": "利用可能"
+	"account.available": "利用可能",
+
+	"record.income": "所得",
+
+	"service.assistant": "アシスタント",
+	"service.tips": "あなたのオンラインカスタマーサービスはあなたにサービスを提供する準備ができています。",
+	"service.online": "Online",
+	"service.app": "WhatsApp",
+	"service.telegram": "Telegram"
 }
