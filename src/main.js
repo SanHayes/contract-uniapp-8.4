@@ -1,6 +1,7 @@
 import App from './App'
 import i18n from './locale'
 import store from "./store";
+import * as filters from '@/filters';
 
 if (process.env.NODE_ENV !== 'development') {
 	// eslint-disable-next-line no-console
@@ -13,6 +14,12 @@ if (process.env.NODE_ENV !== 'development') {
 
 // #ifndef VUE3
 import Vue from 'vue'
+
+//过滤器批量注册
+Object.keys(filters).forEach(key => {
+	Vue.filter(key, filters[key]);
+});
+
 Vue.config.productionTip = false
 App.mpType = 'app'
 
