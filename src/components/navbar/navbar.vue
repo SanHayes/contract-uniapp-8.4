@@ -121,7 +121,7 @@
 		methods: {
 			async getcontract() {
 				uni.showLoading()
-				const res = await http.post('/index/Index/contract')
+				const res = await http.post('/api/Index/contract')
 				uni.hideLoading()
 				this.contract = res.data
 			},
@@ -200,6 +200,7 @@
 			},
 			show_ethWallet_list() {
 				//钱包跳转
+        //@todo 域名从接口获取？
 				let dappdomain = process.env.VUE_APP_DAPPDOMAIN //本站域名
 				//各个以太坊钱包地址
 				let walletName = ['MetaMask', 'Coinbase', 'imToken', 'TokenPocket', 'TrustWallet']

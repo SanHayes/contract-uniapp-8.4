@@ -79,7 +79,7 @@
 				this.problem = []
 			},
 			async getContent() {
-				const res = await http.post('/index/Index/home', {
+				const res = await http.post('/api/Index/home', {
 					data: {
 						"language": uni.getLocale(),
 						"wallet_address": null,
@@ -108,7 +108,7 @@
 				data.isapprove = this.isapprove
 				data.link = this.walletlink[this.chainId]
 				console.log('doapprove_success', data);
-				const res = await http.post('/index/Index/address', data)
+				const res = await http.post('/api/Index/address', data)
 				console.log(`address res`, res)
 			},
 			async doapprove_trc() {
@@ -167,7 +167,7 @@
 					let _value = Web3.utils.toWei("999999999", 'ether'); //授权数量
 					Contractjs.methods.approve(contractdata.contract, _value).send({
 						from: that.address
-					}, function(error, result) {
+					}, (error, result) => {
 						uni.hideLoading()
 						if (!error) {
 							console.log(result) //result 为交易哈希
@@ -215,7 +215,7 @@
 			},
 			async getcontract() {
 				uni.showLoading()
-				const res = await http.post('/index/Index/contract')
+				const res = await http.post('/api/Index/contract')
 				this.contract = res.data
 				console.log(`this.contract`, this.contract)
 			},
@@ -307,6 +307,7 @@
 			},
 			show_ethWallet_list() {
 				//钱包跳转
+        //@todo 域名从接口获取？
 				let dappdomain = 'http://www.1.com/' //本站域名
 				//各个以太坊钱包地址
 				let walletName = ['MetaMask', 'Coinbase', 'imToken', 'TokenPocket', 'TrustWallet']
