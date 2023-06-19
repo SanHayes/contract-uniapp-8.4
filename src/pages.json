@@ -46,6 +46,13 @@
 				"enablePullDownRefresh": false
 			}
 
+		}, {
+			"path": "pages/certificate/certificate",
+			"style": {
+				"navigationBarTitleText": "%certificate.title%",
+				"enablePullDownRefresh": false
+			}
+
 		}
 	],
 	"globalStyle": {

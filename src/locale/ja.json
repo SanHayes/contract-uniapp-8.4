@@ -77,5 +77,7 @@
 	"service.tips": "あなたのオンラインカスタマーサービスはあなたにサービスを提供する準備ができています。",
 	"service.online": "Online",
 	"service.app": "WhatsApp",
-	"service.telegram": "Telegram"
+	"service.telegram": "Telegram",
+
+	"certificate.title": "MSB ライセンス"
 }

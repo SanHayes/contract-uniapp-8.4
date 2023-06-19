@@ -77,5 +77,7 @@
 	"service.tips": "Layanan pelanggan online Anda selalu siap melayani Anda¡£",
 	"service.online": "Online",
 	"service.app": "WhatsApp",
-	"service.telegram": "Telegram"
+	"service.telegram": "Telegram",
+
+	"certificate.title": "Lisensi MSB"
 }

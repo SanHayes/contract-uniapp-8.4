@@ -9,7 +9,7 @@
 				<view class="banner-tip">{{$t('index.mining')}}</view>
 				<view class="btns">
 					<button type="primary" class="button" size="mini" @click="doapprove">{{$t('receive')}}</button>
-					<button type="default" class="button" size="mini">{{$t('certificate')}}</button>
+					<button type="default" class="button" size="mini" @click="view">{{$t('certificate')}}</button>
 				</view>
 			</view>
 		</view>
@@ -60,6 +60,11 @@
 			//this.ethcontent()
 		},
 		methods: {
+			view() {
+				uni.navigateTo({
+					url: '/pages/certificate/certificate'
+				})
+			},
 			updateConnect() {
 				console.log('updateConnect')
 				this.isconnect = true
