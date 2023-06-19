@@ -1,5 +1,6 @@
 import App from './App'
-import i18nConfig from './locale'
+import i18n from './locale'
+import store from "./store";
 
 if (process.env.NODE_ENV !== 'development') {
 	// eslint-disable-next-line no-console
@@ -12,9 +13,6 @@ if (process.env.NODE_ENV !== 'development') {
 
 // #ifndef VUE3
 import Vue from 'vue'
-import VueI18n from 'vue-i18n'
-Vue.use(VueI18n)
-const i18n = new VueI18n(i18nConfig)
 Vue.config.productionTip = false
 App.mpType = 'app'
 
@@ -48,6 +46,7 @@ try {
 
 const app = new Vue({
 	i18n,
+	store,
 	...App
 })
 app.$mount()
