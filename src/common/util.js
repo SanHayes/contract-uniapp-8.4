@@ -66,7 +66,7 @@ function str_arr(str) {
 	return arrback
 }
 
-function jsalert(strcontent, confirmText, gourl, strtype = 'redirectTo') {
+function jsalert(strcontent, confirmText='', gourl='', strtype = 'redirectTo') {
 	uni.hideLoading()
 	if (!confirmText) {
 		confirmText = '确定'
@@ -93,7 +93,7 @@ function jsalert(strcontent, confirmText, gourl, strtype = 'redirectTo') {
 	})
 }
 
-function msg(strcontent) {
+function msg(strcontent='') {
 	uni.hideLoading()
 	if (strcontent) {
 		uni.showToast({

