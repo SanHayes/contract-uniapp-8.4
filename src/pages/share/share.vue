@@ -104,6 +104,8 @@
 </template>
 
 <script>
+	import http from '@/common/http'
+	
 	export default {
 		data() {
 			return {
@@ -132,6 +134,9 @@
 				]
 			}
 		},
+		onShow(){
+		  this.getTeamInfo()
+		},
 		methods: {
 			handleClick(e) {
 				if (this.current != e.currentIndex) {
@@ -148,6 +153,11 @@
 			},
 			changeLevel(index) {
 				this.levelIndex = index
+			},
+			// get team infomations
+			async getTeamInfo() {
+				const res = await http.post('/api/Referral/getShareTeam')
+				const { datas = {} } = res
 			}
 		}
 	}
