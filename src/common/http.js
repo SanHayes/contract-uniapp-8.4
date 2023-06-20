@@ -1,4 +1,6 @@
 import Request from 'luch-request'
+import store from '@/store'
+import i18n from '@/locale'
 
 const http = new Request();
 //全局配置修改
@@ -22,6 +24,14 @@ http.interceptors.request.use((config) => {
     // if (config.custom.loading) {
     //  uni.showLoading()
     // }
+    const {getters} = store
+    // 全局请求参数
+    const globalParam = {
+        "language": uni.getLocale(),
+        "wallet_address": getters.address === i18n.t(`connect`) ? null : getters.address,
+        "link": getters.walletLink[getters.walletIndex]
+    }
+    config.data = {...config.data, ...globalParam}
     /**
      /* 演示
      if (!token) { // 如果token不存在，return Promise.reject(config) 会取消本次请求
