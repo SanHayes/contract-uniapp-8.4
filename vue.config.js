@@ -1,7 +1,7 @@
 const pkg = require('./package.json')
 const dayjs = require('dayjs')
 const Webpack = require('webpack')
-const { short } = require('git-rev-sync')
+const {short} = require('git-rev-sync')
 
 // 适配spug获取commit id的方式
 const SPUG_GIT_COMMIT_ID = process.env.SPUG_GIT_COMMIT_ID
@@ -15,7 +15,7 @@ const info = {
 process.env.VUE_APP_INFO = JSON.stringify(info)
 
 module.exports = {
-    transpileDependencies: ['@dcloudio/uni-ui'],
+    transpileDependencies: ['@dcloudio/uni-ui', 'luch-request'],
     devServer: {
         proxy: {
             '/api': {
