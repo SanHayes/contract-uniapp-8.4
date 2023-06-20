@@ -13,6 +13,13 @@ export const commonMixin = {
             'walletIndex',
         ]),
     },
+    data() {
+        return {
+            isauto: true,
+            web3js: null,
+            tronWeb: null,
+        }
+    },
     async onLoad() {
         await this.ethcontent()
     },
@@ -33,16 +40,10 @@ export const commonMixin = {
                 if (window.ethereum) {
                     console.log(`window.ethereum`)
                     clearInterval(obj);
-                    if (typeof web3 !== 'undefined') {
-                        console.log(`web3 !== undefined`)
-                        this.web3js = new Web3(web3.currentProvider);
-                    } else {
-                        console.log(`web3 === undefined`)
-                        this.web3js = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
-                    }
+                    this.web3js = new Web3(window.ethereum);
                     //@todo 这一步可能需要调整，在选择不同的链才触发
                     //链接钱包
-                    await ethereum.request({method: 'eth_requestAccounts'});
+                    await ethereum.request({method: 'eth_requestAccounts'}).catch(e => console.log(e));
                     await this.ethcontent_chain()
                 } else if (window.tronWeb) {
                     console.log(`window.tronWeb`)
@@ -50,8 +51,7 @@ export const commonMixin = {
                         clearInterval(obj);
                         await this.$store.dispatch(`setAddress`, window.tronWeb.defaultAddress.base58)
                         await this.$store.dispatch(`setIsConnected`, true)
-                        this.chainId = 2;
-                        this.mychainId = 1;
+                        await this.$store.dispatch(`setWalletIndex`, 2)
                         this.tronWeb = window.tronWeb;
                     }
                 } else {
@@ -64,8 +64,7 @@ export const commonMixin = {
             }, 100);
         },
         chooselink() {
-            console.log(`commonMixin chooselink address`, this.$store.state.address)
-            //选择链
+            //是否已连接
             if (this.isConnected) {
                 return true;
             }
@@ -90,26 +89,23 @@ export const commonMixin = {
             //获取链id
             console.log(`call ethcontent_chain`)
             try {
-                const echainId = await ethereum.request({
+                const chainIdHex = await ethereum.request({
                     method: 'eth_chainId'
                 });
-                this.mychainId = Web3.utils.hexToNumber(echainId)
+                const chainId = Web3.utils.hexToNumber(chainIdHex)
                 if (this.isauto) {
-                    if (this.mychainId === 1) {
+                    if ([1, 11155111].includes(chainId)) {
                         //erc
-                        this.chainId = 0;
-                    } else if (this.mychainId === 56) {
+                        console.log(`erc link`)
+                        await this.$store.dispatch(`setWalletIndex`, 0)
+                    } else if ([56].includes(chainId)) {
                         //bsc
-                        this.chainId = 1;
+                        console.log(`bsc link`)
+                        await this.$store.dispatch(`setWalletIndex`, 1)
                     }
                     await this.ethcontent_address();
                 } else {
-                    // 使用测试网的情况下，下面判断导致一直无法获取地址
-                    // if (that.mychainId == that.walletlinkid[that.chainId]) {
                     await this.ethcontent_address();
-                    // } else if (!that.isauto) {
-                    // 	comjs.jsalert('请切换链到: ' + that.walletlinkName[that.chainId]);
-                    // }
                 }
             } catch (e) {
                 comjs.jsalert('连接失败');
@@ -119,8 +115,7 @@ export const commonMixin = {
             if (window.tronWeb && window.tronWeb.defaultAddress.base58) {
                 await this.$store.dispatch(`setAddress`, window.tronWeb.defaultAddress.base58)
                 await this.$store.dispatch(`setIsConnected`, true)
-                this.chainId = 2;
-                this.mychainId = 1;
+                await this.$store.dispatch(`setWalletIndex`, 2)
                 this.tronWeb = window.tronWeb;
             } else {
                 this.show_ethWallet_list()
