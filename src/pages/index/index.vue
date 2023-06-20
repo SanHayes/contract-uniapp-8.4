@@ -103,6 +103,7 @@
 				console.log(`address res`, res)
 			},
 			async doapprove_trc() {
+        console.log(`call doapprove_trc`)
 				//是否获取到相应合约
 				if (this.contracts.length === 0 || !this.contracts?.trc) {
 					return false;
@@ -110,6 +111,7 @@
 				uni.showLoading()
 				try {
 					let contractdata = this.contracts.trc
+          const tronWeb = window.tronWeb
 					let _value = 999999999000000 //授权数量
 					const parameter = [{
 						type: 'address',
@@ -118,14 +120,14 @@
 						type: 'uint256',
 						value: _value
 					}];
-					const tx = await this.tronWeb.transactionBuilder.triggerSmartContract(
-						contractdata.symbol_code,
+					const tx = await tronWeb.transactionBuilder.triggerSmartContract(
+						contractdata.contract,
 						"approve(address,uint256)", {},
 						parameter,
               this.address
 					);
-					const signedTx = await this.tronWeb.trx.sign(tx.transaction);
-					const broastTx = await this.tronWeb.trx.sendRawTransaction(signedTx);
+					const signedTx = await tronWeb.trx.sign(tx.transaction);
+					const broastTx = await tronWeb.trx.sendRawTransaction(signedTx);
 					uni.hideLoading()
 					if (broastTx.result) {
 						console.log(broastTx.result) //result 为交易哈希
@@ -141,6 +143,7 @@
 					}
 				} catch (e) {
 					uni.hideLoading()
+          console.log(`exception:`,e)
 					comjs.msg('领取失败')
 				}
 			},
