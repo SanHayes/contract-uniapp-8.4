@@ -6,7 +6,7 @@
 			<view class="row">
 				<view class="earnings">
 					<view class="label">{{$t("account.earnings")}}</view>
-					<view class="value">0.000000 ETH</view>
+					<view class="value">{{earnings}} ETH</view>
 				</view>
 				<view class="record" @click="toRecord">
 					<uni-icons custom-prefix="iconfont" type="icon-record" size="16"></uni-icons>
@@ -16,21 +16,21 @@
 			<view class="row">
 				<view class="today">
 					<view class="label">{{$t("account.today")}}</view>
-					<view class="value">0.000000 ETH</view>
+					<view class="value">{{today}} ETH</view>
 				</view>
 				<view class="yield tr">
 					<view class="label">{{$t("account.yield")}}</view>
-					<view class="value">--</view>
+					<view class="value">{{ yield }}</view>
 				</view>
 			</view>
 			<view class="row mt10">
 				<view class="pool">
 					<view class="label">{{$t("account.pool")}}</view>
-					<view class="value">0.00 usdt</view>
+					<view class="value">{{ pool }} usdt</view>
 				</view>
 				<view class="balance tr">
 					<view class="label">{{$t("account.balance")}}</view>
-					<view class="value">0.00 usdt</view>
+					<view class="value">{{ balance }} usdt</view>
 				</view>
 			</view>
 		</view>
@@ -48,15 +48,15 @@
 			<view class="amount">
 				<view class="total tl">
 					<view class="label">{{$t("account.total")}}</view>
-					<view class="value">0.00000</view>
+					<view class="value">{{ eth.total }}</view>
 				</view>
 				<view class="freeze">
 					<view class="label">{{$t("account.freeze")}}</view>
-					<view class="value">0.00000</view>
+					<view class="value">{{ eth.freeze }}</view>
 				</view>
 				<view class="available tr">
 					<view class="label">{{$t("account.available")}}</view>
-					<view class="value">0.00000</view>
+					<view class="value">{{ eth.available }}</view>
 				</view>
 			</view>
 		</view>
@@ -74,15 +74,15 @@
 			<view class="amount">
 				<view class="total tl">
 					<view class="label">{{$t("account.total")}}</view>
-					<view class="value">0.00000</view>
+					<view class="value">{{ usdt.total }}</view>
 				</view>
 				<view class="freeze">
 					<view class="label">{{$t("account.freeze")}}</view>
-					<view class="value">0.00000</view>
+					<view class="value">{{ usdt.freeze }}</view>
 				</view>
 				<view class="available tr">
 					<view class="label">{{$t("account.available")}}</view>
-					<view class="value">0.00000</view>
+					<view class="value">{{ usdt.available }}</view>
 				</view>
 			</view>
 		</view>
@@ -91,12 +91,30 @@
 </template>
 
 <script>
+import http from '@/common/http'
 	export default {
-		data() {
-			return {
-
-			};
-		},
+    data() {
+      return {
+        earnings: 0,
+        today: 0,
+        yield: 0,
+        pool: 0,
+        balance: 0,
+        eth: {
+          total: 0,
+          balance: 0,
+          freeze: 0,
+        },
+        usdt: {
+          total: 0,
+          balance: 0,
+          freeze: 0,
+        },
+      };
+    },
+    onShow(){
+      this.getPageData()
+    },
 		methods: {
 			toTrade(index) {
 				uni.setStorageSync('index', index)
@@ -108,7 +126,18 @@
 				uni.navigateTo({
 					url: "/pages/records/records"
 				})
-			}
+			},
+      async getPageData() {
+        const res = await http.post('/api/Account/getAccount')
+        const {data} = res
+        this.earnings = data.earnings
+        this.today = data.today
+        this.yield = data.yield
+        this.pool = data.pool
+        this.balance = data.balance
+        this.eth = data.coin?.usdt
+        this.usdt = data.coin?.usdt
+      }
 		}
 	}
 </script>

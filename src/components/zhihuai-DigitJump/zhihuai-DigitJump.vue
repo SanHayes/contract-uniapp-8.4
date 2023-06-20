@@ -3,9 +3,6 @@
 </template>
 
 <script>
-	import {
-		log
-	} from '../../common/util';
 	export default {
 		data() {
 			return {
@@ -57,36 +54,37 @@
 		},
 		methods: {
 			start() {
-				let that = this;
+				let times;
+        let that = this;
 				that.digit = that.from
-				if (that.modeType == "RANDOM") {
-					var times = that.runTime / that.speed;
+				if (that.modeType === "RANDOM") {
+					times = that.runTime / that.speed;
 					let i = 0;
-					this.time = setInterval(function() {
-						var addVal = 0;
-						if (times == 0) {
+					this.time = setInterval(() => {
+            let dVal;
+            let addVal = 0;
+            if (times == 0) {
 							clearInterval(that.time);
 							that.time = null
 						} else if (times == 1) {
-							var dVal = (that.digitTo - that.digit) / times;
+							dVal = (that.digitTo - that.digit) / times;
 							addVal = dVal;
 						} else {
-							var dVal = (that.digitTo - that.digit) / times;
-							addVal = parseFloat(Math.random() * dVal).toFixed(that.digitFiex);
+              dVal = (that.digitTo - that.digit) / times;
+              addVal = parseFloat(Math.random() * dVal).toFixed(that.digitFiex);
 						}
-						const str = (parseFloat(that.digit) + parseFloat(addVal)).toFixed(that.digitFiex)
-						that.digit = str;
+            that.digit = (parseFloat(that.digit) + parseFloat(addVal)).toFixed(that.digitFiex);
 						times--;
 					}, that.speed)
-				} else if (that.modeType == "AVERAGE") {
-					var times = that.runTime / that.speed;
-					var dValue = (that.digitTo - that.from) / times;
-					let i = 0;
-					that.time = setInterval(function() {
-						console.log(i, times, that.speed);
+				} else if (that.modeType === "AVERAGE") {
+          times = that.runTime / that.speed;
+          const dValue = (that.digitTo - that.from) / times;
+          let i = 0;
+					that.time = setInterval(() => {
+						// console.log(i, times, that.speed);
 						that.digit = parseFloat((that.from + dValue * i)).toFixed(that.digitFiex);
 						if (times <= i) {
-							console.log('clearInterval', that.time);
+							// console.log('clearInterval', that.time);
 							clearInterval(that.time);
 							that.time = null
 							that.done = true
@@ -96,7 +94,7 @@
 				}
 			},
 			formatMoney(str) {
-				console.log('format str', str);
+				// console.log('format str', str);
 				const [a, b] = String(str).split('.')
 				const inteStr = Number(a).toLocaleString('en-US')
 				if (b) {
@@ -108,7 +106,7 @@
 		created() {
 			let that = this;
 			this.from = this.digitFrom
-			setTimeout(function() {
+			setTimeout(() => {
 				that.start();
 			}, that.digitDelay);
 		},
@@ -119,7 +117,7 @@
 				this.start();
 			},
 			time(newVal) {
-				console.log('digit time', newVal)
+				// console.log('digit time', newVal)
 			}
 		},
 		beforeDestroy() {
