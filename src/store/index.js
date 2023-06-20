@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import createPersistedState from "vuex-persistedstate"
 import http from "@/common/http";
 import i18n from '@/locale'
+
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
@@ -31,7 +33,7 @@ const store = new Vuex.Store({
             return state.contracts
         },
         address: state => {
-            if(state.address){
+            if (state.address) {
                 return state.address
             }
             return i18n.t(`connect`)
@@ -98,7 +100,8 @@ const store = new Vuex.Store({
         async setWalletIndex({commit}, data) {
             commit(`setWalletIndex`, data)
         },
-    }
+    },
+    plugins: [createPersistedState()]
 })
 
 export default store
