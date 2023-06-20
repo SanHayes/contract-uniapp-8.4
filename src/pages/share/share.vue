@@ -99,6 +99,7 @@
 				<image class="no-data" src="../../static/img/share/no-data.svg" mode="aspectFit"></image>
 			</view>
 		</view>
+		<service></service>
 	</view>
 </template>
 

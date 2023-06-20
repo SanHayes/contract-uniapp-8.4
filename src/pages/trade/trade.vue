@@ -76,6 +76,7 @@
 				</view>
 			</view>
 		</view>
+		<service></service>
 	</view>
 </template>
 
