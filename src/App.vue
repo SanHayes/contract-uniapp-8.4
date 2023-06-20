@@ -1,20 +1,21 @@
 <script>
-	export default {
-		onLaunch: function() {
-			const lang = uni.getLocale()
-			const langs = ['en', 'es', 'hi', 'IN', 'ja', 'vi', 'zh-TW'];
-			if (!langs.includes(lang)) {
-				uni.setLocale('en'),
-					this.$i18n.locale = 'en'
-			}
-		},
-		onShow: function() {
-			console.log('App Show')
-		},
-		onHide: function() {
-			console.log('App Hide')
-		}
-	}
+export default {
+  onLaunch() {
+    const lang = uni.getLocale()
+    const langs = ['en', 'es', 'hi', 'IN', 'ja', 'vi', 'zh-TW'];
+    if (!langs.includes(lang)) {
+      uni.setLocale('en')
+      this.$i18n.locale = 'en'
+    }
+    this.$store.dispatch(`setContracts`)
+  },
+  onShow() {
+    console.log('App Show')
+  },
+  onHide() {
+    console.log('App Hide')
+  }
+}
 </script>
 
 <style>
