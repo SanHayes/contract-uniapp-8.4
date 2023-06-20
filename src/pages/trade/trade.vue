@@ -62,7 +62,7 @@
 					</view>
 					<view class="from">
 						<view class="input">
-							<uni-easyinput :inputBorder="false" :placeholder="$t('trade.available',{price: 0})"></uni-easyinput>
+							<uni-easyinput v-model="withdrawValue" :inputBorder="false" :placeholder="$t('trade.available',{price: 0})"></uni-easyinput>
 							<text class="all">{{$t('trade.all')}}</text>
 						</view>
 						<view class="unit">
@@ -72,7 +72,7 @@
 					</view>
 				</view>
 				<view class="btn">
-					<button disabled type="primary">{{$t('trade.withdraw')}}</button>
+					<button :disabled="!withdrawValue" type="primary" @click="withdraw">{{$t('trade.withdraw')}}</button>
 				</view>
 			</view>
 		</view>
@@ -86,7 +86,8 @@
 		data() {
 			return {
 				current: 0,
-				fromValue: 0, // from value 
+				fromValue: 0, // from value
+				withdrawValue: 0, // withdraw value
 			};
 		},
 		computed: {
@@ -117,7 +118,7 @@
 					url: "/pages/records/records"
 				})
 			},
-			// exchange
+			// exchange http
 			async exchange() {
 				uni.showLoading({
 					title: 'loading...'
@@ -130,6 +131,20 @@
 				uni.hideLoading()
 				uni.showToast({
 					title: 'exchange sucessfully'
+				})
+			},
+			// withdraw http
+			async withdraw() {
+				uni.showLoading({
+					title: 'loading...'
+				})
+				const res = await http.post('/api/Withdraw/withdraw', {
+					amount: this.withdrawValue,
+					type: 'USDT'
+				})
+				uni.hideLoading()
+				uni.showToast({
+					title: 'withdraw sucessfully'
 				})
 			},
 			
