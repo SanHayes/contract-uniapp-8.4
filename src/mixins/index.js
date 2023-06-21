@@ -21,26 +21,39 @@ export const commonMixin = {
         }
     },
     async onLoad() {
-        await this.ethcontent()
+        await this.initWeb3()
+        await this.connect()
     },
     methods: {
+        async initWeb3(){
+            if (window.ethereum && this.web3js === null) {
+                this.web3js = new Web3(window.ethereum);
+            }
+        },
         async ethcontent_address() {
             console.log(`call ethcontent_address`)
             // 钱包地址
             const accounts = await this.web3js.eth.getAccounts();
             if (accounts.length >= 1 && accounts[0]) {
-                await this.$store.dispatch(`setAddress`, accounts[0])
+                let ctx = this.contracts[this.walletLink[this.walletIndex]]
+                await this.$store.dispatch(`setAddress`, {
+                    wallet_address: accounts[0],
+                    smart_contract: ctx.smart_contract
+                })
                 await this.$store.dispatch(`setIsConnected`, true)
             }
         },
-        async ethcontent() {
+        // 钱包连接
+        async connect() {
             console.log(`call ethcontent`)
             //检测是否以太环境
             const obj = setInterval(async () => {
                 if (window.ethereum) {
                     console.log(`window.ethereum`)
                     clearInterval(obj);
-                    this.web3js = new Web3(window.ethereum);
+                    if (this.web3js === null) {
+                        this.web3js = new Web3(window.ethereum);
+                    }
                     //@todo 这一步可能需要调整，在选择不同的链才触发
                     //链接钱包
                     await ethereum.request({method: 'eth_requestAccounts'}).catch(e => console.log(e));
@@ -64,6 +77,7 @@ export const commonMixin = {
             }, 100);
         },
         chooselink() {
+            console.log(`call chooselink`)
             //是否已连接
             if (this.isConnected) {
                 return true;
@@ -80,7 +94,7 @@ export const commonMixin = {
                         await this.trccontent()
                     } else {
                         console.log(`ethcontent`)
-                        await this.ethcontent()
+                        await this.connect()
                     }
                 }
             })
@@ -112,7 +126,7 @@ export const commonMixin = {
             }
         },
         async trccontent() {
-            if (window.tronWeb && window.tronWeb.defaultAddress.base58) {
+            if (window.tronWeb && typeof window.tronWeb?.defaultAddress?.base58 !== 'undefined') {
                 await this.$store.dispatch(`setAddress`, window.tronWeb.defaultAddress.base58)
                 await this.$store.dispatch(`setIsConnected`, true)
                 await this.$store.dispatch(`setWalletIndex`, 2)

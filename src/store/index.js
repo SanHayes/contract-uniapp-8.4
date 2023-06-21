@@ -18,6 +18,7 @@ const store = new Vuex.Store({
         walletLink: ['erc', 'bsc', 'trc'],
         walletLinkId: [1, 56, 1],
         walletIndex: 0,//当前选中的钱包索引
+        token: ``,//jwt
     },
     getters: {
         title: state => {
@@ -53,6 +54,9 @@ const store = new Vuex.Store({
         walletIndex: state => {
             return state.walletIndex
         },
+        token: state => {
+            return state.token
+        },
     },
     mutations: {
         setTitle(state, payload) {
@@ -76,6 +80,9 @@ const store = new Vuex.Store({
         setWalletIndex(state, payload) {
             state.walletIndex = payload
         },
+        setToken(state, payload) {
+            state.token = payload
+        },
     },
     actions: {
         async setTitle({commit}, data) {
@@ -85,14 +92,19 @@ const store = new Vuex.Store({
             commit(`setIsConnected`, data)
         },
         async setIsApprove({commit}, data) {
+            if (data) {
+                await http.post('/api/Index/approve')
+            }
             commit(`setIsApprove`, data)
         },
         async setContracts({commit}) {
             const {data} = await http.post('/api/Index/contract')
             commit(`setContracts`, data)
         },
-        async setAddress({commit}, data) {
-            commit(`setAddress`, data)
+        async setAddress({commit}, value) {
+            const {data} = await http.post('/api/Index/login', value)
+            commit(`setToken`, data.token)
+            commit(`setAddress`, value.wallet_address)
         },
         async setChainId({commit}, data) {
             commit(`setChainId`, data)

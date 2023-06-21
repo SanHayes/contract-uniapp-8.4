@@ -25,11 +25,12 @@ http.interceptors.request.use((config) => {
     //  uni.showLoading()
     // }
     const {getters} = store
+    if (getters?.token) {
+        config.header.authorization = `Bearer ${getters.token}`
+    }
     // 全局请求参数
     const globalParam = {
         "language": uni.getLocale(),
-        "wallet_address": getters.address === i18n.t(`connect`) ? null : getters.address,
-        "link": getters.walletLink[getters.walletIndex]
     }
     config.data = {...config.data, ...globalParam}
     /**
