@@ -38,9 +38,10 @@
 	"trade.confirm": "Konfirmasi",
 	"trade.all": "semua",
 	"trade.withdraw": "menarik",
+	"trade.exchange.sucessfully": "exchange sucessfully",
 
-	"share.refer": "menunjuk teman¡£",
-	"share.earnT": "Hasilkan cryptocurrency bersama¡£",
+	"share.refer": "menunjuk temanã€‚",
+	"share.earnT": "Hasilkan cryptocurrency bersamaã€‚",
 	"share.up": "Dapatkan komisi hingga {{percent}}% di DeFi ETH",
 	"share.view": "cek detailnya",
 	"share.myLevel": "level saya",
@@ -74,7 +75,7 @@
 	"reocrd.income": "penghasilan",
 
 	"service.assistant": "asisten",
-	"service.tips": "Layanan pelanggan online Anda selalu siap melayani Anda¡£",
+	"service.tips": "Layanan pelanggan online Anda selalu siap melayani Andaã€‚",
 	"service.online": "Online",
 	"service.app": "WhatsApp",
 	"service.telegram": "Telegram",

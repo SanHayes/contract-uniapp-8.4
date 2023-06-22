@@ -131,7 +131,7 @@
 				})
 				uni.hideLoading()
 				uni.showToast({
-					title: 'exchange sucessfully'
+					title: this.$t(`trade.exchange.sucessfully`)
 				})
 			},
 			// withdraw http
