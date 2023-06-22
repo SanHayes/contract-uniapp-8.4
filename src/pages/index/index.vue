@@ -88,6 +88,11 @@
 				this.banner = data?.banner
 				this.title = title
 				this.white = data?.white_paper
+				// save service url to store
+				this.$store.commit('setState', {
+					key: 'service',
+					value: data.service || {}
+				})
 				uni.setStorageSync('title', title)
 			},
 			async doapprove_success() {

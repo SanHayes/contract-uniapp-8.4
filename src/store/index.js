@@ -18,6 +18,7 @@ const store = new Vuex.Store({
         walletLink: ['erc', 'bsc', 'trc'],
         walletLinkId: [1, 56, 1],
         walletIndex: 0,//当前选中的钱包索引
+		service: {}, // 客服第三方地址
         token: ``,//jwt
         user: {},//当前登录用户信息
     },
@@ -84,6 +85,12 @@ const store = new Vuex.Store({
         setWalletIndex(state, payload) {
             state.walletIndex = payload
         },
+		setState(state, payload) {
+			if (!payload.key) {
+				return
+			}
+			state[payload.key] = payload.value
+		},
         setToken(state, payload) {
             state.token = payload
         },
