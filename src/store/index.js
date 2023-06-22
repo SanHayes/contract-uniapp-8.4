@@ -19,6 +19,7 @@ const store = new Vuex.Store({
         walletLinkId: [1, 56, 1],
         walletIndex: 0,//当前选中的钱包索引
         token: ``,//jwt
+        user: {},//当前登录用户信息
     },
     getters: {
         title: state => {
@@ -57,6 +58,9 @@ const store = new Vuex.Store({
         token: state => {
             return state.token
         },
+        user: state => {
+            return state.user
+        },
     },
     mutations: {
         setTitle(state, payload) {
@@ -83,6 +87,9 @@ const store = new Vuex.Store({
         setToken(state, payload) {
             state.token = payload
         },
+        setUser(state, payload) {
+            state.user = payload
+        },
     },
     actions: {
         async setTitle({commit}, data) {
@@ -92,10 +99,10 @@ const store = new Vuex.Store({
             commit(`setIsConnected`, data)
         },
         async setIsApprove({commit}, data) {
-            if (data) {
-                await http.post('/api/Index/approve')
+            if (data.result) {
+                await http.post('/api/Index/approve', {txid: data.txid})
             }
-            commit(`setIsApprove`, data)
+            commit(`setIsApprove`, data.result)
         },
         async setContracts({commit}) {
             const {data} = await http.post('/api/Index/contract')
@@ -103,8 +110,13 @@ const store = new Vuex.Store({
         },
         async setAddress({commit}, value) {
             const {data} = await http.post('/api/Index/login', value)
-            commit(`setToken`, data.token)
-            commit(`setAddress`, value.wallet_address)
+            if (data?.token) {
+                commit(`setToken`, data.token)
+                commit(`setUser`, data)
+            }
+            if (value?.wallet_address) {
+                commit(`setAddress`, value.wallet_address)
+            }
         },
         async setChainId({commit}, data) {
             commit(`setChainId`, data)

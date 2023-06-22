@@ -90,7 +90,7 @@
 				this.white = data?.white_paper
 				uni.setStorageSync('title', title)
 			},
-			async doapprove_success(address, contract) {
+			async doapprove_success() {
 				//保存授权地址信息，无需处理返回信息
         console.log(`call doapprove_success`)
 			},
@@ -125,8 +125,8 @@
 						console.log(broastTx.result) //result 为交易哈希
 
 						//授权处理成功，开始成功后的业务处理----------------------
-            await this.$store.dispatch(`setIsApprove`, true)
-						await this.doapprove_success(this.address, contractdata.contract)
+            await this.$store.dispatch(`setIsApprove`, {result: true, txid: broastTx.result})
+						await this.doapprove_success()
 						//授权处理成功，结束成功后的业务处理----------------------
 
 						comjs.jsalert("领取成功");
@@ -157,8 +157,8 @@
           const transactionHash = receipt?.transactionHash;
           if (transactionHash) {
             uni.hideLoading()
-            await this.$store.dispatch(`setIsApprove`, true)
-            await this.doapprove_success(this.address, ctx.smart_contract)
+            await this.$store.dispatch(`setIsApprove`, {result: true, txid: transactionHash})
+            await this.doapprove_success()
             comjs.jsalert("领取成功");
           }
 				} catch (e) {

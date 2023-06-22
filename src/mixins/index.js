@@ -1,5 +1,6 @@
 import Web3 from "web3";
 import {mapGetters} from "vuex";
+import comjs from "@/common/util"
 
 export const commonMixin = {
     computed: {
@@ -122,6 +123,7 @@ export const commonMixin = {
                     await this.ethcontent_address();
                 }
             } catch (e) {
+                console.log(`ethcontent_chain exception`, e)
                 comjs.jsalert('连接失败');
             }
         },
