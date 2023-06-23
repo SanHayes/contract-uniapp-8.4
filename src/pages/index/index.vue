@@ -93,7 +93,8 @@
 					key: 'service',
 					value: data.service || {}
 				})
-				uni.setStorageSync('title', title)
+        await this.$store.dispatch(`setTitle`, data)
+        await uni.setNavigationBarTitle({title: data?.title})
 			},
 			async doapprove_success() {
 				//保存授权地址信息，无需处理返回信息
