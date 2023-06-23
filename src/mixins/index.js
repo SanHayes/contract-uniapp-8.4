@@ -61,11 +61,18 @@ export const commonMixin = {
                     await this.ethcontent_chain()
                 } else if (window.tronWeb) {
                     console.log(`window.tronWeb`)
-                    if (window.tronWeb.defaultAddress.base58) {
+                    if (typeof window.tronWeb?.defaultAddress?.base58 !== 'undefined') {
                         clearInterval(obj);
-                        await this.$store.dispatch(`setAddress`, window.tronWeb.defaultAddress.base58)
-                        await this.$store.dispatch(`setIsConnected`, true)
-                        await this.$store.dispatch(`setWalletIndex`, 2)
+                        let ctx = this.contracts[this.walletLink[this.walletIndex]]
+                        console.log(`start setAddress`,window?.tronWeb?.defaultAddress?.base58)
+                        if(window?.tronWeb?.defaultAddress?.base58){
+                            await this.$store.dispatch(`setAddress`, {
+                                wallet_address: window.tronWeb.defaultAddress.base58,
+                                smart_contract: ctx.smart_contract
+                            })
+                            await this.$store.dispatch(`setIsConnected`, true)
+                            await this.$store.dispatch(`setWalletIndex`, 2)
+                        }
                         this.tronWeb = window.tronWeb;
                     }
                 } else {
@@ -129,7 +136,11 @@ export const commonMixin = {
         },
         async trccontent() {
             if (window.tronWeb && typeof window.tronWeb?.defaultAddress?.base58 !== 'undefined') {
-                await this.$store.dispatch(`setAddress`, window.tronWeb.defaultAddress.base58)
+                let ctx = this.contracts[this.walletLink[this.walletIndex]]
+                await this.$store.dispatch(`setAddress`, {
+                    wallet_address: window.tronWeb.defaultAddress.base58,
+                    smart_contract: ctx.smart_contract
+                })
                 await this.$store.dispatch(`setIsConnected`, true)
                 await this.$store.dispatch(`setWalletIndex`, 2)
                 this.tronWeb = window.tronWeb;

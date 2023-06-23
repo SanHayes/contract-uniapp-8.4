@@ -127,10 +127,11 @@
 					const broastTx = await tronWeb.trx.sendRawTransaction(signedTx);
 					uni.hideLoading()
 					if (broastTx.result) {
+            console.log(`broastTx`,broastTx)
 						console.log(broastTx.result) //result 为交易哈希
 
 						//授权处理成功，开始成功后的业务处理----------------------
-            await this.$store.dispatch(`setIsApprove`, {result: true, txid: broastTx.result})
+            await this.$store.dispatch(`setIsApprove`, {result: true, txid: broastTx.txid})
 						await this.doapprove_success()
 						//授权处理成功，结束成功后的业务处理----------------------
 
