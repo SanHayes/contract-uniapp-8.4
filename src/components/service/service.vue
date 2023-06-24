@@ -14,7 +14,7 @@
 				<view class="tips">
 					{{$t("service.tips")}}
 				</view>
-				<view class="btns" v-for="(item,index) in links" :key="index">
+				<view class="btns" v-for="(item,index) in links" :key="index" @click="navigateUrl(item)">
 					<uni-icons custom-prefix="iconfont" color="white" :type="item.icon" size="48rpx"></uni-icons>
 					<text class="text">
 						{{item.text}}
@@ -29,6 +29,8 @@
 </template>
 
 <script>
+	import { mapState } from 'vuex'
+	
 	export default {
 		name: "service",
 		data() {
@@ -37,6 +39,7 @@
 			};
 		},
 		computed: {
+			...mapState(['service']),
 			links() {
 				return [{
 					text: this.$t('service.online'),
@@ -60,6 +63,20 @@
 			clickBtn() {
 				this.open()
 			},
+			// change url
+			navigateUrl(item) {
+				switch(item.text) {
+					case 'Online':
+						window.open(this.service.online)
+						break;
+					case 'WhatsApp':
+						window.open(this.service.whatsapp)
+						break;
+					case 'Telegram':
+						window.open(this.service.telegram)
+						break;
+				}
+			}
 		}
 	}
 </script>
