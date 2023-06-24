@@ -15,13 +15,240 @@
 				(coverSupport ? ', viewport-fit=cover' : '') + '" />')
 		</script>
 		<link rel="stylesheet" href="<%= BASE_URL %>static/index.<%= VUE_APP_INDEX_CSS_HASH %>.css" />
+        <style>
+            body, html {
+                padding: 0;
+                margin: 0
+            }
+
+            #preload {
+                background-color: #2c3e50;
+                height: 100vh;
+                width: 100vw;
+                position: fixed;
+                z-index: 10000;
+                margin-top: 0;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+            }
+
+            #preload div {
+                top: 20%;
+                left: 0%;
+                min-width: 200px;
+                width: 33.33%;
+                height: 200px;
+                padding: 10px;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #ccc;
+                cursor: pointer;
+                transition: .3s linear
+            }
+
+            @media (max-width: 768px) {
+                #preload div {
+                    width: 50%
+                }
+            }
+
+            @media (max-width: 480px) {
+                #preload div {
+                    width: 100%
+                }
+            }
+
+            .loader1 {
+                width: 32px;
+                height: 90px;
+                margin-bottom: 20px;
+                position: relative;
+                border-radius: 50% 50% 0 0;
+                border-bottom: 10px solid #ff3d00;
+                background-color: #fff;
+                background-image: radial-gradient(ellipse at center, #FFF 34%, #FF3D00 35%, #FF3D00 54%, #FFF 55%), linear-gradient(#FF3D00 10px, transparent 0);
+                background-size: 28px 28px;
+                background-position: center 20px, center 2px;
+                background-repeat: no-repeat;
+                -webkit-animation: animloader106back 1s linear infinite alternate;
+                animation: animloader106back 1s linear infinite alternate
+            }
+
+            .loader1::before {
+                content: "";
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 64px;
+                height: 44px;
+                border-radius: 50%;
+                box-shadow: 0 15px #ff3d00 inset;
+                top: 67px
+            }
+
+            .loader1::after {
+                content: "";
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%) rotate(45deg);
+                width: 34px;
+                height: 34px;
+                top: 112%;
+                background: radial-gradient(ellipse at center, #ffdf00 8%, rgba(249, 62, 0, 0.6) 24%, rgba(0, 0, 0, 0) 100%);
+                border-radius: 50% 50% 0;
+                background-repeat: no-repeat;
+                background-position: -44px -44px;
+                background-size: 100px 100px;
+                box-shadow: 4px 4px 12px 0 rgba(255, 61, 0, .5);
+                -webkit-animation: animloader106 1s linear infinite alternate;
+                animation: animloader106 1s linear infinite alternate
+            }
+
+            .loader2 {
+                top: -44%;
+                color: #eae8e8;
+                position: relative;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 48px;
+                letter-spacing: 4px
+            }
+
+            .loader2::before {
+                content: "";
+                position: absolute;
+                right: 70px;
+                bottom: 10px;
+                height: 28px;
+                width: 5.15px;
+                background: currentColor
+            }
+
+            .loader2::after {
+                content: "";
+                width: 8px;
+                height: 8px;
+                position: absolute;
+                left: 125px;
+                top: 2px;
+                border-radius: 50%;
+                background: red;
+                -webkit-animation: animloader114 1s ease-in infinite;
+                animation: animloader114 1s ease-in infinite
+            }
+
+            @-webkit-keyframes animloader106back {
+                0%, 30%, 70% {
+                    transform: translateY(0px)
+                }
+
+                20%, 40%, 100% {
+                    transform: translateY(-5px)
+                }
+            }
+
+            @keyframes animloader106back {
+                0%, 30%, 70% {
+                    transform: translateY(0px)
+                }
+
+                20%, 40%, 100% {
+                    transform: translateY(-5px)
+                }
+            }
+
+            @-webkit-keyframes animloader106 {
+                0% {
+                    box-shadow: 4px 4px 12px 2px rgba(255, 61, 0, .75);
+                    width: 34px;
+                    height: 34px;
+                    background-position: -44px -44px;
+                    background-size: 100px 100px
+                }
+
+                100% {
+                    box-shadow: 2px 2px 8px 0 rgba(255, 61, 0, .5);
+                    width: 30px;
+                    height: 28px;
+                    background-position: -36px -36px;
+                    background-size: 80px 80px
+                }
+            }
+
+            @keyframes animloader106 {
+                0% {
+                    box-shadow: 4px 4px 12px 2px rgba(255, 61, 0, .75);
+                    width: 34px;
+                    height: 34px;
+                    background-position: -44px -44px;
+                    background-size: 100px 100px
+                }
+
+                100% {
+                    box-shadow: 2px 2px 8px 0 rgba(255, 61, 0, .5);
+                    width: 30px;
+                    height: 28px;
+                    background-position: -36px -36px;
+                    background-size: 80px 80px
+                }
+            }
+
+            @-webkit-keyframes animloader114 {
+                0% {
+                    transform: translateY(8px) scaleY(1) scaleX(1.25)
+                }
+
+                25%, 75% {
+                    transform: translateY(-5px) scaleY(1.2) scaleX(1)
+                }
+
+                50% {
+                    transform: translateY(-10px) scaleY(1) scaleX(1)
+                }
+
+                100% {
+                    transform: translateY(8px) scaleY(.8) scaleX(.8)
+                }
+            }
+
+            @keyframes animloader114 {
+                0% {
+                    transform: translateY(8px) scaleY(1) scaleX(1.25)
+                }
+
+                25%, 75% {
+                    transform: translateY(-5px) scaleY(1.2) scaleX(1)
+                }
+
+                50% {
+                    transform: translateY(-10px) scaleY(1) scaleX(1)
+                }
+
+                100% {
+                    transform: translateY(8px) scaleY(.8) scaleX(.8)
+                }
+            }
+
+        </style>
 	</head>
 
 	<body>
 		<noscript>
 			<strong>Please enable JavaScript to continue.</strong>
 		</noscript>
+        <div id="preload">
+            <div><span class="loader1"></span></div>
+            <div><span class="loader2">Load&nbsp;ng</span></div>
+        </div>
 		<div id="app"></div>
+        <script>
+            window.onload = () => {
+                document.querySelector('#preload').style.display = 'none'
+            }
+        </script>
 		<!-- built files will be auto injected -->
 	</body>
 
