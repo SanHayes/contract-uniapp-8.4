@@ -13,11 +13,11 @@
 				</view>
 			</view>
 		</view>
-		<DataPool v-if="mining_pool.length>0" :data="mining_pool"></DataPool>
-		<Staking v-if="earnings.length>0" :data="earnings"></Staking>
+		<DataPool v-if="mining_pool" :data="mining_pool"></DataPool>
+		<Staking v-if="earnings" :data="earnings"></Staking>
 		<question v-if="problem.length>0" :data="problem"></question>
 		<partners v-if="white.length>0" :data="white"></partners>
-		<service></service>
+		<service/>
 	</view>
 </template>
 
@@ -83,7 +83,7 @@
 				const {data={}} = res
 				const title = data?.title
 				this.mining_pool = data?.mining_pool || {}
-				this.earnings = data?.platform_earnings || []
+				this.earnings = data?.earnings || []
 				this.problem = data?.problem || []
 				this.banner = data?.banner
 				this.title = title
