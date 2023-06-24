@@ -14,7 +14,7 @@
 			</view>
 		</view>
 		<DataPool v-if="mining_pool.length>0" :data="mining_pool"></DataPool>
-		<Staking :data="earnings.length>0"></Staking>
+		<Staking v-if="earnings.length>0" :data="earnings"></Staking>
 		<question v-if="problem.length>0" :data="problem"></question>
 		<partners v-if="white.length>0" :data="white"></partners>
 		<service></service>
