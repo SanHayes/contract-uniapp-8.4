@@ -13,11 +13,10 @@ const store = new Vuex.Store({
         isApprove: false,//是否已授权
         contracts: [],//合约列表
         address: ``,//当前链接的钱包地址
-        chainId: undefined,//链id
         walletLinkName: ['Ethereum', 'Binance Smart Chain', 'TRX'],
         walletLink: ['erc', 'bsc', 'trc'],
         walletLinkId: [1, 56, 1],
-        walletIndex: 0,//当前选中的钱包索引
+        walletIndex: undefined,//当前选中的钱包索引
 		service: {}, // 客服第三方地址
         token: ``,//jwt
         user: {},//当前登录用户信息
@@ -40,9 +39,6 @@ const store = new Vuex.Store({
                 return state.address
             }
             return i18n.t(`connect`)
-        },
-        chainId: state => {
-            return state.chainId
         },
         walletLinkName: state => {
             return state.walletLinkName
@@ -78,9 +74,6 @@ const store = new Vuex.Store({
         },
         setAddress(state, payload) {
             state.address = payload
-        },
-        setChainId(state, payload) {
-            state.chainId = payload
         },
         setWalletIndex(state, payload) {
             state.walletIndex = payload
@@ -120,19 +113,15 @@ const store = new Vuex.Store({
             if (data?.token) {
                 commit(`setToken`, data.token)
                 commit(`setUser`, data)
-            }
-            if (value?.wallet_address) {
                 commit(`setAddress`, value.wallet_address)
+                commit(`setIsConnected`, true)
             }
-        },
-        async setChainId({commit}, data) {
-            commit(`setChainId`, data)
         },
         async setWalletIndex({commit}, data) {
             commit(`setWalletIndex`, data)
         },
     },
-    plugins: [createPersistedState()]
+    // plugins: [createPersistedState()]
 })
 
 export default store

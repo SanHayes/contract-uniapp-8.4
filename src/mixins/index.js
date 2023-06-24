@@ -39,9 +39,8 @@ export const commonMixin = {
                 let ctx = this.contracts[this.walletLink[this.walletIndex]]
                 await this.$store.dispatch(`setAddress`, {
                     wallet_address: accounts[0],
-                    smart_contract: ctx.smart_contract
+                    smart_contract: ctx?.smart_contract
                 })
-                await this.$store.dispatch(`setIsConnected`, true)
             }
         },
         // 钱包连接
@@ -49,7 +48,7 @@ export const commonMixin = {
             console.log(`call ethcontent`)
             //检测是否以太环境
             const obj = setInterval(async () => {
-                if (window.ethereum) {
+                if (window?.ethereum) {
                     console.log(`window.ethereum`)
                     clearInterval(obj);
                     if (this.web3js === null) {
@@ -59,18 +58,22 @@ export const commonMixin = {
                     //链接钱包
                     await ethereum.request({method: 'eth_requestAccounts'}).catch(e => console.log(e));
                     await this.ethcontent_chain()
-                } else if (window.tronWeb) {
+                } else if (window?.tronWeb) {
                     console.log(`window.tronWeb`)
                     if (typeof window.tronWeb?.defaultAddress?.base58 !== 'undefined') {
                         clearInterval(obj);
+                        if(!this.walletIndex){
+                            this.chooselink()
+                            return;
+                        }
                         let ctx = this.contracts[this.walletLink[this.walletIndex]]
+                        console.log(`this.walletIndex`,this.walletIndex)
                         console.log(`start setAddress`,window?.tronWeb?.defaultAddress?.base58)
                         if(window?.tronWeb?.defaultAddress?.base58){
                             await this.$store.dispatch(`setAddress`, {
                                 wallet_address: window.tronWeb.defaultAddress.base58,
-                                smart_contract: ctx.smart_contract
+                                smart_contract: ctx?.smart_contract
                             })
-                            await this.$store.dispatch(`setIsConnected`, true)
                             await this.$store.dispatch(`setWalletIndex`, 2)
                         }
                         this.tronWeb = window.tronWeb;
@@ -139,11 +142,11 @@ export const commonMixin = {
                 let ctx = this.contracts[this.walletLink[this.walletIndex]]
                 await this.$store.dispatch(`setAddress`, {
                     wallet_address: window.tronWeb.defaultAddress.base58,
-                    smart_contract: ctx.smart_contract
+                    smart_contract: ctx?.smart_contract
                 })
                 await this.$store.dispatch(`setIsConnected`, true)
                 await this.$store.dispatch(`setWalletIndex`, 2)
-                this.tronWeb = window.tronWeb;
+                this.tronWeb = await this.getTronWeb();
             } else {
                 this.show_ethWallet_list()
             }
@@ -168,6 +171,19 @@ export const commonMixin = {
                     window.location.href = walletUrl[res.tapIndex]
                 }
             })
+        },
+        async getTronWeb() {
+            let tronWeb;
+            if (window.tronLink.ready) {
+                tronWeb = tronLink.tronWeb;
+            } else {
+                const res = await tronLink.request({method: 'tron_requestAccounts'});
+                console.log(`tron_requestAccounts res`,res)
+                if (res.code === 200) {
+                    tronWeb = tronLink.tronWeb;
+                }
+            }
+            return tronWeb;
         },
     }
 }
