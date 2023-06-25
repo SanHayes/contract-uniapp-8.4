@@ -80,6 +80,9 @@ dependencies:
   luch-request:
     specifier: ^3.1.0
     version: 3.1.0
+  uview-ui:
+    specifier: 1.8.4
+    version: 1.8.4
   vue:
     specifier: '>= 2.6.14 < 2.7'
     version: 2.6.14
@@ -11613,6 +11616,10 @@ packages:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
     hasBin: true
     dev: true
+
+  /uview-ui@1.8.4:
+    resolution: {integrity: sha512-Zr+D5dFdNy6CdHQLBEXeGq/w0LkjxzBtsgaaDwLl0P58g67H7fBBDvy6AzWK/k0c7dwPYMBiK7I4Tr9p92+0DA==}
+    dev: false
 
   /v8-to-istanbul@4.1.4:
     resolution: {integrity: sha512-Rw6vJHj1mbdK8edjR7+zuJrpDtKIgNdAvTSAcpYfgMIw+u2dPDntD3dgN4XQFLU2/fvFQdzj+EeSGfd/jnY5fQ==}

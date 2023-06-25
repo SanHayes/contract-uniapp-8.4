@@ -15,6 +15,9 @@ if (process.env.NODE_ENV !== 'development') {
 // #ifndef VUE3
 import Vue from 'vue'
 
+import uView from "uview-ui";
+Vue.use(uView);
+
 //过滤器批量注册
 Object.keys(filters).forEach(key => {
 	Vue.filter(key, filters[key]);
