@@ -114,13 +114,14 @@
 			uni.removeStorageSync('index')
 		},
     onLoad(){
-      this.getPageData()
+
     },
 		onShow() {
 			setTimeout(() => {
 				const index = uni.getStorageSync('index')
 				this.current = Number(index)
 			})
+      this.getPageData()
 		},
 		methods: {
 			changeTab(e) {
