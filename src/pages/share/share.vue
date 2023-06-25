@@ -181,8 +181,9 @@
 				}
 			},
 			copy() {
+        console.log("copy",this.inviteUrl)
 				uni.setClipboardData({
-					data: this.url,
+					data: this.inviteUrl,
 					success: function() {
 						console.log('success');
 					}
