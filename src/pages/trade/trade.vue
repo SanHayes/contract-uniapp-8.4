@@ -62,7 +62,7 @@
 					</view>
 					<view class="from">
 						<view class="input">
-							<uni-easyinput v-model="withdrawValue" :inputBorder="false" :placeholder="$t('trade.available',{price: 0})"></uni-easyinput>
+							<uni-easyinput v-model="withdrawValue" :inputBorder="false" :clearable="false" :placeholder="$t('trade.available',{price: 0})"></uni-easyinput>
 							<text class="all">{{$t('trade.all')}}</text>
 						</view>
 						<view class="unit">
@@ -82,7 +82,7 @@
 
 <script>
 	import http from '@/common/http'
-	
+
 	export default {
 		data() {
 			return {
