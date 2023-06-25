@@ -6,28 +6,27 @@
 		<view class="data">
 			<text class="label">{{$t('index.output')}}</text>
 			<view class="value">
-				<zhihuai-DigitJump textColor="blue" :digitTo="Number(data.platform_total_output || 0)"
-					:digitFiex='2'></zhihuai-DigitJump>
+        <u-count-to :end-val="Number(data.platform_total_output || 0)" separator="," color="#0052ff" font-size="12" :bold="true"></u-count-to>
 				<text class="blue">ETH</text>
 			</view>
 		</view>
 		<view class="data">
 			<text class="label">{{$t('index.valid')}}</text>
 			<view class="value">
-				<zhihuai-DigitJump textColor="blue" :digitTo="data.node_sum" :digitFiex='0'></zhihuai-DigitJump>
+        <u-count-to :end-val="data.node_sum" separator="," color="#0052ff" font-size="12" :bold="true"></u-count-to>
 			</view>
 		</view>
 		<view class="data">
 			<text class="label">{{$t('index.participants')}}</text>
 			<view class="value">
-				<zhihuai-DigitJump :digitTo="data.participation" :digitFiex='0'></zhihuai-DigitJump>
+        <u-count-to :end-val="data.participation" separator="," font-size="12" :bold="true"></u-count-to>
 			</view>
 		</view>
 		<view class="data">
 			<text class="label">{{$t('index.userRevenue')}}</text>
 			<view class="value">
 				<text class="appro"> ≈ </text>
-				<zhihuai-DigitJump :digitTo="Number(data.user_income_sum || 0)" :digitFiex='2'></zhihuai-DigitJump>
+        <u-count-to :end-val="Number(data.user_income_sum || 0)" separator="," font-size="12" :bold="true"></u-count-to>
 				<text>USDT</text>
 			</view>
 		</view>
