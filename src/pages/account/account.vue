@@ -132,8 +132,7 @@
 			async getPageData() {
 				const res = await http.post('/api/Account/getAccount');
 
-        if(res.statusCode!=200)
-        {
+        if (res.code !== 200) {
           this.chooselink();
           return
         }
