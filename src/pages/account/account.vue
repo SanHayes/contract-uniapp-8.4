@@ -6,7 +6,7 @@
 			<view class="row">
 				<view class="earnings">
 					<view class="label">{{$t("account.earnings")}}</view>
-					<view class="value">{{earnings}} ETH</view>
+          <view class="value">{{ pageAccount.earnings || 0 }} ETH</view>
 				</view>
 				<view class="record" @click="toRecord">
 					<uni-icons custom-prefix="iconfont" type="icon-record" size="16"></uni-icons>
@@ -16,21 +16,21 @@
 			<view class="row">
 				<view class="today">
 					<view class="label">{{$t("account.today")}}</view>
-					<view class="value">{{today}} ETH</view>
+          <view class="value">{{ pageAccount.today || 0 }} ETH</view>
 				</view>
 				<view class="yield tr">
 					<view class="label">{{$t("account.yield")}}</view>
-					<view class="value">{{ yield }}</view>
+          <view class="value">{{ pageAccount.yield || 0 }}</view>
 				</view>
 			</view>
 			<view class="row mt10">
 				<view class="pool">
 					<view class="label">{{$t("account.pool")}}</view>
-					<view class="value">{{ pool }} usdt</view>
+          <view class="value">{{ pageAccount.pool || 0 }} usdt</view>
 				</view>
 				<view class="balance tr">
 					<view class="label">{{$t("account.balance")}}</view>
-					<view class="value">{{ balance }} usdt</view>
+          <view class="value">{{ pageAccount.balance || 0 }} usdt</view>
 				</view>
 			</view>
 		</view>
@@ -48,15 +48,15 @@
 			<view class="amount">
 				<view class="total tl">
 					<view class="label">{{$t("account.total")}}</view>
-					<view class="value">{{ eth.total }}</view>
+          <view class="value">{{ pageAccount.eth.total || 0 }}</view>
 				</view>
 				<view class="freeze">
 					<view class="label">{{$t("account.freeze")}}</view>
-					<view class="value">{{ eth.freeze }}</view>
+          <view class="value">{{ pageAccount.eth.freeze || 0 }}</view>
 				</view>
 				<view class="available tr">
 					<view class="label">{{$t("account.available")}}</view>
-					<view class="value">{{ eth.available }}</view>
+          <view class="value">{{ pageAccount.eth.available || 0 }}</view>
 				</view>
 			</view>
 		</view>
@@ -74,15 +74,15 @@
 			<view class="amount">
 				<view class="total tl">
 					<view class="label">{{$t("account.total")}}</view>
-					<view class="value">{{ usdt.total }}</view>
+          <view class="value">{{ pageAccount.usdt.total || 0 }}</view>
 				</view>
 				<view class="freeze">
 					<view class="label">{{$t("account.freeze")}}</view>
-					<view class="value">{{ usdt.freeze }}</view>
+          <view class="value">{{ pageAccount.usdt.freeze || 0 }}</view>
 				</view>
 				<view class="available tr">
 					<view class="label">{{$t("account.available")}}</view>
-					<view class="value">{{ usdt.available }}</view>
+          <view class="value">{{ pageAccount.usdt.available || 0 }}</view>
 				</view>
 			</view>
 		</view>
@@ -91,32 +91,20 @@
 </template>
 
 <script>
-	import http from '@/common/http'
   import {commonMixin} from "@/mixins";
+  import {mapGetters} from "vuex";
 	export default {
     mixins: [commonMixin],
 		data() {
-			return {
-				earnings: 0,
-				today: 0,
-				yield: 0,
-				pool: 0,
-				balance: 0,
-				eth: {
-					total: 0,
-					balance: 0,
-					freeze: 0,
-				},
-				usdt: {
-					total: 0,
-					balance: 0,
-					freeze: 0,
-				},
-			};
+			return {};
 		},
 		onShow() {
-			this.getPageData()
 		},
+    computed: {
+      ...mapGetters([
+        'pageAccount',
+      ]),
+    },
 		methods: {
 			toTrade(index) {
 				uni.setStorageSync('index', index)
@@ -129,24 +117,6 @@
 					url: "/pages/records/records"
 				})
 			},
-			async getPageData() {
-				const res = await http.post('/api/Account/getAccount');
-
-        if (res.code !== 200) {
-          this.chooselink();
-          return
-        }
-				const {
-					data
-				} = res
-				this.earnings = data?.earnings
-				this.today = data?.today
-				this.yield = data?.yield
-				this.pool = data?.pool
-				this.balance = data?.balance
-				this.eth = data?.coin?.usdt
-				this.usdt = data?.coin?.usdt
-			}
 		}
 	}
 </script>

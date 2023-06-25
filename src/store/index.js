@@ -21,6 +21,23 @@ const store = new Vuex.Store({
         token: ``,//jwt
         user: {},//当前登录用户信息
         inviteUrl: ``,//邀请连接
+        pageAccount: {
+            earnings: 0,
+            today: 0,
+            yield: 0,
+            pool: 0,
+            balance: 0,
+            eth: {
+                total: 0,
+                balance: 0,
+                freeze: 0,
+            },
+            usdt: {
+                total: 0,
+                balance: 0,
+                freeze: 0,
+            },
+        },//account页面数据
     },
     getters: {
         title: state => {
@@ -65,6 +82,9 @@ const store = new Vuex.Store({
             }
             return state.inviteUrl
         },
+        pageAccount: state => {
+            return state.pageAccount
+        },
     },
     mutations: {
         setTitle(state, payload) {
@@ -106,6 +126,9 @@ const store = new Vuex.Store({
         setInviteUrl(state, payload) {
             state.inviteUrl = payload
         },
+        setPageAccount(state, payload) {
+            state.pageAccount = payload
+        },
     },
     actions: {
         async setTitle({commit}, data) {
@@ -124,7 +147,7 @@ const store = new Vuex.Store({
             const {data} = await http.post('/api/Index/contract')
             commit(`setContracts`, data)
         },
-        async setAddress({commit}, value) {
+        async setAddress({commit, dispatch}, value) {
             const {data} = await http.post('/api/Index/login', value)
             if (data?.token) {
                 commit(`setToken`, data.token)
@@ -132,6 +155,7 @@ const store = new Vuex.Store({
                 commit(`setAddress`, value.wallet_address)
                 commit(`setIsConnected`, true)
                 commit(`setInviteUrl`, `${window.location.origin}?code=${data.invite_code}`)
+                dispatch(`setPageAccount`)
             }
         },
         async setWalletIndex({commit}, data) {
@@ -139,6 +163,10 @@ const store = new Vuex.Store({
         },
         async resetState({commit}){
             commit(`resetState`)
+        },
+        async setPageAccount({commit}) {
+            const {data} = await http.post('/api/Account/getAccount');
+            commit(`setPageAccount`, data)
         },
     },
     // plugins: [createPersistedState()]
