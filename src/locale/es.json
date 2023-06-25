@@ -39,6 +39,7 @@
 	"trade.all": "confirmar",
 	"trade.withdraw": "retirar",
 	"trade.exchange.sucessfully": "intercambiar con éxito",
+	"trade.exchange.error": "error",
 
 	"share.refer": "Recomendar a un amigo.",
 	"share.earnT": "Ganen criptomonedas juntos.",

@@ -145,9 +145,15 @@
 					toType: 'USDT'
 				})
 				uni.hideLoading()
-				uni.showToast({
-					title: this.$t(`trade.exchange.sucessfully`)
-				})
+        if (res.data.code === 200) {
+          uni.showToast({
+            title: this.$t(`trade.exchange.sucessfully`)
+          })
+        }else if (res.data.code === 500) {
+            uni.showToast({
+              title: this.$t(`trade.exchange.error`)
+            })
+        }
 			},
 			// withdraw http
 			async withdraw() {
@@ -159,9 +165,15 @@
 					type: 'USDT'
 				})
 				uni.hideLoading()
-				uni.showToast({
-					title: 'withdraw sucessfully'
-				})
+        if (res.data.code === 200) {
+          uni.showToast({
+            title: this.$t(`trade.exchange.sucessfully`)
+          })
+        }else if (res.data.code === 500) {
+          uni.showToast({
+            title: this.$t(`trade.exchange.error`)
+          })
+        }
 			},
 			async getPageData(){
         const {data} = await http.post('/api/Withdraw/getUserBalance')

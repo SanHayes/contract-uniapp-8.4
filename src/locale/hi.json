@@ -40,6 +40,8 @@
 	"trade.withdraw": "निकालना",
 	"trade.exchange.sucessfully": "सफलतापूर्वक विनिमय करें",
 
+	"trade.exchange.error": "error",
+
 	"share.refer": "एक मित्र को सूचित करें。",
 	"share.earnT": "एक साथ क्रिप्टोकुरेंसी कमाएं。",
 	"share.up": "DeFi ETH पर {percent}% कमीशन तक कमाएं",

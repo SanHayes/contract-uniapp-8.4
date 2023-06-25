@@ -39,6 +39,7 @@
 	"trade.all": "全部",
 	"trade.withdraw": "提現",
 	"trade.exchange.sucessfully": "兌換成功",
+	"trade.exchange.error": "请求失败",
 
 	"share.refer": "推薦朋友。",
 	"share.earnT": "一起賺取加密貨幣。",

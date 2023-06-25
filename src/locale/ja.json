@@ -39,6 +39,7 @@
 	"trade.all": "すべて",
 	"trade.withdraw": "撤回",
 	"trade.exchange.sucessfully": "無事交換しました",
+	"trade.exchange.error": "error",
 
 	"share.refer": "友達を紹介する",
 	"share.earnT": "一緒に暗号を稼ぐ",
