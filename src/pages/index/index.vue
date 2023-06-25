@@ -18,6 +18,12 @@
 		<question v-if="problem.length>0" :data="problem"></question>
 		<partners v-if="white.length>0" :data="white"></partners>
 		<service/>
+
+    <u-modal v-model="showNotice" :title="notice.title" confirm-text="Confirm" confirm-color="#ee0a24">
+      <view class="slot-content">
+        <rich-text :nodes="noticeContent"></rich-text>
+      </view>
+    </u-modal>
 	</view>
 </template>
 
@@ -36,7 +42,10 @@
 				problem: [],
 				banner: '',
 				title: '',
-				white: []
+				white: [],
+        notice: null,
+        showNotice: false,
+        noticeContent: ``,
 			}
 		},
 		onLoad() {
@@ -75,6 +84,7 @@
 			async getContent() {
         const res = await http.post('/api/Index/home')
 				const {data={}} = res
+        console.log(`data`,data)
 				const title = data?.title
 				this.mining_pool = data?.mining_pool || {}
 				this.earnings = data?.earnings || []
@@ -82,7 +92,12 @@
 				this.banner = data?.banner
 				this.title = title
 				this.white = data?.white_paper
-				// save service url to store
+				this.notice = data?.notice
+        if (this.notice) {
+          this.showNotice = true
+          this.noticeContent = this.notice.content
+        }
+        // save service url to store
 				this.$store.commit('setState', {
 					key: 'service',
 					value: data.service || {}
@@ -161,4 +176,12 @@
 	.content {
 		background-color: #f8f8f8;
 	}
+</style>
+
+<style lang="scss" scoped>
+.slot-content {
+  font-size: 28rpx;
+  color: $u-content-color;
+  padding-left: 30rpx;
+}
 </style>
