@@ -90,6 +90,11 @@ const store = new Vuex.Store({
         setUser(state, payload) {
             state.user = payload
         },
+        resetState(state){
+            state.address = ``
+            state.isConnected = false
+            state.isApprove = false
+        },
     },
     actions: {
         async setTitle({commit}, data) {
@@ -119,6 +124,9 @@ const store = new Vuex.Store({
         },
         async setWalletIndex({commit}, data) {
             commit(`setWalletIndex`, data)
+        },
+        async resetState({commit}){
+            commit(`resetState`)
         },
     },
     // plugins: [createPersistedState()]

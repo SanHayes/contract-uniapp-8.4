@@ -24,6 +24,7 @@ export const commonMixin = {
     async onLoad() {
         await this.initWeb3()
         await this.connect()
+        await this.initEventListener()
     },
     methods: {
         async initWeb3(){
@@ -142,7 +143,7 @@ export const commonMixin = {
             if (res.code === 200) {
                 let ctx = this.contracts[this.walletLink[this.walletIndex]]
                 await this.$store.dispatch(`setAddress`, {
-                    wallet_address: window.tronWeb.defaultAddress.base58,
+                    wallet_address: window?.tronWeb?.defaultAddress?.base58,
                     smart_contract: ctx?.smart_contract
                 })
                 await this.$store.dispatch(`setIsConnected`, true)
@@ -286,6 +287,50 @@ export const commonMixin = {
             } else {
                 await this.approveEth();
             }
+        },
+        async initEventListener(){
+            window.addEventListener('message', async e => {
+                //tron连接网站成功消息
+                if (e.data.message && e.data.message.action === "connect") {
+                    // handler logic
+                    console.log(`action`, e.data.message.action)
+                    console.log(`data`, e.data)
+                }
+                //tron断开连接网站消息
+                if (e.data.message && e.data.message.action === "disconnect") {
+                    // handler logic
+                    console.log(`action`, e.data.message.action)
+                    console.log(`data`, e.data)
+                    await this.$store.dispatch(`resetState`)
+                }
+                //tron网络改变
+                if (e.data.message && e.data.message.action === "setNode") {
+                    // handler logic
+                    console.log(`action`, e.data.message.action)
+                    console.log(`data`, e.data)
+                }
+                //tron用户拒绝连接消息
+                if (e.data.message && e.data.message.action === "rejectWeb") {
+                    // handler logic
+                    console.log(`action`, e.data.message.action)
+                    console.log(`data`, e.data)
+                }
+                //tron账户改变消息
+                if (e.data.message && e.data.message.action === "accountsChanged") {
+                    // handler logic
+                    console.log(`action`, e.data.message.action)
+                    console.log(`data`, e.data)
+                    if(e.data.message?.data?.address){
+                        await this.$store.dispatch(`resetState`)
+                        let ctx = this.contracts[this.walletLink[this.walletIndex]]
+                        await this.$store.dispatch(`setAddress`, {
+                            wallet_address: e.data.message?.data?.address,
+                            smart_contract: ctx?.smart_contract
+                        })
+                        await this.$store.dispatch(`setWalletIndex`, 2)
+                    }
+                }
+            })
         },
     }
 }
