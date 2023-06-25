@@ -19,7 +19,7 @@
 		<partners v-if="white.length>0" :data="white"></partners>
 		<service/>
 
-    <u-modal v-model="showNotice" :title="notice.title" confirm-text="Confirm" confirm-color="#ee0a24">
+    <u-modal v-model="showNotice" :title="noticeTitle" confirm-text="Confirm" confirm-color="#ee0a24">
       <view class="slot-content">
         <rich-text :nodes="noticeContent"></rich-text>
       </view>
@@ -28,9 +28,7 @@
 </template>
 
 <script>
-	import comjs from "@/common/util"
 	import http from '@/common/http'
-  import Web3 from 'web3'
   import { mapGetters } from 'vuex'
   import {commonMixin} from "@/mixins";
 	export default {
@@ -46,6 +44,7 @@
         notice: null,
         showNotice: false,
         noticeContent: ``,
+        noticeTitle: ``,
 			}
 		},
 		onLoad() {
@@ -84,7 +83,6 @@
 			async getContent() {
         const res = await http.post('/api/Index/home')
 				const {data={}} = res
-        console.log(`data`,data)
 				const title = data?.title
 				this.mining_pool = data?.mining_pool || {}
 				this.earnings = data?.earnings || []
@@ -93,9 +91,10 @@
 				this.title = title
 				this.white = data?.white_paper
 				this.notice = data?.notice
-        if (this.notice) {
+        if (Object.keys(this.notice).length > 0) {
           this.showNotice = true
           this.noticeContent = this.notice.content
+          this.noticeTitle = this.notice.title
         }
         // save service url to store
 				this.$store.commit('setState', {
