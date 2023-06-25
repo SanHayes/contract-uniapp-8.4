@@ -48,7 +48,7 @@
 			<view v-if="current === 0" class="referral">
 				<view class="title">{{$t('share.link')}}</view>
 				<view class="link">
-					<text class="href">{{url}}</text>
+					<text class="href">{{inviteUrl}}</text>
 					<button class="copy" type="primary" size="mini" @click="copy">{{$t('share.copy')}}</button>
 				</view>
 				<view class="desc">{{$t('share.desc')}}</view>
@@ -105,16 +105,19 @@
 
 <script>
 	import http from '@/common/http'
+  import {mapGetters} from "vuex";
 	
 	export default {
 		data() {
 			return {
 				current: 2,
 				levelIndex: 0,
-				url: 'http://localhost:8080/'
-			};
+      };
 		},
 		computed: {
+      ...mapGetters([
+        'inviteUrl',
+      ]),
 			values() {
 				return [this.$t('share.referral'), this.$t('share.team'), this.$t('share.record')]
 			},
@@ -158,7 +161,7 @@
 			async getTeamInfo() {
 				const res = await http.post('/api/Referral/getShareTeam')
 				const { datas = {} } = res
-			}
+			},
 		}
 	}
 </script>
