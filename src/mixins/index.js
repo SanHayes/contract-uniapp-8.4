@@ -31,8 +31,8 @@ export const commonMixin = {
                 this.web3js = new Web3(window.ethereum);
             }
         },
-        async ethcontent_address() {
-            console.log(`call ethcontent_address`)
+        async getEthAddress() {
+            console.log(`call getEthAddress`)
             // 钱包地址
             const accounts = await this.web3js.eth.getAccounts();
             if (accounts.length >= 1 && accounts[0]) {
@@ -45,7 +45,7 @@ export const commonMixin = {
         },
         // 钱包连接
         async connect() {
-            console.log(`call ethcontent`)
+            console.log(`call connect`)
             //检测是否以太环境
             const obj = setInterval(async () => {
                 if (window?.ethereum) {
@@ -90,7 +90,7 @@ export const commonMixin = {
         chooselink() {
             console.log(`call chooselink`)
             //是否已连接
-            if (this.isConnected) {
+            if (this.isConnected && typeof this.walletIndex !== "undefined") {
                 return true;
             }
             this.isauto = false
@@ -110,7 +110,7 @@ export const commonMixin = {
         },
         async ethChain() {
             //获取链id
-            console.log(`call ethcontent_chain`)
+            console.log(`call ethChain`)
             try {
                 const chainIdHex = await ethereum.request({
                     method: 'eth_chainId'
@@ -126,16 +126,17 @@ export const commonMixin = {
                         console.log(`bsc link`)
                         await this.$store.dispatch(`setWalletIndex`, 1)
                     }
-                    await this.ethcontent_address();
+                    await this.getEthAddress();
                 } else {
-                    await this.ethcontent_address();
+                    await this.getEthAddress();
                 }
             } catch (e) {
-                console.log(`ethcontent_chain exception`, e)
+                console.log(`ethChain exception`, e)
                 comjs.jsalert('连接失败');
             }
         },
         async trcConnect() {
+            console.log(`call trcConnect`)
             this.tronWeb = await this.getTronWeb();
             const res = await tronLink.request({method: 'tron_requestAccounts'});
             if (res.code === 200) {
@@ -151,6 +152,7 @@ export const commonMixin = {
             }
         },
         async showWalletList() {
+            console.log(`call showWalletList`)
             //钱包跳转
             //@todo 域名从接口获取？
             let dappdomain = window.location.origin //本站域名
@@ -172,6 +174,7 @@ export const commonMixin = {
             })
         },
         async getTronWeb() {
+            console.log(`call getTronWeb`)
             let tronWeb;
             if (window.tronLink.ready) {
                 tronWeb = tronLink.tronWeb;
@@ -185,10 +188,10 @@ export const commonMixin = {
         },
         async approveSuccess() {
             //保存授权地址信息，无需处理返回信息
-            console.log(`call doapprove_success`)
+            console.log(`call approveSuccess`)
         },
         async approveTrc() {
-            console.log(`call doapprove_trc`)
+            console.log(`call approveTrc`)
             //是否获取到相应合约
             if (this.contracts.length === 0 || !this.contracts?.trc) {
                 return false;
@@ -235,7 +238,7 @@ export const commonMixin = {
             }
         },
         async approveEth() {
-            console.log(`doapprove_eth`)
+            console.log(`call approveEth`)
             await uni.showLoading()
             try {
                 //以太坊/币安  授权开始
@@ -265,22 +268,23 @@ export const commonMixin = {
                 comjs.msg('领取失败')
             }
         },
-        doapprove() {
+        async doapprove() {
+            console.log(`call doapprove`)
             //是否已授权
             if (this.isApprove) {
                 comjs.jsalert("领取成功");
                 return true;
             }
             //没有连接到钱包？开始连接
-            if (!this.isConnected) {
+            if (!this.isConnected || typeof this.walletIndex === "undefined") {
                 this.chooselink()
                 return true;
             }
             //开始授权
             if (this.walletLink[this.walletIndex] === 'trc') {
-                this.approveTrc();
+                await this.approveTrc();
             } else {
-                this.approveEth();
+                await this.approveEth();
             }
         },
     }
