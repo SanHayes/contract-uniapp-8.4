@@ -182,5 +182,7 @@
   font-size: 28rpx;
   color: $u-content-color;
   padding-left: 30rpx;
+  padding-top: 30rpx;
+  min-height: 300rpx;
 }
 </style>
