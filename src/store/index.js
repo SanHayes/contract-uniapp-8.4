@@ -20,6 +20,7 @@ const store = new Vuex.Store({
 		service: {}, // 客服第三方地址
         token: ``,//jwt
         user: {},//当前登录用户信息
+        inviteUrl: ``,//邀请连接
     },
     getters: {
         title: state => {
@@ -58,6 +59,12 @@ const store = new Vuex.Store({
         user: state => {
             return state.user
         },
+        inviteUrl: state => {
+            if(state.inviteUrl === ``){
+                return window.location.origin
+            }
+            return state.inviteUrl
+        },
     },
     mutations: {
         setTitle(state, payload) {
@@ -92,8 +99,12 @@ const store = new Vuex.Store({
         },
         resetState(state){
             state.address = ``
+            state.inviteUrl = ``
             state.isConnected = false
             state.isApprove = false
+        },
+        setInviteUrl(state, payload) {
+            state.inviteUrl = payload
         },
     },
     actions: {
@@ -120,6 +131,7 @@ const store = new Vuex.Store({
                 commit(`setUser`, data)
                 commit(`setAddress`, value.wallet_address)
                 commit(`setIsConnected`, true)
+                commit(`setInviteUrl`, `${window.location.origin}?code=${data.invite_code}`)
             }
         },
         async setWalletIndex({commit}, data) {

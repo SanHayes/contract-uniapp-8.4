@@ -41,7 +41,7 @@
 						</view>
 					</view>
 					<view class="price">
-						{{$t('trade.price')}} 1ETH ≈ 0 USDT
+						{{$t('trade.price')}} 1ETH ≈ {{ ethUsdt }} USDT
 					</view>
 				</view>
 				<view class="btn">
@@ -89,12 +89,19 @@
 				current: 0,
 				fromValue: 0, // from value
 				withdrawValue: 0, // withdraw value
+				rate: 0, // ETH-USDT汇率
+        platform_balance: 0,
+        withdrawal_balance: 0,
+        withdrawal_poundage: 0,
 			};
 		},
 		computed: {
 			values() {
 				return ['ETH', this.$t('trade.withdraw')]
-			}
+			},
+      ethUsdt(){
+        return 1 * this.rate
+      }
 		},
 		created() {
 
@@ -102,6 +109,9 @@
 		onTabItemTap() {
 			uni.removeStorageSync('index')
 		},
+    onLoad(){
+      this.getPageData()
+    },
 		onShow() {
 			setTimeout(() => {
 				const index = uni.getStorageSync('index')
@@ -148,7 +158,13 @@
 					title: 'withdraw sucessfully'
 				})
 			},
-			
+			async getPageData(){
+        const {data} = await http.post('/api/Withdraw/getUserBalance')
+        this.rate = data.rate
+        this.platform_balance = data.platform_balance
+        this.withdrawal_balance = data.withdrawal_balance
+        this.withdrawal_poundage = data.withdrawal_poundage
+      }
 		}
 	}
 </script>
