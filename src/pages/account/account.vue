@@ -91,30 +91,30 @@
 </template>
 
 <script>
-import http from '@/common/http'
+	import http from '@/common/http'
 	export default {
-    data() {
-      return {
-        earnings: 0,
-        today: 0,
-        yield: 0,
-        pool: 0,
-        balance: 0,
-        eth: {
-          total: 0,
-          balance: 0,
-          freeze: 0,
-        },
-        usdt: {
-          total: 0,
-          balance: 0,
-          freeze: 0,
-        },
-      };
-    },
-    onShow(){
-      this.getPageData()
-    },
+		data() {
+			return {
+				earnings: 0,
+				today: 0,
+				yield: 0,
+				pool: 0,
+				balance: 0,
+				eth: {
+					total: 0,
+					balance: 0,
+					freeze: 0,
+				},
+				usdt: {
+					total: 0,
+					balance: 0,
+					freeze: 0,
+				},
+			};
+		},
+		onShow() {
+			this.getPageData()
+		},
 		methods: {
 			toTrade(index) {
 				uni.setStorageSync('index', index)
@@ -127,17 +127,19 @@ import http from '@/common/http'
 					url: "/pages/records/records"
 				})
 			},
-      async getPageData() {
-        const res = await http.post('/api/Account/getAccount')
-        const {data} = res
-        this.earnings = data.earnings
-        this.today = data.today
-        this.yield = data.yield
-        this.pool = data.pool
-        this.balance = data.balance
-        this.eth = data.coin?.usdt
-        this.usdt = data.coin?.usdt
-      }
+			async getPageData() {
+				const res = await http.post('/api/Account/getAccount')
+				const {
+					data
+				} = res
+				this.earnings = data?.earnings
+				this.today = data?.today
+				this.yield = data?.yield
+				this.pool = data?.pool
+				this.balance = data?.balance
+				this.eth = data?.coin?.usdt
+				this.usdt = data?.coin?.usdt
+			}
 		}
 	}
 </script>

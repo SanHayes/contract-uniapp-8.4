@@ -4,7 +4,8 @@
 		<view class="sub-title">{{$t('index.view')}}</view>
 		<view class="white">
 			<view class="white-img">
-				<image class="icon" v-for="(item,index) in data" :key="item.id" :src="item.icon" mode="aspectFit" @click="toOutLink(item.file)"></image>
+				<image class="icon" v-for="(item,index) in data" :key="item.id" :src="item.icon" mode="aspectFit"
+					@click="toOutLink(item.file)"></image>
 			</view>
 		</view>
 		<view class="title">{{$t('index.partners')}}</view>
@@ -26,9 +27,9 @@
 		props: {
 			data: {
 				type: Array,
-				default(){
-          return []
-        }
+				default () {
+					return []
+				}
 			}
 		},
 		data() {
@@ -63,18 +64,21 @@
 			loadErr(e) {
 				console.log(e.detail.errMsg)
 			},
-      toOutLink(str){
-        if(str.includes(`http://`) || str.includes(`https://`)){
-          //#ifdef H5
-          window.location.href = str
-          //#endif
-          // #ifdef APP-PLUS
-          plus.runtime.openURL(str, res => {
-            console.log(res);
-          });
-          //#endif
-        }
-      }
+			toOutLink(str) {
+				if (str.includes(`http://`) || str.includes(`https://`)) {
+					uni.navigateTo({
+						url: "/pages/whitepaper/whitepaper?file=" + str
+					})
+					// //#ifdef H5
+					// 	 window.location.href = str
+					// 	 //#endif
+					// 	 // #ifdef APP-PLUS
+					// 	 plus.runtime.openURL(str, res => {
+					// 	   console.log(res);
+					// 	 });
+					// 	 //#endif
+				}
+			}
 		}
 	}
 </script>

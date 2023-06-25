@@ -54,7 +54,16 @@
 			}
 
 		}
-	],
+	    ,{
+            "path" : "pages/whitepaper/whitepaper",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "Whitepaper",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
