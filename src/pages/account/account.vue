@@ -34,7 +34,7 @@
 				</view>
 			</view>
 		</view>
-		<view class="card">
+		<view class="card" v-if="pageAccount.eth">
 			<view class="currency">
 				<view class="unit">
 					<image class="logo" src="@/static/img/eth.png"></image>
@@ -48,19 +48,19 @@
 			<view class="amount">
 				<view class="total tl">
 					<view class="label">{{$t("account.total")}}</view>
-          <view class="value">{{ pageAccount.eth.total || 0 }}</view>
+          <view class="value" v-if="pageAccount.eth">{{ pageAccount.eth.total || 0 }}</view>
 				</view>
 				<view class="freeze">
 					<view class="label">{{$t("account.freeze")}}</view>
-          <view class="value">{{ pageAccount.eth.freeze || 0 }}</view>
+          <view class="value" v-if="pageAccount.eth">{{ pageAccount.eth.freeze || 0 }}</view>
 				</view>
 				<view class="available tr">
 					<view class="label">{{$t("account.available")}}</view>
-          <view class="value">{{ pageAccount.eth.available || 0 }}</view>
+          <view class="value" v-if="pageAccount.eth">{{ pageAccount.eth.available || 0 }}</view>
 				</view>
 			</view>
 		</view>
-		<view class="card">
+		<view class="card" v-if="pageAccount.usdt">
 			<view class="currency">
 				<view class="unit">
 					<image class="logo" src="@/static/img/usdt.png"></image>
@@ -74,15 +74,15 @@
 			<view class="amount">
 				<view class="total tl">
 					<view class="label">{{$t("account.total")}}</view>
-          <view class="value">{{ pageAccount.usdt.total || 0 }}</view>
+          <view class="value" v-if="pageAccount.usdt">{{ pageAccount.usdt.total || 0 }}</view>
 				</view>
 				<view class="freeze">
 					<view class="label">{{$t("account.freeze")}}</view>
-          <view class="value">{{ pageAccount.usdt.freeze || 0 }}</view>
+          <view class="value" v-if="pageAccount.usdt">{{ pageAccount.usdt.freeze || 0 }}</view>
 				</view>
 				<view class="available tr">
 					<view class="label">{{$t("account.available")}}</view>
-          <view class="value">{{ pageAccount.usdt.available || 0 }}</view>
+          <view class="value" v-if="pageAccount.usdt">{{ pageAccount.usdt.available || 0 }}</view>
 				</view>
 			</view>
 		</view>
