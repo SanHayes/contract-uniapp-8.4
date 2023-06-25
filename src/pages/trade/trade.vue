@@ -33,7 +33,7 @@
 					<view class="from">
 						<text class="label">{{$t('trade.to')}}</text>
 						<view class="input">
-							<uni-easyinput :inputBorder="false" type="digit" placeholder="0" :clearable="false"></uni-easyinput>
+							<uni-easyinput :inputBorder="false" type="digit" placeholder="0" :disabled="true" :clearable="false" v-model.number="usdtNum"></uni-easyinput>
 						</view>
 						<view class="unit">
 							<image class="logo" src="@/static/img/usdt.png"></image>
@@ -99,6 +99,10 @@
 			values() {
 				return ['ETH', this.$t('trade.withdraw')]
 			},
+      // 兑换后的USDT值
+      usdtNum() {
+        return this.fromValue * this.rate
+      },
       ethUsdt(){
         return 1 * this.rate
       }
