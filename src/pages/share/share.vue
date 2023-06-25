@@ -9,7 +9,7 @@
 					<view class="up">
 						{{$t('share.up',{percent: 0})}}
 					</view>
-					<view class="view">{{$t('share.view')}}</view>
+					<view class="view" @click="shareView">{{$t('share.view')}}</view>
 				</view>
 				<image class="bg" src="../../static/img/share/bg_share.png" mode="aspectFit"></image>
 			</view>
@@ -17,25 +17,25 @@
 				<view class="level-item">
 					<view class="title">{{$t('share.myLevel')}}</view>
 					<view class="value">
-						--
+            {{ myLevel.name || '--' }}
 					</view>
 				</view>
 				<view class="level-item">
 					<view class="title">Level 1</view>
 					<view class="value">
-						--
+            {{ myLevel.rate1 || '--' }}
 					</view>
 				</view>
 				<view class="level-item">
 					<view class="title">Level 2</view>
 					<view class="value">
-						--
+            {{ myLevel.rate2 || '--' }}
 					</view>
 				</view>
 				<view class="level-item">
 					<view class="title">Level 3</view>
 					<view class="value">
-						--
+            {{ myLevel.rate3 || '--' }}
 					</view>
 				</view>
 			</view>
@@ -99,6 +99,26 @@
 				<image class="no-data" src="../../static/img/share/no-data.svg" mode="aspectFit"></image>
 			</view>
 		</view>
+    <u-modal v-model="showModel" title="" confirm-text="Confirm" confirm-color="#ee0a24" width="90%">
+      <view class="slot-content">
+          <view class="model-list">
+            <view class="level">
+              <view class="title">Level</view>
+              <view class="title">Minimum Balance</view>
+              <view class="title">Commission Rate</view>
+            </view>
+            <view class="level-list"  v-for="(item,index) in levelList" :key="index">
+              <view class="value">{{ item.name }}</view>
+              <view class="value">{{ item.balance }}</view>
+              <view class="value">
+                <view>Lv.1:{{item.rate1}} </view>
+                <view>Lv.2:{{item.rate2}} </view>
+                <view>Lv.3:{{item.rate3}} </view>
+              </view>
+            </view>
+          </view>
+      </view>
+    </u-modal>
 		<service></service>
 	</view>
 </template>
@@ -106,39 +126,53 @@
 <script>
 	import http from '@/common/http'
   import {mapGetters} from "vuex";
-	
+
 	export default {
 		data() {
 			return {
 				current: 2,
 				levelIndex: 0,
+        levelList: [],
+        myLevel: '',
+        showModel: false,
       };
 		},
+    onLoad(){
+      this.getLevels()
+    },
 		computed: {
       ...mapGetters([
         'inviteUrl',
+          'user'
       ]),
 			values() {
 				return [this.$t('share.referral'), this.$t('share.team'), this.$t('share.record')]
 			},
 			levels() {
-				return [{
-						text: this.$t("trade.all"),
-					},
-					{
-						text: this.$t("share.level1"),
-					},
-					{
-						text: this.$t("share.level2"),
-					},
-					{
-						text: this.$t("share.level3"),
-					},
-				]
-			}
+        return [{
+          text: this.$t("trade.all"),
+        },
+          {
+            text: this.$t("share.level1"),
+          },
+          {
+            text: this.$t("share.level2"),
+          },
+          {
+            text: this.$t("share.level3"),
+          },
+        ]
+      }
 		},
 		onShow(){
 		  this.getTeamInfo()
+      if(this.$store.getters.user?.user_level > 0) {
+        this.myLevel = this.levelList.filter((item, index) => {
+          console.log("item" ,item)
+          console.log("index" ,index)
+          return this.$store.getters.user?.user_level === index + 1
+        })
+      }
 		},
 		methods: {
 			handleClick(e) {
@@ -162,6 +196,15 @@
 				const res = await http.post('/api/Referral/getShareTeam')
 				const { datas = {} } = res
 			},
+      shareView() {
+        this.showModel = true
+      },
+
+      async getLevels (){
+        const res = await http.post('/api/Referral/getShareTeam')
+        this.levelList = res.data.levels
+
+      }
 		}
 	}
 </script>
@@ -340,4 +383,30 @@
 		margin: 40rpx auto;
 		display: block;
 	}
+  .model-list {
+    margin: 15rpx;
+    border: 1px solid #ddd;
+    border-radius: 10rpx;
+    .level {
+      display: flex;
+      background-color: #eee;
+      .title {
+        flex: 1;
+        text-align: center;
+        padding: 10rpx 0;
+        font-size: 24rpx;
+      }
+    }
+    .level-list{
+      border-top: 1px solid #ddd;
+      display: flex;
+      align-items: center;
+      .value {
+        flex: 1;
+        text-align: center;
+        padding: 10rpx 0;
+        font-size: 24rpx;
+      }
+    }
+  }
 </style>
