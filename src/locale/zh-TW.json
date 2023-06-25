@@ -80,5 +80,6 @@
 	"service.app": "WhatsApp",
 	"service.telegram": "Telegram",
 
-	"certificate.title": "MSB牌照"
+	"certificate.title": "MSB牌照",
+	"message.title": "Station letter"
 }

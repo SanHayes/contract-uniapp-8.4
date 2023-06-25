@@ -20,7 +20,7 @@
 						<text class="text">{{address|maskAddr}}</text>
 						<uni-icons custom-prefix="iconfont" type="icon-duidiaojiaohuanduihuan" size="12" color="#fff"></uni-icons>
 					</button>
-					<uni-icons type="notification" size="21"></uni-icons>
+					<uni-icons type="notification" size="21" @click="goNotification"></uni-icons>
 				</view>
 			</view>
 		</uni-nav-bar>
@@ -108,6 +108,11 @@
 				uni.setLocale(langObj.lang)
 				this.$emit('change')
 			},
+      goNotification() {
+        uni.navigateTo({
+          url: '/pages/message/message'
+        })
+      }
 		}
 	}
 </script>

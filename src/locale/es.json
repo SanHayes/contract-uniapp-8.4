@@ -80,5 +80,6 @@
 	"service.app": "WhatsApp",
 	"service.telegram": "Telegram",
 
-	"certificate.title": "Licencia MSB"
+	"certificate.title": "Licencia MSB",
+	"message.title": "Station letter"
 }

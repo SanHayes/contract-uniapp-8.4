@@ -56,12 +56,20 @@
 		}
 	    ,{
             "path" : "pages/whitepaper/whitepaper",
-            "style" :                                                                                    
+            "style" :
             {
                 "navigationBarTitleText": "Whitepaper",
                 "enablePullDownRefresh": false
             }
-            
+
+        },{
+            "path" : "pages/message/message",
+            "style" :
+            {
+                "navigationBarTitleText": "%message.title%",
+                "enablePullDownRefresh": false
+            }
+
         }
     ],
 	"globalStyle": {
