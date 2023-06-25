@@ -92,7 +92,9 @@
 
 <script>
 	import http from '@/common/http'
+  import {commonMixin} from "@/mixins";
 	export default {
+    mixins: [commonMixin],
 		data() {
 			return {
 				earnings: 0,
@@ -128,7 +130,13 @@
 				})
 			},
 			async getPageData() {
-				const res = await http.post('/api/Account/getAccount')
+				const res = await http.post('/api/Account/getAccount');
+
+        if(res.statusCode!=200)
+        {
+          this.chooselink();
+          return
+        }
 				const {
 					data
 				} = res

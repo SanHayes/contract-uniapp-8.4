@@ -56,6 +56,6 @@ http.interceptors.response.use((res) => {
 }, (res) => {
     console.log(`res onReject`, res)
     // 容错处理
-    return Promise.resolve({})
+    return Promise.resolve(res)
 })
 export default http
