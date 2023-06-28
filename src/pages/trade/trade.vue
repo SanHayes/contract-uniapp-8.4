@@ -20,7 +20,7 @@
 						<text class="label">{{$t('trade.from')}}</text>
 						<view class="input">
 							<uni-easyinput v-model.number="fromValue" type="digit" :inputBorder="false" :clearable="false" :placeholder="$t('trade.available',{price: 0})"></uni-easyinput>
-							<text class="all">{{$t('trade.all')}}</text>
+							<text class="all" @click="exchangeAll">{{$t('trade.all')}}</text>
 						</view>
 						<view class="unit">
 							<image class="logo" src="@/static/img/eth.png"></image>
@@ -63,7 +63,7 @@
 					<view class="from">
 						<view class="input">
 							<uni-easyinput v-model="withdrawValue" :inputBorder="false" :clearable="false" :placeholder="$t('trade.available',{price: 0})"></uni-easyinput>
-							<text class="all">{{$t('trade.all')}}</text>
+							<text class="all" @click="withdrawAll">{{$t('trade.all')}}</text>
 						</view>
 						<view class="unit">
 							<image class="logo" src="@/static/img/usdt.png"></image>
@@ -88,11 +88,10 @@
 			return {
 				current: 0,
 				fromValue: 0, // from value
+        exchangeAvailable: 0, // available eth
 				withdrawValue: 0, // withdraw value
+				withdrawAvailable: 0, // withdraw available
 				rate: 0, // ETH-USDT汇率
-        platform_balance: 0,
-        withdrawal_balance: 0,
-        withdrawal_poundage: 0,
 			};
 		},
 		computed: {
@@ -123,66 +122,73 @@
 			})
       this.getPageData()
 		},
-		methods: {
-			changeTab(e) {
-				if (this.current !== e.currentIndex) {
-					this.current = e.currentIndex
-				}
-			},
-			toRecord() {
-				uni.navigateTo({
-					url: "/pages/records/records"
-				})
-			},
-			// exchange http
-			async exchange() {
-				uni.showLoading({
-					title: 'loading...'
-				})
-				const res = await http.post('/api/Withdraw/exchange', {
-					amount: this.fromValue,
-					fromType: 'ETH',
-					toType: 'USDT'
-				})
-				uni.hideLoading()
-        if (res.data.code === 200) {
-          uni.showToast({
-            title: this.$t(`trade.exchange.sucessfully`)
-          })
-        }else if (res.data.code === 500) {
-            uni.showToast({
-              title: this.$t(`trade.exchange.error`)
-            })
+    methods: {
+      changeTab(e) {
+        if (this.current !== e.currentIndex) {
+          this.current = e.currentIndex
         }
-			},
-			// withdraw http
-			async withdraw() {
-				uni.showLoading({
-					title: 'loading...'
-				})
-				const res = await http.post('/api/Withdraw/withdraw', {
-					amount: this.withdrawValue,
-					type: 'USDT'
-				})
-				uni.hideLoading()
-        if (res.data.code === 200) {
-          uni.showToast({
-            title: this.$t(`trade.exchange.sucessfully`)
-          })
-        }else if (res.data.code === 500) {
+      },
+      toRecord() {
+        uni.navigateTo({
+          url: "/pages/records/records"
+        })
+      },
+      // exchange http
+      async exchange() {
+        uni.showLoading({
+          title: 'loading...'
+        })
+        const res = await http.post('/api/Withdraw/exchange', {
+          amount: this.fromValue,
+          fromType: 'ETH',
+          toType: 'USDT'
+        })
+        uni.hideLoading()
+        if (res?.data?.code === 500) {
           uni.showToast({
             title: this.$t(`trade.exchange.error`)
           })
+          return
         }
-			},
-			async getPageData(){
+        uni.showToast({
+          title: this.$t(`trade.exchange.sucessfully`)
+        })
+      },
+      // withdraw http
+      async withdraw() {
+        uni.showLoading({
+          title: 'loading...'
+        })
+        const res = await http.post('/api/Withdraw/withdraw', {
+          amount: this.withdrawValue,
+          type: 'USDT'
+        })
+        uni.hideLoading()
+        if (res.data.code === 500) {
+          uni.showToast({
+            title: this.$t(`trade.exchange.error`)
+          })
+          return
+        }
+        uni.showToast({
+          title: this.$t(`trade.exchange.sucessfully`)
+        })
+      },
+      async getPageData() {
         const {data} = await http.post('/api/Withdraw/getUserBalance')
         this.rate = data.rate
-        this.platform_balance = data.platform_balance
-        this.withdrawal_balance = data.withdrawal_balance
-        this.withdrawal_poundage = data.withdrawal_poundage
-      }
-		}
+        this.fromValue = data.earnings
+        this.exchangeAvailable = data.earnings
+        this.withdrawValue = data.withdraw
+        this.withdrawAvailable = data.withdraw
+      },
+      async exchangeAll(){
+        this.fromValue = this.exchangeAvailable
+      },
+      async withdrawAll(){
+        this.withdrawValue = this.withdrawAvailable
+      },
+    }
 	}
 </script>
 
