@@ -164,7 +164,7 @@
           type: 'USDT'
         })
         uni.hideLoading()
-        if (res.data.code === 500) {
+        if (res?.data?.code === 500) {
           uni.showToast({
             title: this.$t(`trade.exchange.error`)
           })
