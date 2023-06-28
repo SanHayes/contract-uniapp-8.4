@@ -26,11 +26,11 @@
 			<view class="row mt10">
 				<view class="pool">
 					<view class="label">{{$t("account.pool")}}</view>
-          <view class="value">{{ pageAccount.pool || 0 }} usdt</view>
+          <view class="value">{{ pageAccount.pool || 0 }} USDT</view>
 				</view>
 				<view class="balance tr">
 					<view class="label">{{$t("account.balance")}}</view>
-          <view class="value">{{ pageAccount.balance || 0 }} usdt</view>
+          <view class="value">{{ pageAccount.balance || 0 }} USDT</view>
 				</view>
 			</view>
 		</view>
@@ -64,7 +64,7 @@
 			<view class="currency">
 				<view class="unit">
 					<image class="logo" src="@/static/img/usdt.png"></image>
-					<text>usdt</text>
+					<text>USDT</text>
 				</view>
 				<button class="mini-btn" type="primary" size="mini" @click="toTrade(1)">
 					<uni-icons custom-prefix="iconfont" type="icon-tixian" size="12" color="#fff"></uni-icons>
