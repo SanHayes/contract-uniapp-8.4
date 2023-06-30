@@ -40,7 +40,7 @@
 							<text>USDT</text>
 						</view>
 					</view>
-					<view class="price">
+					<view class="price" v-if="ethUsdt">
 						{{$t('trade.price')}} 1ETH ≈ {{ ethUsdt }} USDT
 					</view>
 				</view>
