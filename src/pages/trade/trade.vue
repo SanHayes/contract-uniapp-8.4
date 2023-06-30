@@ -143,6 +143,7 @@
           fromType: 'ETH',
           toType: 'USDT'
         })
+        await this.$store.dispatch(`setPageAccount`)
         uni.hideLoading()
         if (res?.data?.code === 500) {
           uni.showToast({
