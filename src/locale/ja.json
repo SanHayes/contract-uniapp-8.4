@@ -63,6 +63,8 @@
 	"share.level1": "レベル 1",
 	"share.level2": "レベル 2",
 	"share.level3": "レベル 3",
+	"share.min": "最小残高",
+	"share.rate": "手数料率",
 
 	"account.earnings": "累積所得",
 	"account.today": "今日の収益",

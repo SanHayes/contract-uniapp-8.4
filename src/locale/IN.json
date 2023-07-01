@@ -63,6 +63,8 @@
 	"share.level1": "Tingkat 1",
 	"share.level2": "Tingkat 2",
 	"share.level3": "Tingkat 3",
+	"share.min": "Saldo minimal",
+	"share.rate": "Tarif komisi",
 
 	"account.earnings": "pendapatan kumulatif",
 	"account.today": "Penghasilan hari ini",

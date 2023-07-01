@@ -26,6 +26,7 @@
 	"index.view": "View the white paper",
 	"index.partners": "Partners",
 	"index.businessP": "Our business partners",
+	"index.problem": '',
 
 	"trade.exchange": "Exchange",
 	"trade.record": "Record",
@@ -63,6 +64,8 @@
 	"share.level1": "Level 1",
 	"share.level2": "Level 2",
 	"share.level3": "Level 3",
+	"share.min": "Minimum Balance",
+	"share.rate": "Commission Rate",
 
 	"account.earnings": "Accumulated earnings",
 	"account.today": "Today's earnings",

@@ -63,6 +63,8 @@
 	"share.level1": "1級",
 	"share.level2": "2級",
 	"share.level3": "3級",
+	"share.min": "最低餘額",
+	"share.rate": "佣金率",
 
 	"account.earnings": "累計收益",
 	"account.today": "今日收益",

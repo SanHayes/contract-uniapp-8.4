@@ -63,6 +63,8 @@
 	"share.level1": "1clase",
 	"share.level2": "2clase",
 	"share.level3": "3clase",
+	"share.min": "Balance minimo",
+	"share.rate": "porcentaje de comision",
 
 	"account.earnings": "ingreso acumulado",
 	"account.today": "Ganancias hoy",

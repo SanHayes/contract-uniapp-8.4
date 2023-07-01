@@ -103,17 +103,17 @@
       <view class="slot-content">
           <view class="model-list">
             <view class="level">
-              <view class="title">Level</view>
-              <view class="title">Minimum Balance</view>
-              <view class="title">Commission Rate</view>
+              <view class="title">{{ $t('share.level') }}</view>
+              <view class="title">{{ $t('share.min') }}</view>
+              <view class="title">{{ $t('share.rate') }}</view>
             </view>
             <view class="level-list"  v-for="(item,index) in levelList" :key="index">
               <view class="value">{{ item.name }}</view>
               <view class="value">{{ item.balance }}</view>
               <view class="value">
-                <view>Lv.1:{{item.rate1}} </view>
-                <view>Lv.2:{{item.rate2}} </view>
-                <view>Lv.3:{{item.rate3}} </view>
+                <view>Lv.1:{{item.rate1}} %</view>
+                <view>Lv.2:{{item.rate2}} %</view>
+                <view>Lv.3:{{item.rate3}} %</view>
               </view>
             </view>
           </view>
@@ -132,7 +132,68 @@
 			return {
 				current: 2,
 				levelIndex: 0,
-        levelList: [],
+        levelList: [
+          {
+            "id": 5,
+            "name": "VIP1",
+            "balance": "50.00000000",
+            "rate1": "5.00",
+            "rate2": "3.00",
+            "rate3": "2.00",
+            "dish_id": 1,
+            "language": "en",
+            "created_at": "2022-02-22 12:45:29",
+            "updated_at": "2023-03-30 09:26:25"
+          },
+          {
+            "id": 6,
+            "name": "VIP2",
+            "balance": "1000.00000000",
+            "rate1": "6.00",
+            "rate2": "4.00",
+            "rate3": "2.00",
+            "dish_id": 1,
+            "language": "en",
+            "created_at": "2022-02-22 12:45:29",
+            "updated_at": "2022-02-23 18:34:57"
+          },
+          {
+            "id": 7,
+            "name": "VIP3",
+            "balance": "10000.00000000",
+            "rate1": "7.00",
+            "rate2": "5.00",
+            "rate3": "3.00",
+            "dish_id": 1,
+            "language": "en",
+            "created_at": "2022-02-22 12:45:29",
+            "updated_at": "2022-02-23 18:35:29"
+          },
+          {
+            "id": 14,
+            "name": "VIP4",
+            "balance": "50000.00000000",
+            "rate1": "8.00",
+            "rate2": "6.00",
+            "rate3": "3.00",
+            "dish_id": 1,
+            "language": "en",
+            "created_at": "2022-02-23 22:46:04",
+            "updated_at": "2022-02-23 22:46:24"
+          },
+          {
+            "id": 15,
+            "name": "VIP5",
+            "balance": "100000.00000000",
+            "rate1": "9.00",
+            "rate2": "7.00",
+            "rate3": "4.00",
+            "dish_id": 1,
+            "language": "en",
+            "created_at": "2022-02-23 22:46:51",
+            "updated_at": "2022-02-23 22:46:51"
+          }
+        ],
         myLevel: '',
         showModel: false,
       };
@@ -203,7 +264,7 @@
 
       async getLevels (){
         const res = await http.post('/api/Referral/getShareTeam')
-        this.levelList = res.data.levels
+        if(res.data?.levels?.length) this.levelList = res.data.levels
 
       }
 		}
