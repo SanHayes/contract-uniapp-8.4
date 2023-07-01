@@ -31,6 +31,7 @@
 	import http from '@/common/http'
   import { mapGetters } from 'vuex'
   import {commonMixin} from "@/mixins";
+  import problem from '@/locale/problem.json'
 	export default {
     mixins: [commonMixin],
 		data() {
@@ -48,6 +49,8 @@
 			}
 		},
 		onLoad() {
+      const lang = uni.getLocale()
+      this.problem = problem[lang]
 			//通过接口获取合约信息
 			this.getContent()
 		},
@@ -77,7 +80,8 @@
         console.log('updateConnect')
         await this.$store.dispatch(`setIsConnected`, true)
       },
-			changeLang() {
+			changeLang(lang) {
+        this.problem = problem[lang]
 				this.getContent()
 			},
 			async getContent() {
@@ -86,7 +90,9 @@
 				const title = data?.title
 				this.mining_pool = data?.mining_pool || {}
 				this.earnings = data?.earnings || []
-				this.problem = data?.problem || []
+        if (data?.problem?.length){
+          this.problem = data?.problem
+        }
 				this.banner = data?.banner
 				this.title = title
 				this.white = data?.white_paper

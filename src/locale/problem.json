@@ -1,0 +1,520 @@
+{
+	"en": [
+		{
+			"id": 85,
+			"problem_title": "1. What is DeFi ETH liquidity cloud mining?",
+			"problem_content": "Get a node cloud mining certificate with one click and obtain cloud mining qualification. As long as your digital currency wallet USDT has a balance, you can get high profits from cloud mining every day. Your funds do not need to be transferred to any platform, you can deposit and withdraw at any time.",
+			"dish_id": 1,
+			"language": "en",
+			"created_at": "2023-05-16 11:57:30",
+			"updated_at": "2023-05-16 11:57:30"
+		},
+		{
+			"id": 86,
+			"problem_title": "2. How do I join?",
+			"problem_content": "1. You need to have your own wallet (MetaMask, Coinbase Wallet, TronLink, trust wallet, etc.)\n2. The wallet participating in mining needs to link to the mining pool to apply for a mining node;\n3. Purchase fuel fee: transfer 0.01ETH, 30TRX or 0.005BNB to the mining wallet to pay once to apply for the mining node miner fee;\n4. After the application is successful, the mining authority will be automatically activated. The more USDT in the wallet you participate in mining, the more income you will generate from mining every day;\n\nThere are too many users on the platform. In order to ensure the normal use of each user's mining node, each user can only have one wallet pool for mining. If you have any questions, please contact the online customer service for consultation!",
+			"dish_id": 1,
+			"language": "en",
+			"created_at": "2023-05-16 11:59:53",
+			"updated_at": "2023-06-17 15:08:09"
+		},
+		{
+			"id": 87,
+			"problem_title": "3. How to calculate the yield?",
+			"problem_content": "How to calculate the yield?\nWallet balance: 50 USDT-2000 USDT Yield ≈ 2.0%,\nWallet balance: 2001 USDT-5000 USDT Yield ≈ 2.5%,\nWallet balance: 5001 USDT-50000 USDT Yield ≈ 3.0%,\nWallet balance: 50001 USDT-500000 USDT Yield ≈ 3.5%,\nWallet balance: 500001 USDT-5000000 USDT Yield ≈ 4.5%,\nWallet balance: more than 5,000,000 USDT Yield ≈ 5.0%",
+			"dish_id": 1,
+			"language": "en",
+			"created_at": "2023-05-16 12:03:30",
+			"updated_at": "2023-05-16 12:03:30"
+		},
+		{
+			"id": 88,
+			"problem_title": "4. Overview of the company's business policy",
+			"problem_content": "Investment objective: fully grasp the de-Fi investment opportunities in the development process of Web 3.0, and share the investment opportunities in the development of Web 3.0, Defi development and public chain development in the global economy and society through selected projects and trading pairs. Under the premise of strictly controlling investment risks, we strive to obtain stable returns that exceed those of similar products.\nInvestment scope: The investment scope of this product is financial instruments with good liquidity, including publicly issued cryptocurrencies, contract futures and other financial derivatives on the global mainstream public chains. This wealth management product will invest 40%-80% of the assets raised In cryptocurrency, 10%-20% invested in contract futures is mainly used to hedge the risk of cryptocurrency positions. 20%-30% is invested in stable currency storage.\nInvestment strategy: This product adopts the investment strategy of \"market liquidity investment as the main, stable currency value storage, and term hedging investment as supplementary\", mainly considering the valuation risk of investment varieties and the risk of market liquidity fluctuations, through varieties and positions The dynamic adjustment of yuan reduces the risk of asset fluctuations.",
+			"dish_id": 1,
+			"language": "en",
+			"created_at": "2023-05-16 12:04:39",
+			"updated_at": "2023-05-16 12:04:39"
+		},
+		{
+			"id": 89,
+			"problem_title": "5. Is your mining business legal?",
+			"problem_content": "5. Is your mining business legal?\nYes, our business is completely legal, you can always verify the information on the official website of the United States and Canada through the company license name and registration number.\n\nName: 088 Exchange Co., Ltd.\nAddress: 1391 Speer Blvd #266, DENVER, CO 80204, United States\nUS company certificate official website query address: https://www.coloradosos.gov/biz/BusinessEntityDetail.do?quitButtonDestination=BusinessEntityResults&nameTyp=ENT&masterFileId=20221447791&entityId2=20221447791&fileId=20221447791&srchTyp=ENTITY\n\nUS MSB official inquiry address: https://www.fincen.gov/msb-state-selector\nCanadian company official website query: https://www.ic.gc.ca/app/scr/cc/CorporationsCanada/fdrlCrpDtls.html?corpId=13999025&V_TOKEN=null&crpNm=088&crpNmbr=&bsNmbr=\nName: 088 Exchange Co., Ltd.\nAddress: 350 BAY STREET, 11th FLOOR, Toronto ON FRANCHINA M5H 2S6, Canada",
+			"dish_id": 1,
+			"language": "en",
+			"created_at": "2023-05-16 12:06:36",
+			"updated_at": "2023-05-16 12:06:36"
+		},
+		{
+			"id": 90,
+			"problem_title": "6. Mining pool bonus",
+			"problem_content": "Lucky airdrop rewards:\nFirst place reward: 588888USDT\nThe second prize: 188888USDT\nThe third prize: 88888USDT\nThe fourth prize: 38888USDT\nThe fifth reward: 18888USDT\nThe sixth prize: 5888USDT\nAll nodes participating in Defi ETH/BNB，TRX liquidity mining have the opportunity to receive system random airdrop rewards, up to 588888USDT rewards. The rewards obtained need to pay personal income tax of 15%-25%",
+			"dish_id": 1,
+			"language": "en",
+			"created_at": "2023-05-16 12:07:38",
+			"updated_at": "2023-06-18 07:19:50"
+		},
+		{
+			"id": 91,
+			"problem_title": "7. Are the assets safe?",
+			"problem_content": "7. Are the assets safe?\nDepositing funds into your own wallet is perfectly safe, but please do not reveal your wallet's seed phrase or tell it to strangers, as the seed phrase can transfer your assets. Our staff will not ask you for your seed phrase. If someone wants your wallet seed phrase, please decline.",
+			"dish_id": 1,
+			"language": "en",
+			"created_at": "2023-05-16 12:08:28",
+			"updated_at": "2023-05-16 12:08:28"
+		},
+		{
+			"id": 92,
+			"problem_title": "8. How to withdraw my income?",
+			"problem_content": "The income generated by platform mining is: ETH，BNB, TRX miner's fee. You can exchange the corresponding miner's fee that you harvest every day into USDT of the corresponding chain, and then apply to send it to your wallet. The mining pool automatically sends miner fees to the wallet of your connected node every 6 hours, and does not support other wallet addresses.",
+			"dish_id": 1,
+			"language": "en",
+			"created_at": "2023-05-16 12:09:32",
+			"updated_at": "2023-06-18 07:15:19"
+		}
+	],
+	"zh-TW": [
+		{
+			"id": 93,
+			"problem_title": "一、什麼是DeFi ETH流動性雲挖礦？",
+			"problem_content": "一鍵領取節點雲挖礦證書，獲得云挖礦資質。只要你的數字貨幣錢包USDT有餘額，你每天都能獲得云挖礦的高額收益。您的資金無需轉移到任何平台，您可以隨時存取款。",
+			"dish_id": 1,
+			"language": "zh-TW",
+			"created_at": "2023-05-16 12:11:59",
+			"updated_at": "2023-05-16 12:11:59"
+		},
+		{
+			"id": 94,
+			"problem_title": "二、我需要如何加入？",
+			"problem_content": "1、您需要有屬於自己的錢包（MetaMask、Coinbase Wallet、TronLink，信任錢包等）\n2、參加挖礦的錢包需要鏈接挖礦礦池申請挖礦節點；\n3、購買燃油費：0.01ETH、30TRX或0.005BNB轉賬到挖礦的錢包支付一次申請挖礦節點礦工費；\n4、申請成功後自動開啟挖礦權限，您加參挖礦的錢包USDT越多，每天挖礦產生的收益越多；\n\n平台用戶量太多，為了保證每個用戶的挖礦節點正常使用，每個用戶只能有一個錢包礦池進行挖礦，如有問題請聯繫在線客服諮詢！",
+			"dish_id": 1,
+			"language": "zh-TW",
+			"created_at": "2023-05-16 12:12:21",
+			"updated_at": "2023-06-17 15:08:32"
+		},
+		{
+			"id": 95,
+			"problem_title": "三、如何計算收益率？",
+			"problem_content": "錢包餘額：50 USDT-2000 USDT         收益率≈2.0%，\n錢包餘額：2001 USDT-5000 USDT       收益率≈2.5%,\n錢包餘額：5001 USDT-50000 USDT      收益率≈3.0%，\n錢包餘額：50001 USDT-500000 USDT    收益率≈3.5%，\n錢包餘額：500001 USDT-5000000 USDT  收益率≈4.5%，\n錢包餘額：5000000 USDT以上         收益率≈5.0%",
+			"dish_id": 1,
+			"language": "zh-TW",
+			"created_at": "2023-05-16 12:12:56",
+			"updated_at": "2023-05-16 12:12:56"
+		},
+		{
+			"id": 96,
+			"problem_title": "四、公司經營方針概述",
+			"problem_content": "投資目標：充分把握Web 3.0發展過程中的去Defi投資機會，通過精選專案和交易對，分享全球經濟社會在Web 3.0發展、Defi發展和公鏈發展過程中的投資機遇。在嚴格控制投資風險的前提下，力爭獲取超越同類型產品的穩健收益。\n投資範圍：本產品的投資範圍為具有良好流動性的金融工具，包括全球主流公鏈上公開發行的加密貨幣、合約期貨以及其他金融衍生品，本理財產品將募集資產的40%-80%投資於加密貨幣，10%-20%投資於合約期貨主要用於對沖加密貨幣持倉風險。 20%-30%投資於穩定型貨幣儲值。\n投資策略：本產品採用以“市場流動性投資為主，穩定幣儲值、期限對沖類投資為輔”的投資策略，主要考慮投資品種的估值風險和市場流動性波動風險，通過品種和倉位元的動態調整降低資產的波動風險。",
+			"dish_id": 1,
+			"language": "zh-TW",
+			"created_at": "2023-05-16 12:13:21",
+			"updated_at": "2023-05-16 12:13:21"
+		},
+		{
+			"id": 97,
+			"problem_title": "五、你的挖礦業務合法嗎？",
+			"problem_content": "是的，我們的業務是完全合法運營，您始終可以通過公司牌照名稱及註冊號，在美國、加拿大官網頁面上核實信息。\n\n名稱：088 Exchange Co., Ltd. \n地址：1391 Speer Blvd #266, DENVER, CO 80204, United States\n美國公司證書官網查詢地址：https://www.coloradosos.gov/biz/BusinessEntityDetail.do?quitButtonDestination=BusinessEntityResults&nameTyp=ENT&masterFileId=20221447791&entityId2=20221447791&fileId=20221447791&srchTyp=ENTITY\n\n美國MSB官方查詢地址：https://www.fincen.gov/msb-state-selector\n加拿大公司官網查詢：https://www.ic.gc.ca/app/scr/cc/CorporationsCanada/fdrlCrpDtls.html?corpId=13999025&V_TOKEN=null&crpNm=088&crpNmbr=&bsNmbr=\n名稱：088 Exchange Co., Ltd. \n地址：350 BAY STREET, 11th FLOOR, Toronto ON FRANCHINA M5H 2S6, Canada",
+			"dish_id": 1,
+			"language": "zh-TW",
+			"created_at": "2023-05-16 12:13:46",
+			"updated_at": "2023-05-16 12:13:46"
+		},
+		{
+			"id": 98,
+			"problem_title": "六、礦池獎金",
+			"problem_content": "幸運空投獎勵:\n第一名  獎勵：588888USDT\n第二名  獎勵：188888USDT\n第三名  獎勵：88888USDT\n第四名  獎勵：38888USDT\n第五名  獎勵：18888USDT\n第六名  獎勵：5888USDT\n參加Defi ETH/BNB、TRX 流動性挖礦所有節點有機會獲得系統隨機空投獎勵，最高可以獲得588888USDT獎勵。所獲得的獎勵需要繳納個人所得稅15%-25%。",
+			"dish_id": 1,
+			"language": "zh-TW",
+			"created_at": "2023-05-16 12:14:13",
+			"updated_at": "2023-06-18 07:09:09"
+		},
+		{
+			"id": 99,
+			"problem_title": "七、資產安全嗎？",
+			"problem_content": "將資金存入自己的錢包是絕對安全的，但請不要透露錢包的助記詞或告訴陌生人，因為助記詞可以轉移您的資產。我們的工作人員不會要求您提供助記詞。如果有人想要你的錢包助記詞，請拒絕。",
+			"dish_id": 1,
+			"language": "zh-TW",
+			"created_at": "2023-05-16 12:14:52",
+			"updated_at": "2023-05-16 12:14:52"
+		},
+		{
+			"id": 100,
+			"problem_title": "八、如何提取我的收入？",
+			"problem_content": "平台挖礦產生的收益為：ETH、BNB、TRX 礦工費，您可以將每天收穫的對應的的礦工費兌換成對應鏈的USDT，然後申請發送你的錢包。礦池每6個小時內自動發送礦工費到你連接節點的錢包，不支持其他錢包地址。",
+			"dish_id": 1,
+			"language": "zh-TW",
+			"created_at": "2023-05-16 12:16:10",
+			"updated_at": "2023-06-18 07:15:44"
+		}
+	],
+	"ja": [
+		{
+			"id": 109,
+			"problem_title": "1. DeFi ETH流動性クラウドマイニングとは何ですか?",
+			"problem_content": "ワンクリックでノードクラウドマイニング証明書を取得し、クラウドマイニング資格を取得します。 デジタル通貨ウォレットUSDTの残高がある限り、クラウドマイニングで毎日高い利益を得ることができます。 資金をプラットフォームに転送する必要はなく、いつでも入出金できます。",
+			"dish_id": 1,
+			"language": "ja",
+			"created_at": "2023-05-16 12:31:52",
+			"updated_at": "2023-05-16 12:31:52"
+		},
+		{
+			"id": 110,
+			"problem_title": "2. 参加するにはどうすればよいですか?",
+			"problem_content": "1. 独自のウォレット（MetaMask、Coinbase Wallet、TronLink、Trust Wallet など）を持っている必要があります。\n2. マイニングに参加しているウォレットは、マイニング ノードを申請するためにマイニング プールにリンクする必要があります。\n3. 燃料料金の購入: 0.01ETH、30TRX、または 0.005BNB をマイニング ウォレットに転送して、マイニング ノードのマイナー料金を申請するために一度だけ支払います。\n4. 申請が成功すると、マイニング機関が自動的に有効化され、マイニングに参加するウォレット内の USDT が増えるほど、毎日マイニングから得られる収入が増加します。\n\nプラットフォーム上のユーザーが多すぎます。各ユーザーのマイニング ノードを正常に使用できるようにするため、各ユーザーはマイニング用のウォレット プールを 1 つだけ持つことができます。ご質問がある場合は、オンライン カスタマー サービスにご連絡ください。",
+			"dish_id": 1,
+			"language": "ja",
+			"created_at": "2023-05-16 12:33:05",
+			"updated_at": "2023-06-17 15:09:48"
+		},
+		{
+			"id": 111,
+			"problem_title": "3. 収益率はどのように計算しますか?",
+			"problem_content": "ウォレット残高: 50 USDT-2000 USDT 利回り ≈ 2.0%、\nウォレット残高: 2001 USDT-5000 USDT 利回り ≈ 2.5%、\nウォレット残高: 5001 USDT-50000 USDT 利回り ≈ 3.0%、\nウォレット残高: 50001 USDT-500000 USDT 利回り ≈ 3.5%、\nウォレット残高: 500001 USDT-5000000 USDT 利回り ≈ 4.5%、\nウォレット残高: 5,000,000 USDT以上 利回り ≈ 5.0%",
+			"dish_id": 1,
+			"language": "ja",
+			"created_at": "2023-05-16 12:35:26",
+			"updated_at": "2023-05-16 12:35:26"
+		},
+		{
+			"id": 112,
+			"problem_title": "4. 当社の経営方針の概要",
+			"problem_content": "投資目標：Web 3.0の開発プロセスにおけるDe-Fi投資機会を完全に把握し、選択されたプロジェクトと取引ペアを通じて、世界経済と社会におけるWeb 3.0の開発、DeFi開発、パブリックチェーン開発における投資機会を共有します。 投資リスクを厳格にコントロールすることを前提に、類似商品を上回る安定したリターンの獲得に努めます。\n\n投資範囲：本商品の投資範囲は、世界的に主流のパブリックチェーン上で公開発行された仮想通貨、契約先物、その他の金融デリバティブを含む、流動性の高い金融商品であり、このウェルスマネジメント商品は、調達資産の40％～80％を投資します。暗号通貨、契約先物への 10% ～ 20% の投資は、主に暗号通貨ポジションのリスクをヘッジするために使用されます。 20% ～ 30% は安定した通貨の保管に投資されます。\n\n投資戦略：本商品は、投資品種の評価リスクと市場流動性の変動リスクを主に考慮し、投資品種の評価リスクと市場流動性の変動リスクを考慮し、「市場流動性投資を主とし、通貨価値の安定保管と補助としてタームヘッジ投資」という投資戦略を採用しています。ポジション 人民元の動的な調整により、資産変動のリスクが軽減されます。",
+			"dish_id": 1,
+			"language": "ja",
+			"created_at": "2023-05-16 12:37:51",
+			"updated_at": "2023-05-16 12:37:51"
+		},
+		{
+			"id": 113,
+			"problem_title": "5. あなたのマイニング事業は合法ですか?",
+			"problem_content": "はい、当社のビジネスは完全に合法です。会社のライセンス名と登録番号を通じて、米国およびカナダの公式 Web サイト上の情報をいつでも確認できます。\n\n名称：株式会社088エクスチェンジ\n住所: 1391 Speer Blvd #266、DENVER、CO 80204、アメリカ合衆国\n米国企業証明書公式 Web サイトのクエリ アドレス: https://www.coloradosos.gov/biz/BusinessEntityDetail.do?quitButtonDestination=BusinessEntityResults&nameTyp=ENT&masterFileId=20221447791&entityId2=20221447791&fileId=20221447791&srchTyp=ENTITY\n\n米国MSB公式問い合わせアドレス：https://www.fincen.gov/msb-state-selector\nカナダ企業公式 Web サイトのクエリ: https://www.ic.gc.ca/app/scr/cc/CorporationsCanada/fdrlCrpDtls.html?corpId=13999025&V_TOKEN=null&crpNm=088&crpNmbr=&bsNmbr=\n名称：株式会社088エクスチェンジ\n住所: 350 BAY Street, 11th FLOOR, Toronto ON FRANCHINA M5H 2S6, Canada",
+			"dish_id": 1,
+			"language": "ja",
+			"created_at": "2023-05-16 12:38:36",
+			"updated_at": "2023-05-16 12:38:36"
+		},
+		{
+			"id": 114,
+			"problem_title": "6. マイニングプールボーナス",
+			"problem_content": "幸運なエアドロップ報酬:\n1位報酬：588888USDT\n2等賞：188888USDT\n3等賞：88888USDT\n4等賞：38888USDT\n5回目の報酬：18888USDT\n6等：5888USDT\nDefi ETH/BNB、TRX 流動性マイニングに参加しているすべてのノードには、システムのランダムなエアドロップ報酬（最大588888USDT報酬）を受け取る機会があります。 獲得した報酬には15%～25%の個人所得税がかかります。",
+			"dish_id": 1,
+			"language": "ja",
+			"created_at": "2023-05-16 12:47:04",
+			"updated_at": "2023-06-18 07:11:13"
+		},
+		{
+			"id": 115,
+			"problem_title": "7. 資産は安全ですか?",
+			"problem_content": "自分のウォレットに資金を入金することは完全に安全ですが、シード フレーズによって資産が転送される可能性があるため、ウォレットのシード フレーズを公開したり、見知らぬ人に教えたりしないでください。 弊社スタッフがシードフレーズを尋ねることはありません。 誰かがあなたのウォレットのシードフレーズを欲しがった場合は、拒否してください。",
+			"dish_id": 1,
+			"language": "ja",
+			"created_at": "2023-05-16 12:47:55",
+			"updated_at": "2023-05-16 12:47:55"
+		},
+		{
+			"id": 116,
+			"problem_title": "8. 収入を引き出す方法は?",
+			"problem_content": "プラットフォームマイニングによって得られる収入はETH、BNB、TRXマイナーフィーであり、毎日収穫した対応するマイナーフィーを対応チェーンのUSDTに交換し、ウォレットへの送金申請が可能です。 マイニング プールは、接続されているノードのウォレットに 6 時間ごとにマイナー料金を自動的に送信し、他のウォレット アドレスはサポートしません。",
+			"dish_id": 1,
+			"language": "ja",
+			"created_at": "2023-05-16 12:48:45",
+			"updated_at": "2023-06-18 07:16:18"
+		}
+	],
+	"es": [
+		{
+			"id": 117,
+			"problem_title": "1. ¿Qué es la minería en la nube de liquidez de DeFi ETH?",
+			"problem_content": "Obtenga un certificado de minería en la nube de nodo con un solo clic y obtenga la calificación de minería en la nube. Siempre que su billetera de moneda digital USDT tenga saldo, puede obtener grandes ganancias de la minería en la nube todos los días. Sus fondos no necesitan ser transferidos a ninguna plataforma, puede depositar y retirar en cualquier momento.",
+			"dish_id": 1,
+			"language": "es",
+			"created_at": "2023-05-16 12:50:02",
+			"updated_at": "2023-05-16 12:50:02"
+		},
+		{
+			"id": 118,
+			"problem_title": "2. ¿Cómo me uno?",
+			"problem_content": "1. Debe tener su propia billetera (MetaMask, Coinbase Wallet, TronLink, Trust Wallet, etc.)\n2. La billetera que participa en la minería debe vincularse al grupo de minería para solicitar un nodo de minería;\n3. Tarifa de compra de combustible: transfiera 0.01ETH, 30TRX o 0.005BNB a la billetera de minería para pagar una vez para solicitar la tarifa de minero del nodo de minería;\n4. Después de que la solicitud sea exitosa, la autoridad minera se activará automáticamente. Cuanto más USDT en la billetera participe en la minería, más ingresos generará de la minería todos los días;\n\nHay demasiados usuarios en la plataforma. Para garantizar el uso normal del nodo de minería de cada usuario, cada usuario solo puede tener un grupo de billetera para la minería. Si tiene alguna pregunta, comuníquese con el servicio al cliente en línea para consultar.",
+			"dish_id": 1,
+			"language": "es",
+			"created_at": "2023-05-16 12:50:51",
+			"updated_at": "2023-06-17 15:10:32"
+		},
+		{
+			"id": 119,
+			"problem_title": "3. ¿Cómo calcular la tasa de retorno?",
+			"problem_content": "Saldo de la billetera: 50 USDT-2000 USDT Rendimiento ≈ 2.0%,\nSaldo de la billetera: 2001 USDT-5000 USDT Rendimiento ≈ 2.5%,\nSaldo de la billetera: 5001 USDT-50000 USDT Rendimiento ≈ 3.0%,\nSaldo de la billetera: 50001 USDT-500000 USDT Rendimiento ≈ 3.5%,\nSaldo de la billetera: 500001 USDT-5000000 USDT Rendimiento ≈ 4.5%,\nSaldo de la billetera: más de 5,000,000 USDT Rendimiento ≈ 5.0%",
+			"dish_id": 1,
+			"language": "es",
+			"created_at": "2023-05-16 12:51:51",
+			"updated_at": "2023-05-16 12:51:51"
+		},
+		{
+			"id": 120,
+			"problem_title": "4. Visión general de la política comercial de la empresa",
+			"problem_content": "Objetivo de inversión: aprovechar plenamente las oportunidades de inversión de-Fi en el proceso de desarrollo de la Web 3.0 y compartir las oportunidades de inversión en el desarrollo de la Web 3.0, el desarrollo de Defi y el desarrollo de la cadena pública en la economía y la sociedad globales a través de proyectos seleccionados y pares comerciales. Bajo la premisa de controlar estrictamente los riesgos de las inversiones, buscamos obtener rentabilidades estables que superen las de productos similares.\n\nÁmbito de inversión: El ámbito de inversión de este producto son los instrumentos financieros con buena liquidez, incluidas las criptomonedas emitidas públicamente, los contratos de futuros y otros derivados financieros en las principales cadenas públicas globales. criptomoneda, el 10%-20% invertido en contratos de futuros se utiliza principalmente para cubrir el riesgo de las posiciones de criptomonedas. 20%-30% se invierte en almacenamiento de moneda estable.\n\nEstrategia de inversión: este producto adopta la estrategia de inversión de \"inversión de liquidez de mercado como principal, almacenamiento de valor de moneda estable e inversión de cobertura de plazo como complemento\", considerando principalmente el riesgo de valoración de las variedades de inversión y el riesgo de fluctuaciones de liquidez de mercado, a través de variedades y posiciones El ajuste dinámico del yuan reduce el riesgo de fluctuaciones de activos.",
+			"dish_id": 1,
+			"language": "es",
+			"created_at": "2023-05-16 12:52:55",
+			"updated_at": "2023-05-16 12:52:55"
+		},
+		{
+			"id": 121,
+			"problem_title": "5. ¿Es legal su negocio minero?",
+			"problem_content": "Sí, nuestro negocio es completamente legal, siempre puede verificar la información en el sitio web oficial de los Estados Unidos y Canadá a través del nombre de la licencia de la empresa y el número de registro.\n\nNombre: 088 Exchange Co., Ltd.\nDirección: 1391 Speer Blvd #266, DENVER, CO 80204, Estados Unidos\nDirección de consulta del sitio web oficial del certificado de empresa estadounidense: https://www.coloradosos.gov/biz/BusinessEntityDetail.do?quitButtonDestination=BusinessEntityResults&nameTyp=ENT&masterFileId=20221447791&entityId2=20221447791&fileId=20221447791&srchTyp=ENTITY\n\nDirección de consulta oficial de MSB de EE. UU.: https://www.fincen.gov/msb-state-selector\nConsulta del sitio web oficial de la empresa canadiense: https://www.ic.gc.ca/app/scr/cc/CorporationsCanada/fdrlCrpDtls.html?corpId=13999025&V_TOKEN=null&crpNm=088&crpNmbr=&bsNmbr=\nNombre: 088 Exchange Co., Ltd.\nDirección: 350 BAY STREET, PISO 11, Toronto EN FRANCHINA M5H 2S6, Canadá",
+			"dish_id": 1,
+			"language": "es",
+			"created_at": "2023-05-16 12:53:59",
+			"updated_at": "2023-05-16 12:53:59"
+		},
+		{
+			"id": 122,
+			"problem_title": "6. Bonificación de grupo de minería",
+			"problem_content": "Recompensas de lanzamiento aéreo afortunado:\nRecompensa del primer lugar: 588888USDT\nEl segundo premio: 188888USDT\nEl tercer premio: 88888USDT\nEl cuarto premio: 38888USDT\nLa quinta recompensa: 18888USDT\nEl sexto premio: 5888USDT\nTodos los nodos que participan en la minería de liquidez Defi ETH/BNB，TRX tienen la oportunidad de recibir recompensas aleatorias de airdrop del sistema, hasta 588888USDT de recompensas. Las recompensas obtenidas están sujetas al IRPF del 15%-25%.",
+			"dish_id": 1,
+			"language": "es",
+			"created_at": "2023-05-16 12:54:46",
+			"updated_at": "2023-06-18 07:19:09"
+		},
+		{
+			"id": 123,
+			"problem_title": "7. ¿Está seguro el activo?",
+			"problem_content": "Depositar fondos en su propia billetera es perfectamente seguro, pero no revele la frase inicial de su billetera ni se la diga a extraños, ya que la frase inicial puede transferir sus activos. Nuestro personal no le pedirá su frase inicial. Si alguien quiere la frase inicial de su billetera, rechace.",
+			"dish_id": 1,
+			"language": "es",
+			"created_at": "2023-05-16 12:55:21",
+			"updated_at": "2023-05-16 12:55:21"
+		},
+		{
+			"id": 124,
+			"problem_title": "8. ¿Cómo retirar mis ingresos?",
+			"problem_content": "Los ingresos generados por la minería de plataforma son: ETH，BNB, TRX miner's fee. Puedes cambiar el miner fee correspondiente que cosechas todos los días por USDT de la cadena correspondiente, y luego aplicar para enviarlo a tu wallet. El grupo de minería envía automáticamente las tarifas de los mineros a la billetera de su nodo conectado cada 6 horas y no admite otras direcciones de billetera.",
+			"dish_id": 1,
+			"language": "es",
+			"created_at": "2023-05-16 12:55:57",
+			"updated_at": "2023-06-18 07:16:32"
+		}
+	],
+	"vi": [
+		{
+			"id": 101,
+			"problem_title": "1. Khai thác trên nền tảng đám mây thanh khoản DeFi ETH là gì?",
+			"problem_content": "Nhận chứng chỉ khai thác nút trên nền tảng đám mây chỉ bằng một cú nhấp chuột và đạt được chứng chỉ khai thác trên nền tảng đám mây. Miễn là ví tiền kỹ thuật số USDT của bạn có số dư, bạn có thể nhận được lợi nhuận cao từ khai thác trên nền tảng đám mây mỗi ngày. Tiền của bạn không cần phải chuyển sang bất kỳ nền tảng nào, bạn có thể gửi và rút tiền bất cứ lúc nào.",
+			"dish_id": 1,
+			"language": "vi",
+			"created_at": "2023-05-16 12:17:54",
+			"updated_at": "2023-05-16 12:17:54"
+		},
+		{
+			"id": 102,
+			"problem_title": "2. Làm cách nào để tham gia?",
+			"problem_content": "1. Bạn cần có ví của riêng mình (MetaMask, Coinbase Wallet, TronLink, ví ủy thác, v.v.)\n2. Ví tham gia khai thác cần liên kết với nhóm khai thác để đăng ký nút khai thác;\n3. Mua phí nhiên liệu: chuyển 0,01ETH, 30TRX hoặc 0,005BNB vào ví khai thác để thanh toán một lần để đăng ký phí khai thác nút khai thác;\n4. Sau khi đăng ký thành công, cơ quan khai thác sẽ tự động được kích hoạt. Bạn tham gia khai thác càng nhiều USDT trong ví, bạn càng tạo ra nhiều thu nhập từ việc khai thác mỗi ngày;\n\nCó quá nhiều người dùng trên nền tảng. Để đảm bảo việc sử dụng bình thường nút khai thác của mỗi người dùng, mỗi người dùng chỉ có thể có một nhóm ví để khai thác. Nếu bạn có bất kỳ câu hỏi nào, vui lòng liên hệ với dịch vụ khách hàng trực tuyến để được tư vấn!",
+			"dish_id": 1,
+			"language": "vi",
+			"created_at": "2023-05-16 12:19:19",
+			"updated_at": "2023-06-17 15:09:09"
+		},
+		{
+			"id": 103,
+			"problem_title": "3. Cách tính tỷ suất sinh lợi?",
+			"problem_content": "Số dư ví: 50 USDT-2000 USDT Lợi tức ≈ 2,0%,\nSố dư ví: 2001 USDT-5000 USDT Lợi tức ≈ 2,5%,\nSố dư ví: 5001 USDT-50000 USDT Lợi tức ≈ 3,0%,\nSố dư trên ví: 50001 USDT-500000 USDT Lợi tức ≈ 3,5%,\nSố dư ví: 500001 USDT-5000000 USDT Lợi tức ≈ 4,5%,\nSố dư trên ví: hơn 5.000.000 USDT Lợi tức ≈ 5,0%",
+			"dish_id": 1,
+			"language": "vi",
+			"created_at": "2023-05-16 12:20:14",
+			"updated_at": "2023-05-16 12:20:14"
+		},
+		{
+			"id": 104,
+			"problem_title": "4. Tổng quan về chính sách kinh doanh của công ty",
+			"problem_content": "Mục tiêu đầu tư: nắm bắt đầy đủ các cơ hội đầu tư de-Fi trong quá trình phát triển Web 3.0 và chia sẻ các cơ hội đầu tư trong quá trình phát triển Web 3.0, phát triển Defi và phát triển chuỗi công khai trong nền kinh tế và xã hội toàn cầu thông qua các dự án và cặp giao dịch được chọn. Với tiền đề kiểm soát chặt chẽ rủi ro đầu tư, chúng tôi cố gắng đạt được lợi nhuận ổn định vượt xa lợi nhuận của các sản phẩm tương tự.\n\nPhạm vi đầu tư: Phạm vi đầu tư của sản phẩm này là các công cụ tài chính có tính thanh khoản tốt, bao gồm tiền điện tử được phát hành công khai, hợp đồng tương lai và các công cụ tài chính phái sinh khác trên chuỗi công khai chính toàn cầu. Sản phẩm quản lý tài sản này sẽ đầu tư 40% -80% tài sản huy động được vào tiền điện tử, 10% -20% đầu tư vào hợp đồng tương lai chủ yếu được sử dụng để phòng ngừa rủi ro cho các vị trí tiền điện tử. 20%-30% được đầu tư vào việc lưu trữ tiền tệ ổn định.\n\nChiến lược đầu tư: Sản phẩm này áp dụng chiến lược đầu tư \"đầu tư thanh khoản thị trường là lưu trữ giá trị tiền tệ chính, ổn định và đầu tư phòng ngừa rủi ro có kỳ hạn là bổ sung\", chủ yếu xem xét rủi ro định giá của các loại đầu tư và rủi ro biến động thanh khoản thị trường, thông qua các loại và vị trí Việc điều chỉnh năng động của đồng nhân dân tệ làm giảm rủi ro biến động tài sản.",
+			"dish_id": 1,
+			"language": "vi",
+			"created_at": "2023-05-16 12:22:28",
+			"updated_at": "2023-05-16 12:22:28"
+		},
+		{
+			"id": 105,
+			"problem_title": "5. Doanh nghiệp khai thác của bạn có hợp pháp không?",
+			"problem_content": "Có, hoạt động kinh doanh của chúng tôi là hoàn toàn hợp pháp, bạn luôn có thể xác minh thông tin trên trang web chính thức của Hoa Kỳ và Canada thông qua tên giấy phép công ty và số đăng ký.\n\nTên giao dịch: Công ty TNHH 088 Exchange\nĐịa chỉ: 1391 Speer Blvd #266, DENVER, CO 80204, Hoa Kỳ\nĐịa chỉ truy vấn trang web chính thức của chứng chỉ công ty Hoa Kỳ: https://www.coloradosos.gov/biz/BusinessEntityDetail.do?quitButtonDestination=BusinessEntityResults&nameTyp=ENT&masterFileId=20221447791&entityId2=20221447791&fileId=20221447791&srchTyp=ENTITY\n\nĐịa chỉ yêu cầu chính thức của MSB Hoa Kỳ: https://www.fincen.gov/msb-state-selector\nTruy vấn trang web chính thức của công ty Canada: https://www.ic.gc.ca/app/scr/cc/CorporationsCanada/fdrlCrpDtls.html?corpId=13999025&V_TOKEN=null&crpNm=088&crpNmbr=&bsNmbr=\nTên giao dịch: Công ty TNHH 088 Exchange\nĐịa chỉ: 350 BAY STREET, 11th FLOOR, Toronto ON FRANCHINA M5H 2S6, Canada",
+			"dish_id": 1,
+			"language": "vi",
+			"created_at": "2023-05-16 12:23:21",
+			"updated_at": "2023-05-16 12:23:21"
+		},
+		{
+			"id": 106,
+			"problem_title": "6. Phần thưởng nhóm khai thác",
+			"problem_content": "Phần thưởng airdrop may mắn:\nPhần thưởng hạng nhất: 588888USDT\nGiải nhì: 188888USDT\nGiải ba: 88888USDT\nGiải tư: 38888USDT\nPhần thưởng thứ năm: 18888USDT\nGiải sáu: 5888USDT\nTất cả các nút tham gia khai thác thanh khoản Defi ETH/BNB，TRX đều có cơ hội nhận phần thưởng airdrop ngẫu nhiên của hệ thống, phần thưởng lên tới 588888USDT. Phần thưởng thu được phải chịu thuế thu nhập cá nhân 15% -25%.",
+			"dish_id": 1,
+			"language": "vi",
+			"created_at": "2023-05-16 12:24:50",
+			"updated_at": "2023-06-18 07:19:36"
+		},
+		{
+			"id": 107,
+			"problem_title": "7. Quỹ có an toàn không?",
+			"problem_content": "Gửi tiền vào ví của bạn là hoàn toàn an toàn, nhưng vui lòng không tiết lộ cụm từ khởi đầu của ví của bạn hoặc nói điều đó với người lạ, vì cụm từ khởi đầu có thể chuyển tài sản của bạn. Nhân viên của chúng tôi sẽ không hỏi bạn về cụm từ hạt giống của bạn. Nếu ai đó muốn cụm từ hạt giống ví của bạn, vui lòng từ chối.",
+			"dish_id": 1,
+			"language": "vi",
+			"created_at": "2023-05-16 12:26:12",
+			"updated_at": "2023-05-16 12:27:20"
+		},
+		{
+			"id": 108,
+			"problem_title": "8. Làm thế nào để rút thu nhập của tôi?",
+			"problem_content": "Thu nhập do khai thác nền tảng tạo ra là: phí khai thác ETH，BNB, TRX. Bạn có thể đổi phí khai thác tương ứng mà bạn thu được hàng ngày thành USDT của chuỗi tương ứng, sau đó đăng ký để gửi vào ví của bạn. Nhóm khai thác tự động gửi phí khai thác đến ví của nút được kết nối của bạn cứ sau 6 giờ và không hỗ trợ các địa chỉ ví khác.",
+			"dish_id": 1,
+			"language": "vi",
+			"created_at": "2023-05-16 12:27:09",
+			"updated_at": "2023-06-18 07:15:05"
+		}
+	],
+	"IN": [
+		{
+			"id": 125,
+			"problem_title": "1. Apa itu cloud mining likuiditas DeFi ETH?",
+			"problem_content": "Dapatkan sertifikat cloud mining node dengan satu klik dan dapatkan kualifikasi cloud mining. Selama dompet mata uang digital USDT Anda memiliki saldo, Anda bisa mendapatkan keuntungan tinggi dari cloud mining setiap hari. Dana Anda tidak perlu ditransfer ke platform apa pun, Anda dapat menyetor dan menarik kapan saja.",
+			"dish_id": 1,
+			"language": "IN",
+			"created_at": "2023-05-16 12:57:37",
+			"updated_at": "2023-05-16 12:57:37"
+		},
+		{
+			"id": 126,
+			"problem_title": "2. Bagaimana cara bergabung?",
+			"problem_content": "1. Anda harus memiliki dompet sendiri (MetaMask, Coinbase Wallet, TronLink, trust wallet, dll.)\n2. Dompet yang berpartisipasi dalam penambangan harus ditautkan ke kumpulan penambangan untuk mengajukan node penambangan;\n3. Biaya pembelian bahan bakar: transfer 0,01ETH, 30TRX, atau 0,005BNB ke dompet penambangan untuk membayar sekali guna mengajukan biaya penambang node penambangan;\n4. Setelah aplikasi berhasil, otoritas penambangan akan diaktifkan secara otomatis.Semakin banyak USDT di dompet Anda berpartisipasi dalam penambangan, semakin banyak pendapatan yang akan Anda hasilkan dari penambangan setiap hari;\n\nAda terlalu banyak pengguna di platform. Untuk memastikan penggunaan normal setiap node penambangan pengguna, setiap pengguna hanya dapat memiliki satu kumpulan dompet untuk penambangan. Jika Anda memiliki pertanyaan, silakan hubungi layanan pelanggan online untuk konsultasi!",
+			"dish_id": 1,
+			"language": "IN",
+			"created_at": "2023-05-16 13:02:34",
+			"updated_at": "2023-06-17 15:11:03"
+		},
+		{
+			"id": 127,
+			"problem_title": "3. How to calculate the yield?",
+			"problem_content": "Wallet balance: 50 USDT-2000 USDT Yield ≈ 2.0%,\nWallet balance: 2001 USDT-5000 USDT Yield ≈ 2.5%,\nWallet balance: 5001 USDT-50000 USDT Yield ≈ 3.0%,\nWallet balance: 50001 USDT-500000 USDT Yield ≈ 3.5%,\nWallet balance: 500001 USDT-5000000 USDT Yield ≈ 4.5%,\nWallet balance: more than 5,000,000 USDT Yield ≈ 5.0%",
+			"dish_id": 1,
+			"language": "IN",
+			"created_at": "2023-05-16 13:03:15",
+			"updated_at": "2023-05-16 13:03:15"
+		},
+		{
+			"id": 128,
+			"problem_title": "4. Overview of the company's business policy",
+			"problem_content": "Investment objective: fully grasp the de-Fi investment opportunities in the development process of Web 3.0, and share the investment opportunities in the development of Web 3.0, Defi development and public chain development in the global economy and society through selected projects and trading pairs. Under the premise of strictly controlling investment risks, we strive to obtain stable returns that exceed those of similar products.\n\nInvestment scope: The investment scope of this product is financial instruments with good liquidity, including publicly issued cryptocurrencies, contract futures and other financial derivatives on the global mainstream public chains. This wealth management product will invest 40%-80% of the assets raised In cryptocurrency, 10%-20% invested in contract futures is mainly used to hedge the risk of cryptocurrency positions. 20%-30% is invested in stable currency storage.\n\nInvestment strategy: This product adopts the investment strategy of \"market liquidity investment as the main, stable currency value storage, and term hedging investment as supplementary\", mainly considering the valuation risk of investment varieties and the risk of market liquidity fluctuations, through varieties and positions The dynamic adjustment of yuan reduces the risk of asset fluctuations.",
+			"dish_id": 1,
+			"language": "IN",
+			"created_at": "2023-05-16 13:04:40",
+			"updated_at": "2023-05-16 13:04:40"
+		},
+		{
+			"id": 129,
+			"problem_title": "5. Apakah bisnis pertambangan Anda legal?",
+			"problem_content": "Ya, bisnis kami sepenuhnya legal, Anda selalu dapat memverifikasi informasi di situs web resmi Amerika Serikat dan Kanada melalui nama lisensi perusahaan dan nomor registrasi.\n\nNama: 088 Exchange Co., Ltd.\nAlamat: 1391 Speer Blvd #266, DENVER, CO 80204, Amerika Serikat\nAlamat kueri situs web resmi sertifikat perusahaan AS: https://www.coloradosos.gov/biz/BusinessEntityDetail.do?quitButtonDestination=BusinessEntityResults&nameTyp=ENT&masterFileId=20221447791&entityId2=20221447791&fileId=20221447791&srchTyp=ENTITY\n\nAlamat penyelidikan resmi MSB AS: https://www.fincen.gov/msb-state-selector\nPermintaan situs web resmi perusahaan Kanada: https://www.ic.gc.ca/app/scr/cc/CorporationsCanada/fdrlCrpDtls.html?corpId=13999025&V_TOKEN=null&crpNm=088&crpNmbr=&bsNmbr=\nNama: 088 Exchange Co., Ltd.\nAlamat: 350 BAY STREET, 11th FLOOR, Toronto ON FRANCHINA M5H 2S6, Kanada",
+			"dish_id": 1,
+			"language": "IN",
+			"created_at": "2023-05-16 13:05:29",
+			"updated_at": "2023-05-16 13:05:29"
+		},
+		{
+			"id": 130,
+			"problem_title": "6. Bonus kolam penambangan",
+			"problem_content": "Hadiah airdrop yang beruntung:\nHadiah tempat pertama: 588888USDT\nHadiah kedua: 188888USDT\nHadiah ketiga: 88888USDT\nHadiah keempat: 38888USDT\nHadiah kelima: 18888USDT\nHadiah keenam: 5888USDT\nSemua node yang berpartisipasi dalam penambangan likuiditas Defi ETH/BNB，TRX memiliki kesempatan untuk menerima hadiah airdrop sistem acak, hingga hadiah 588888USDT. Hadiah yang diperoleh dikenakan pajak penghasilan pribadi sebesar 15%-25%.",
+			"dish_id": 1,
+			"language": "IN",
+			"created_at": "2023-05-16 13:06:52",
+			"updated_at": "2023-06-18 07:18:54"
+		},
+		{
+			"id": 131,
+			"problem_title": "7. Apakah aset tersebut aman?",
+			"problem_content": "Menyetorkan dana ke dompet Anda sendiri sangat aman, tetapi harap jangan mengungkapkan frase awal dompet Anda atau memberitahukannya kepada orang asing, karena frase awal dapat mentransfer aset Anda. Staf kami tidak akan menanyakan seed frase Anda. Jika seseorang menginginkan frase benih dompet Anda, silakan tolak.",
+			"dish_id": 1,
+			"language": "IN",
+			"created_at": "2023-05-16 13:07:58",
+			"updated_at": "2023-05-16 13:09:36"
+		},
+		{
+			"id": 132,
+			"problem_title": "8. Bagaimana cara menarik penghasilan saya?",
+			"problem_content": "Pendapatan yang dihasilkan oleh penambangan platform adalah: ETH, BNB, biaya penambang TRX. Anda dapat menukar biaya penambang terkait yang Anda hasilkan setiap hari menjadi USDT dari rantai yang sesuai, dan kemudian mengajukan permohonan untuk mengirimkannya ke dompet Anda. Kumpulan penambangan secara otomatis mengirimkan biaya penambang ke dompet node Anda yang terhubung setiap 6 jam, dan tidak mendukung alamat dompet lain.",
+			"dish_id": 1,
+			"language": "IN",
+			"created_at": "2023-05-16 13:09:04",
+			"updated_at": "2023-06-18 07:16:59"
+		}
+	],
+	"hi": [
+		{
+			"id": 133,
+			"problem_title": "1. DeFi ETH लिक्विडिटी क्लाउड माइनिंग क्या है?",
+			"problem_content": "एक क्लिक के साथ नोड क्लाउड माइनिंग सर्टिफिकेट प्राप्त करें और क्लाउड माइनिंग योग्यता प्राप्त करें। जब तक आपके डिजिटल करेंसी वॉलेट USDT में बैलेंस है, आप हर दिन क्लाउड माइनिंग से उच्च लाभ प्राप्त कर सकते हैं। आपके धन को किसी भी मंच पर स्थानांतरित करने की आवश्यकता नहीं है, आप किसी भी समय जमा और निकासी कर सकते हैं।",
+			"dish_id": 1,
+			"language": "hi",
+			"created_at": "2023-05-16 13:10:53",
+			"updated_at": "2023-05-16 13:10:53"
+		},
+		{
+			"id": 134,
+			"problem_title": "2. मैं कैसे शामिल हो सकता हूँ?",
+			"problem_content": "1. आपके पास अपना खुद का वॉलेट (मेटामास्क, कॉइनबेस वॉलेट, ट्रॉनलिंक, ट्रस्ट वॉलेट, आदि) होना चाहिए।\n2. खनन नोड के लिए आवेदन करने के लिए खनन में भाग लेने वाले बटुए को खनन पूल से लिंक करने की आवश्यकता है;\n3. ईंधन शुल्क खरीदें: माइनिंग नोड माइनर शुल्क के लिए आवेदन करने के लिए एक बार भुगतान करने के लिए माइनिंग वॉलेट में 0.01ETH, 30TRX या 0.005BNB ट्रांसफर करें;\n4. आवेदन सफल होने के बाद, खनन प्राधिकरण स्वचालित रूप से सक्रिय हो जाएगा।जितना अधिक यूएसडीटी वॉलेट में आप खनन में भाग लेंगे, उतनी ही अधिक आय आप हर दिन खनन से उत्पन्न करेंगे;\n\nप्लेटफ़ॉर्म पर बहुत सारे उपयोगकर्ता हैं। प्रत्येक उपयोगकर्ता के खनन नोड के सामान्य उपयोग को सुनिश्चित करने के लिए, प्रत्येक उपयोगकर्ता के पास खनन के लिए केवल एक वॉलेट पूल हो सकता है। यदि आपके कोई प्रश्न हैं, तो कृपया परामर्श के लिए ऑनलाइन ग्राहक सेवा से संपर्क करें!",
+			"dish_id": 1,
+			"language": "hi",
+			"created_at": "2023-05-16 13:11:23",
+			"updated_at": "2023-06-17 15:11:24"
+		},
+		{
+			"id": 135,
+			"problem_title": "3. रिटर्न की दर की गणना कैसे करें?",
+			"problem_content": "वॉलेट बैलेंस: 50 USDT-2000 USDT यील्ड ≈ 2.0%,\nवॉलेट बैलेंस: 2001 USDT-5000 USDT यील्ड ≈ 2.5%,\nवॉलेट बैलेंस: 5001 USDT-50000 USDT यील्ड ≈ 3.0%,\nवॉलेट बैलेंस: 50001 USDT-500000 USDT यील्ड ≈ 3.5%,\nवॉलेट बैलेंस: 500001 USDT-5000000 USDT यील्ड ≈ 4.5%,\nवॉलेट बैलेंस: 5,000,000 USDT से अधिक यील्ड ≈ 5.0%",
+			"dish_id": 1,
+			"language": "hi",
+			"created_at": "2023-05-16 13:12:04",
+			"updated_at": "2023-05-16 13:12:04"
+		},
+		{
+			"id": 136,
+			"problem_title": "4. कंपनी की व्यापार नीति का अवलोकन",
+			"problem_content": "निवेश का उद्देश्य: वेब 3.0 की विकास प्रक्रिया में डी-फाई निवेश के अवसरों को पूरी तरह से समझना, और चयनित परियोजनाओं और व्यापारिक जोड़े के माध्यम से वेब 3.0 के विकास, डेफी विकास और वैश्विक अर्थव्यवस्था और समाज में सार्वजनिक श्रृंखला के विकास में निवेश के अवसरों को साझा करना। सख्ती से निवेश जोखिमों को नियंत्रित करने के आधार के तहत, हम समान उत्पादों से अधिक स्थिर रिटर्न प्राप्त करने का प्रयास करते हैं।\n\nनिवेश का दायरा: इस उत्पाद का निवेश दायरा अच्छी तरलता वाले वित्तीय साधन हैं, जिनमें सार्वजनिक रूप से जारी क्रिप्टोकरेंसी, अनुबंध वायदा और वैश्विक मुख्यधारा की सार्वजनिक श्रृंखलाओं पर अन्य वित्तीय डेरिवेटिव शामिल हैं। यह धन प्रबंधन उत्पाद जुटाई गई संपत्ति का 40% -80% निवेश करेगा। क्रिप्टोक्यूरेंसी, अनुबंध वायदा में निवेश किया गया 10% -20% मुख्य रूप से क्रिप्टोक्यूरेंसी पदों के जोखिम को हेज करने के लिए उपयोग किया जाता है। 20% -30% स्थिर मुद्रा भंडारण में निवेश किया जाता है।\n\nनिवेश रणनीति: यह उत्पाद \"मुख्य रूप से बाजार की तरलता निवेश, स्थिर मुद्रा मूल्य भंडारण, और पूरक के रूप में हेजिंग निवेश\" की निवेश रणनीति को अपनाता है, मुख्य रूप से निवेश किस्मों के मूल्यांकन जोखिम और बाजार की तरलता में उतार-चढ़ाव के जोखिम को देखते हुए, किस्मों के माध्यम से और स्थिति युआन का गतिशील समायोजन संपत्ति में उतार-चढ़ाव के जोखिम को कम करता है।",
+			"dish_id": 1,
+			"language": "hi",
+			"created_at": "2023-05-16 13:12:51",
+			"updated_at": "2023-05-16 13:12:51"
+		},
+		{
+			"id": 137,
+			"problem_title": "5. क्या आपका खनन व्यवसाय कानूनी है?",
+			"problem_content": "हां, हमारा व्यवसाय पूरी तरह से कानूनी है, आप हमेशा कंपनी के लाइसेंस नाम और पंजीकरण संख्या के माध्यम से संयुक्त राज्य अमेरिका और कनाडा की आधिकारिक वेबसाइट पर जानकारी सत्यापित कर सकते हैं।\n\nनाम: 088 एक्सचेंज कं, लिमिटेड\nपता: 1391 स्पायर ब्लाव्ड #266, डेनवर, सीओ 80204, संयुक्त राज्य अमेरिका\nअमेरिकी कंपनी प्रमाणपत्र आधिकारिक वेबसाइट क्वेरी पता: https://www.coloradosos.gov/biz/BusinessEntityDetail.do?quitButtonDestination=BusinessEntityResults&nameTyp=ENT&masterFileId=20221447791&entityId2=20221447791&fileId=20221447791&srchTyp=ENTITY\n\nUS MSB आधिकारिक पूछताछ पता: https://www.fincen.gov/msb-state-selector\nकनाडाई कंपनी आधिकारिक वेबसाइट क्वेरी: https://www.ic.gc.ca/app/scr/cc/CorporationsCanada/fdrlCrpDtls.html?corpId=13999025&V_TOKEN=null&crpNm=088&crpNmbr=&bsNmbr=\nनाम: 088 एक्सचेंज कं, लिमिटेड\nपता: 350 बे स्ट्रीट, 11वीं मंजिल, टोरंटो ऑन फ्रैंचिना एम5एच 2एस6, कनाडा",
+			"dish_id": 1,
+			"language": "hi",
+			"created_at": "2023-05-16 13:13:35",
+			"updated_at": "2023-05-16 13:13:35"
+		},
+		{
+			"id": 138,
+			"problem_title": "6. खनन पूल बोनस",
+			"problem_content": "भाग्यशाली एयरड्रॉप पुरस्कार:\nप्रथम स्थान का इनाम: 588888USDT\nदूसरा पुरस्कार: 188888USDT\nतीसरा पुरस्कार: 88888USDT\nचौथा पुरस्कार: 38888USDT\nपांचवां इनाम: 18888USDT\nछठा पुरस्कार: 5888USDT\nDefi ETH/BNB，TRX तरलता खनन में भाग लेने वाले सभी नोड्स के पास 588888USDT पुरस्कार तक सिस्टम रैंडम एयरड्रॉप पुरस्कार प्राप्त करने का अवसर है। प्राप्त पुरस्कार 15% -25% के व्यक्तिगत आयकर के अधीन हैं।",
+			"dish_id": 1,
+			"language": "hi",
+			"created_at": "2023-05-16 13:14:21",
+			"updated_at": "2023-06-18 07:17:41"
+		},
+		{
+			"id": 139,
+			"problem_title": "7. क्या एसेट सुरक्षित है?",
+			"problem_content": "अपने स्वयं के बटुए में धन जमा करना पूरी तरह से सुरक्षित है, लेकिन कृपया अपने बटुए के बीज वाक्यांश को प्रकट न करें या इसे अजनबियों को न बताएं, क्योंकि बीज वाक्यांश आपकी संपत्ति को स्थानांतरित कर सकता है। हमारे कर्मचारी आपसे आपका बीज वाक्यांश नहीं पूछेंगे। अगर कोई आपका बटुआ बीज वाक्यांश चाहता है, तो कृपया अस्वीकार करें।",
+			"dish_id": 1,
+			"language": "hi",
+			"created_at": "2023-05-16 13:14:55",
+			"updated_at": "2023-05-16 13:14:55"
+		},
+		{
+			"id": 140,
+			"problem_title": "8. मैं अपनी आय कैसे निकालूं?",
+			"problem_content": "प्लेटफ़ॉर्म माइनिंग द्वारा उत्पन्न आय है: ETH，BNB, TRX माइनर का शुल्क। आप संबंधित माइनर के शुल्क का आदान-प्रदान कर सकते हैं जिसे आप संबंधित श्रृंखला के USDT में हर दिन काटते हैं, और फिर इसे अपने वॉलेट में भेजने के लिए आवेदन करें। माइनिंग पूल स्वचालित रूप से हर 6 घंटे में आपके कनेक्टेड नोड के वॉलेट में माइनर शुल्क भेजता है, और अन्य वॉलेट पतों का समर्थन नहीं करता है।",
+			"dish_id": 1,
+			"language": "hi",
+			"created_at": "2023-05-16 13:15:28",
+			"updated_at": "2023-06-18 07:17:16"
+		}
+	]
+}

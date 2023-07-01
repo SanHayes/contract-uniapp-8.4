@@ -106,7 +106,7 @@
 				this.value = index
 				this.$i18n.locale = langObj.lang
 				uni.setLocale(langObj.lang)
-				this.$emit('change')
+				this.$emit('change', langObj.lang)
 			},
       goNotification() {
         uni.navigateTo({
