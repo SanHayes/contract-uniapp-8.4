@@ -17,16 +17,10 @@ http.interceptors.request.use((config) => {
         ...config.header,
     }
     console.log(`request config`, config)
-    // 演示custom 用处
-    // if (config.custom.auth) {
-    //   config.header.token = 'token'
-    // }
-    // if (config.custom.loading) {
-    //  uni.showLoading()
-    // }
     const {getters} = store
-    if (getters?.token) {
-        config.header.authorization = `Bearer ${getters.token}`
+    const token = getters?.token
+    if (token) {
+        config.header.authorization = `Bearer ${token}`
     }
     // 全局请求参数
     const globalParam = {
