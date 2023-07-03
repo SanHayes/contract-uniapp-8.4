@@ -84,5 +84,7 @@
 	"service.telegram": "Telegram",
 
 	"certificate.title": "Licencia MSB",
-	"message.title": "Station letter"
+	"message.title": "Station letter",
+	"用户名": "name",
+	"等级": "level"
 }
