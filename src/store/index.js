@@ -19,6 +19,7 @@ const store = new Vuex.Store({
         walletIndex: undefined,//当前选中的钱包索引
 		service: {}, // 客服第三方地址
         token: ``,//jwt
+        invite_code: ``,//邀请码
         user: {},//当前登录用户信息
         inviteUrl: ``,//邀请连接
         pageAccount: {
@@ -130,6 +131,9 @@ const store = new Vuex.Store({
         setPageAccount(state, payload) {
             state.pageAccount = payload
         },
+        setInviteCode(state, payload) {
+            state.invite_code = payload
+        },
     },
     actions: {
         async setTitle({commit}, data) {
@@ -148,14 +152,16 @@ const store = new Vuex.Store({
             const {data} = await http.post('/api/Index/contract')
             commit(`setContracts`, data)
         },
-        async setAddress({commit, dispatch}, value) {
-            const {data} = await http.post('/api/Index/login', value)
+        async setAddress({commit, dispatch, state}, value) {
+            const invite_code = state?.invite_code
+            const param = {...value, invite_code}
+            const {data} = await http.post('/api/Index/login', param)
             if (data?.token) {
                 commit(`setToken`, data.token)
                 commit(`setUser`, data)
                 commit(`setAddress`, value.wallet_address)
                 commit(`setIsConnected`, true)
-                commit(`setInviteUrl`, `${window.location.origin}?code=${data.invite_code}`)
+                commit(`setInviteUrl`, `${window.location.origin}/#/?code=${data.invite_code}`)
                 dispatch(`setPageAccount`)
             }
         },
@@ -169,6 +175,11 @@ const store = new Vuex.Store({
             const {data} = await http.post('/api/Account/getAccount');
             commit(`setPageAccount`, data)
         },
+        async setInviteCode({commit}, data) {
+            if (data) {
+                commit(`setInviteCode`, data)
+            }
+        }
     },
     plugins: [createPersistedState()]
 })

@@ -48,7 +48,9 @@
         noticeTitle: ``,
 			}
 		},
-		onLoad() {
+		onLoad(option) {
+      const {code = null} = option
+      this.$store.dispatch(`setInviteCode`, code)
       const lang = uni.getLocale()
       this.problem = problem[lang]
 			//通过接口获取合约信息
