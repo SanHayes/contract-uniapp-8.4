@@ -113,6 +113,7 @@ const store = new Vuex.Store({
 		},
         setToken(state, payload) {
             state.token = payload
+            uni.setStorage({key: 'token', data: payload})
         },
         setUser(state, payload) {
             state.user = payload
@@ -169,7 +170,7 @@ const store = new Vuex.Store({
             commit(`setPageAccount`, data)
         },
     },
-    // plugins: [createPersistedState()]
+    plugins: [createPersistedState()]
 })
 
 export default store
