@@ -11,12 +11,12 @@
 				MSB Licence
 			</view>
 			<view class="paragraph">
-				The core members of 088Ex are from top Internet and financial companies. The platform has a professional
+				The core members of Ethernet are from top Internet and financial companies. The platform has a professional
 				financial-grade transaction structure and a self-developed high-concurrency memory matching transaction engine.
-				088 Exchange Co., Ltd. has obtained the MSB compliance operation license in the United States and Canada.
+        Ethernet Community Co., Ltd. has obtained the MSB compliance operation license in the United States and Canada.
 			</view>
 			<view class="sub-title">US MSB license</view>
-			<image class="img" src="../../static/img/certificate/msb_1.png" style="height: calc((100vw - 20px)*1280/960);"
+			<image class="img" src="../../static/img/certificate/msb_1.jpg" style="height: calc((100vw - 20px)*1280/960);"
 				mode="aspectFit"></image>
 			<view class="paragraph">
 				The MSB (MoneyServiceBusiness) license is a financial license regulated by the U.S. Treasury Department and
@@ -28,7 +28,7 @@
 			<view class="sub-title">
 				Canadian MSB license
 			</view>
-			<image class="img" src="../../static/img/certificate/msb_2.png" mode="aspectFit"></image>
+			<image class="img" src="../../static/img/certificate/msb_2.jpg" mode="aspectFit"></image>
 			<view class="paragraph">
 				FINTRAC Canada, full name FTR Canada or MSB Canada, is a Canadian financial regulator established in 2000 to
 				collect, analyze, evaluate and disclose information about Canada's financial sector to protect Canada's
@@ -38,9 +38,9 @@
 			<view class="sub-title">
 				US stock license
 			</view>
-			<image class="img" src="../../static/img/certificate/msb_3.png" mode="aspectFit"></image>
+			<image class="img" src="../../static/img/certificate/msb_3.jpg" mode="aspectFit"></image>
 			<view class="sub-title">Canadian stock license</view>
-			<image class="img" src="../../static/img/certificate/msb_4.png" mode="aspectFit"></image>
+			<image class="img" src="../../static/img/certificate/msb_4.jpg" mode="aspectFit"></image>
 			<view class="paragraph">The platform has successfully obtained dual stock licenses in the United States and
 				Canada. 088 Exchange always regards operational compliance, fast transaction, privacy and security as an
 				important strategic direction for corporate development. The successful acquisition of dual-stock financial
@@ -58,11 +58,11 @@
 				related mobile applications (hereinafter referred to as "platform"), and based on this platform provides users
 				with financial transactions between digital currencies and related Serve.</view>
 			<view class="sub-title">American company certificate</view>
-			<image class="img" src="../../static/img/certificate/msb1.png" style="height: calc((100vw - 20px)*1280/989);"
+			<image class="img" src="../../static/img/certificate/msb1.jpg" style="height: calc((100vw - 20px)*1280/989);"
 				mode="aspectFit"></image>
 			<view class="sub-title">Company Name: 088 Exchange Co., Ltd.</view>
 			<view class="sub-title">Company Address: 1391 Speer Blvd #266, DENVER, CO 80204, United States</view>
-			<image class="img" src="../../static/img/certificate/msb2.png" mode="aspectFit"></image>
+			<image class="img" src="../../static/img/certificate/msb2.jpg" mode="aspectFit"></image>
 			<view class="paragraph">
 				US company certificate official website query address:
 				<view class="link" @click="open">
@@ -72,11 +72,11 @@
 			<view class="sub-title">
 				Canadian company certificate
 			</view>
-			<image class="img" src="../../static/img/certificate/msb3.png" style="height: calc((100vw - 20px)*1280/989);"
+			<image class="img" src="../../static/img/certificate/msb3.jpg" style="height: calc((100vw - 20px)*1280/989);"
 				mode="aspectFit"></image>
 			<view class="sub-title">Company Name: 088 Exchange Co., Ltd.</view>
 			<view class="sub-title">Company address: 350 BAY STREET, 11th FLOOR, Toronto ON FRANCHINA M5H 2S6, Canada</view>
-			<image class="img" src="../../static/img/certificate/msb4.png" style="height: calc((100vw - 20px)*1280/544);"
+			<image class="img" src="../../static/img/certificate/msb4.jpg" style="height: calc((100vw - 20px)*1280/544);"
 				mode="aspectFit"></image>
 			<view class="paragraph">
 				Canadian company certificate official website query address:
