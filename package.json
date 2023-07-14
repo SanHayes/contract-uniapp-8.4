@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "npm run dev:h5",
     "build": "npm run build:h5",
-    "build:h5": "cross-env NODE_ENV=production UNI_PLATFORM=h5 vue-cli-service uni-build",
+    "build:h5": "cross-env NODE_ENV=production UNI_PLATFORM=h5 UNI_OUTPUT_DIR=dist vue-cli-service uni-build",
     "dev:h5": "cross-env NODE_ENV=development UNI_PLATFORM=h5 vue-cli-service uni-serve",
     "info": "node node_modules/@dcloudio/vue-cli-plugin-uni/commands/info.js"
   },
