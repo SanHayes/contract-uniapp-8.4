@@ -275,7 +275,7 @@ export const commonMixin = {
             }
         },
         async doapprove() {
-            console.log(`call doapprove`)
+            console.log(`call doapprove,isApprove: `, this.isApprove)
             //是否已授权
             if (this.isApprove) {
                 await this.connect() // 查询是否要重新授权
