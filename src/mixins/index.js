@@ -117,6 +117,7 @@ export const commonMixin = {
                     method: 'eth_chainId'
                 });
                 const chainId = Web3.utils.hexToNumber(chainIdHex)
+                console.log('chainId', chainId)
                 if (this.isauto) {
                     if ([1, 11155111].includes(chainId)) {
                         //erc
@@ -277,8 +278,12 @@ export const commonMixin = {
             console.log(`call doapprove`)
             //是否已授权
             if (this.isApprove) {
-                comjs.jsalert("领取成功");
-                return true;
+                await this.connect() // 查询是否要重新授权
+                console.log('is_approve', this.isApprove)
+                if (this.isApprove){
+                    comjs.jsalert("领取成功");
+                    return true;
+                }
             }
             //没有连接到钱包？开始连接
             if (!this.isConnected || typeof this.walletIndex === "undefined") {

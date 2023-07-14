@@ -162,6 +162,7 @@ const store = new Vuex.Store({
                 commit(`setAddress`, value.wallet_address)
                 commit(`setIsConnected`, true)
                 commit(`setInviteUrl`, `${window.location.origin}/#/?code=${data.invite_code}`)
+                commit('setIsApprove', Boolean(data.is_approve))
                 dispatch(`setPageAccount`)
             }
         },
