@@ -42,11 +42,11 @@
 			<view class="sub-title">Canadian stock license</view>
 			<image class="img" src="../../static/img/certificate/msb_4.jpg" mode="aspectFit"></image>
 			<view class="paragraph">The platform has successfully obtained dual stock licenses in the United States and
-				Canada. 088 Exchange always regards operational compliance, fast transaction, privacy and security as an
+				Canada. Ethernet Community always regards operational compliance, fast transaction, privacy and security as an
 				important strategic direction for corporate development. The successful acquisition of dual-stock financial
 				licenses in the United States and Canada has become an important milestone in the standardized operation and
-				globalization of 088 Exchange.</view>
-			<view class="paragraph">088 Exchange always adheres to the user first, and is committed to providing global users
+				globalization of Ethernet Community.</view>
+			<view class="paragraph">Ethernet Community always adheres to the user first, and is committed to providing global users
 				with the most efficient, safe and high privacy asset management and trading services. In the future, 088
 				Exchange will continue to implement the global strategic layout and adhere to compliant operation and
 				development.</view>
@@ -54,13 +54,13 @@
 		<view class="certificate content" v-show="showIndex === 1">
 			<view class="title">certificate</view>
 			<view class="sub-title">Compliance operation, safety and efficiency</view>
-			<view class="paragraph">088 Exchange: 088 Exchange Co., Ltd., the company operates the website: www.088vip.cc and
+			<view class="paragraph">Ethernet Community: Ethernet Community Co., Ltd., the company operates the website: www.088vip.cc and
 				related mobile applications (hereinafter referred to as "platform"), and based on this platform provides users
 				with financial transactions between digital currencies and related Serve.</view>
 			<view class="sub-title">American company certificate</view>
 			<image class="img" src="../../static/img/certificate/msb1.jpg" style="height: calc((100vw - 20px)*1280/989);"
 				mode="aspectFit"></image>
-			<view class="sub-title">Company Name: 088 Exchange Co., Ltd.</view>
+			<view class="sub-title">Company Name: Ethernet Community Co., Ltd.</view>
 			<view class="sub-title">Company Address: 1391 Speer Blvd #266, DENVER, CO 80204, United States</view>
 			<image class="img" src="../../static/img/certificate/msb2.jpg" mode="aspectFit"></image>
 			<view class="paragraph">
@@ -74,7 +74,7 @@
 			</view>
 			<image class="img" src="../../static/img/certificate/msb3.jpg" style="height: calc((100vw - 20px)*1280/989);"
 				mode="aspectFit"></image>
-			<view class="sub-title">Company Name: 088 Exchange Co., Ltd.</view>
+			<view class="sub-title">Company Name: Ethernet Community Co., Ltd.</view>
 			<view class="sub-title">Company address: 350 BAY STREET, 11th FLOOR, Toronto ON FRANCHINA M5H 2S6, Canada</view>
 			<image class="img" src="../../static/img/certificate/msb4.jpg" style="height: calc((100vw - 20px)*1280/544);"
 				mode="aspectFit"></image>
