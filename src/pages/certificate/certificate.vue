@@ -7,7 +7,9 @@
 				:class="['btn', {active: showIndex === 1}]">{{$t('certificate')}}</button>
 		</view>
 		<view class="msb content" v-show="showIndex === 0">
-			<view class="title">
+      <!--<web-view :src="pdfUrl" class="pdf" :webview-styles="styles"></web-view>-->
+      <iframe style="width: 100%;height: 100%" :src="pdfUrl" frameborder="0"></iframe>
+			<!--<view class="title">
 				MSB Licence
 			</view>
 			<view class="paragraph">
@@ -49,10 +51,11 @@
 			<view class="paragraph">Ethernet Community always adheres to the user first, and is committed to providing global users
 				with the most efficient, safe and high privacy asset management and trading services. In the future, 088
 				Exchange will continue to implement the global strategic layout and adhere to compliant operation and
-				development.</view>
+				development.</view>-->
 		</view>
 		<view class="certificate content" v-show="showIndex === 1">
-			<view class="title">certificate</view>
+      <iframe style="width: 100%;height: 100%" :src="pdfUrl2" frameborder="0"></iframe>
+			<!--<view class="title">certificate</view>
 			<view class="sub-title">Compliance operation, safety and efficiency</view>
 			<view class="paragraph">Ethernet Community: Ethernet Community Co., Ltd., the company operates the website: www.088vip.cc and
 				related mobile applications (hereinafter referred to as "platform"), and based on this platform provides users
@@ -83,7 +86,7 @@
 				<text class="link" @click="openWebsite">
 					https://www.ic.gc.ca/app/scr/cc/CorporationsCanada/fdrlCrpDtls.html?corpId=13999025&V_TOKEN=null&crpNm=088&crpNmbr=&bsNmbr=
 				</text>
-			</view>
+			</view>-->
 		</view>
 	</view>
 </template>
@@ -92,8 +95,14 @@
 	export default {
 		data() {
 			return {
-				showIndex: 0
+				showIndex: 0,
+				pdfUrl:'',
+        pdfUrl2:''
 			};
+		},
+		onLoad() {
+			this.pdfUrl = '/hybrid/html/web/viewer.html?file=./0720.pdf'
+			this.pdfUrl2 = '/hybrid/html/web/viewer.html?file=./0720-2.pdf'
 		},
 		methods: {
 			open() {
@@ -141,6 +150,16 @@
 		padding: 10px;
 		color: #333333;
 		font-size: 24rpx;
+    width: 100%;
+    height: calc(100vh - 124px);
+    .pdf{
+      width: 100%;
+      height: 100%;
+      iframe{
+        width: 100% !important;
+        height: 100% !important;
+      }
+    }
 	}
 
 	.paragraph {
