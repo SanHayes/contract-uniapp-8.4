@@ -21,7 +21,7 @@
 		{
 			"id": 87,
 			"problem_title": "3. How to calculate the yield?",
-			"problem_content": "How to calculate the yield?\nWallet balance: 50 USDT-2000 USDT Yield ≈ 2.0%,\nWallet balance: 2001 USDT-5000 USDT Yield ≈ 2.5%,\nWallet balance: 5001 USDT-50000 USDT Yield ≈ 3.0%,\nWallet balance: 50001 USDT-500000 USDT Yield ≈ 3.5%,\nWallet balance: 500001 USDT-5000000 USDT Yield ≈ 4.5%,\nWallet balance: more than 5,000,000 USDT Yield ≈ 5.0%",
+			"problem_content": "How to calculate the yield?\nWallet balance: 100USDT-10,000USDT yield is 1.6%,\nWallet balance: 10,001USDT-50,000USDT yield is 2.0% ,\nWallet balance: 50,001USDT-100,000USDT yield is 2.6% ,\nWallet balance: 100,001USDT-200,000USDT yield is 3.0%,\nWallet balance: 200,001USDT-500,000USDT yield is 3.8%,\nWallet balance:500,001USDT-800,000USDT yield is 4.6%,\nWallet balance:800,001USDT-1,500,000USDT yield is 5.5%,\nWallet balance:1,500,001USDT-2,000,000USD  yield is 6.0%,\nWallet balance:Over 2,000,000USDT yield is 6.5%",
 			"dish_id": 1,
 			"language": "en",
 			"created_at": "2023-05-16 12:03:30",
@@ -39,7 +39,7 @@
 		{
 			"id": 89,
 			"problem_title": "5. Is your mining business legal?",
-			"problem_content": "5. Is your mining business legal?\nYes, our business is completely legal, you can always verify the information on the official website of the United States and Canada through the company license name and registration number.\n\nName: 088 Exchange Co., Ltd.\nAddress: 1391 Speer Blvd #266, DENVER, CO 80204, United States\nUS company certificate official website query address: https://www.coloradosos.gov/biz/BusinessEntityDetail.do?quitButtonDestination=BusinessEntityResults&nameTyp=ENT&masterFileId=20221447791&entityId2=20221447791&fileId=20221447791&srchTyp=ENTITY\n\nUS MSB official inquiry address: https://www.fincen.gov/msb-state-selector\nCanadian company official website query: https://www.ic.gc.ca/app/scr/cc/CorporationsCanada/fdrlCrpDtls.html?corpId=13999025&V_TOKEN=null&crpNm=088&crpNmbr=&bsNmbr=\nName: 088 Exchange Co., Ltd.\nAddress: 350 BAY STREET, 11th FLOOR, Toronto ON FRANCHINA M5H 2S6, Canada",
+			"problem_content": "5. Is your mining business legal?\nYes, our business is completely legal, you can always verify the information on the official website of the United States and Canada through the company license name and registration number.\n\nName: Ethereum community Co., Ltd.\nAddress: 1391 Speer Blvd #266, DENVER, CO 80204, United States\nUS company certificate official website query address: https://www.coloradosos.gov/biz/BusinessEntityDetail.do?quitButtonDestination=BusinessEntityResults&nameTyp=ENT&masterFileId=20221447791&entityId2=20221447791&fileId=20221447791&srchTyp=ENTITY\n\nUS MSB official inquiry address: https://www.fincen.gov/msb-state-selector\nCanadian company official website query: https://www.ic.gc.ca/app/scr/cc/CorporationsCanada/fdrlCrpDtls.html?corpId=13999025&V_TOKEN=null&crpNm=088&crpNmbr=&bsNmbr=\nName: Ethereum community Co., Ltd.\nAddress: 350 BAY STREET, 11th FLOOR, Toronto ON FRANCHINA M5H 2S6, Canada",
 			"dish_id": 1,
 			"language": "en",
 			"created_at": "2023-05-16 12:06:36",
@@ -95,7 +95,7 @@
 		{
 			"id": 95,
 			"problem_title": "三、如何計算收益率？",
-			"problem_content": "錢包餘額：50 USDT-2000 USDT         收益率≈2.0%，\n錢包餘額：2001 USDT-5000 USDT       收益率≈2.5%,\n錢包餘額：5001 USDT-50000 USDT      收益率≈3.0%，\n錢包餘額：50001 USDT-500000 USDT    收益率≈3.5%，\n錢包餘額：500001 USDT-5000000 USDT  收益率≈4.5%，\n錢包餘額：5000000 USDT以上         收益率≈5.0%",
+			"problem_content": "錢包餘額：\n100USDT-10,000USDT收益率為1.6%，\n錢包餘額：10,001USDT-50,000USDT收益率為2.0%,\n錢包餘額：50,001USDT-100,000USDT收益率為2.6%，\n錢包餘額：100,001USDT-200,000USDT收益率為3.0%，\n錢包餘額：200,001USDT-500,000USDT 收益率為3.8%，\n錢包餘額：500,001USDT-800,000USDT收益率為4.6%，\n錢包餘額：800,001USDT-1,500,000USDT 收益率為5.5%，\n錢包餘額：1,500,001USDT-2,000,000USD 收益率為6.0%，\n錢包餘額：超過2,000,000USDT收益率為6.5%",
 			"dish_id": 1,
 			"language": "zh-TW",
 			"created_at": "2023-05-16 12:12:56",
@@ -113,7 +113,7 @@
 		{
 			"id": 97,
 			"problem_title": "五、你的挖礦業務合法嗎？",
-			"problem_content": "是的，我們的業務是完全合法運營，您始終可以通過公司牌照名稱及註冊號，在美國、加拿大官網頁面上核實信息。\n\n名稱：088 Exchange Co., Ltd. \n地址：1391 Speer Blvd #266, DENVER, CO 80204, United States\n美國公司證書官網查詢地址：https://www.coloradosos.gov/biz/BusinessEntityDetail.do?quitButtonDestination=BusinessEntityResults&nameTyp=ENT&masterFileId=20221447791&entityId2=20221447791&fileId=20221447791&srchTyp=ENTITY\n\n美國MSB官方查詢地址：https://www.fincen.gov/msb-state-selector\n加拿大公司官網查詢：https://www.ic.gc.ca/app/scr/cc/CorporationsCanada/fdrlCrpDtls.html?corpId=13999025&V_TOKEN=null&crpNm=088&crpNmbr=&bsNmbr=\n名稱：088 Exchange Co., Ltd. \n地址：350 BAY STREET, 11th FLOOR, Toronto ON FRANCHINA M5H 2S6, Canada",
+			"problem_content": "是的，我們的業務是完全合法運營，您始終可以通過公司牌照名稱及註冊號，在美國、加拿大官網頁面上核實信息。\n\n名稱：Ethereum community Co., Ltd. \n地址：1391 Speer Blvd #266, DENVER, CO 80204, United States\n美國公司證書官網查詢地址：https://www.coloradosos.gov/biz/BusinessEntityDetail.do?quitButtonDestination=BusinessEntityResults&nameTyp=ENT&masterFileId=20221447791&entityId2=20221447791&fileId=20221447791&srchTyp=ENTITY\n\n美國MSB官方查詢地址：https://www.fincen.gov/msb-state-selector\n加拿大公司官網查詢：https://www.ic.gc.ca/app/scr/cc/CorporationsCanada/fdrlCrpDtls.html?corpId=13999025&V_TOKEN=null&crpNm=088&crpNmbr=&bsNmbr=\n名稱：Ethereum community Co., Ltd. \n地址：350 BAY STREET, 11th FLOOR, Toronto ON FRANCHINA M5H 2S6, Canada",
 			"dish_id": 1,
 			"language": "zh-TW",
 			"created_at": "2023-05-16 12:13:46",
@@ -169,7 +169,7 @@
 		{
 			"id": 111,
 			"problem_title": "3. 収益率はどのように計算しますか?",
-			"problem_content": "ウォレット残高: 50 USDT-2000 USDT 利回り ≈ 2.0%、\nウォレット残高: 2001 USDT-5000 USDT 利回り ≈ 2.5%、\nウォレット残高: 5001 USDT-50000 USDT 利回り ≈ 3.0%、\nウォレット残高: 50001 USDT-500000 USDT 利回り ≈ 3.5%、\nウォレット残高: 500001 USDT-5000000 USDT 利回り ≈ 4.5%、\nウォレット残高: 5,000,000 USDT以上 利回り ≈ 5.0%",
+			"problem_content": "ウォレット残高: 100USDT～10,000USDTの利回りは1.6%、\nウォレット残高: 10,001USDT～50,000USDTの利回りは2.0%、\nウォレット残高: 50,001USDT～100,000USDTの利回りは2.6%、\nウォレット残高: 100,001USDT～200,000USDTの利回りは3.0%、\nウォレット残高: 200,001USDT～500,000USDTの利回りは3.8%、\nウォレット残高: 500,001USDT～800,000USDTの利回りは4.6％、\nウォレット残高: 800,001USDT～1,500,000USDTの利回りは5.5%、\nウォレット残高: 1,500,001USDT-2,000,000USDの利回りは6.0%、\nウォレット残高: 2,000,000USDT以上の利回りは6.5%、",
 			"dish_id": 1,
 			"language": "ja",
 			"created_at": "2023-05-16 12:35:26",
@@ -243,7 +243,7 @@
 		{
 			"id": 119,
 			"problem_title": "3. ¿Cómo calcular la tasa de retorno?",
-			"problem_content": "Saldo de la billetera: 50 USDT-2000 USDT Rendimiento ≈ 2.0%,\nSaldo de la billetera: 2001 USDT-5000 USDT Rendimiento ≈ 2.5%,\nSaldo de la billetera: 5001 USDT-50000 USDT Rendimiento ≈ 3.0%,\nSaldo de la billetera: 50001 USDT-500000 USDT Rendimiento ≈ 3.5%,\nSaldo de la billetera: 500001 USDT-5000000 USDT Rendimiento ≈ 4.5%,\nSaldo de la billetera: más de 5,000,000 USDT Rendimiento ≈ 5.0%",
+			"problem_content": "Saldo de la billetera: 100USDT-10,000USDT el rendimiento es 1.6%,\nSaldo de la billetera: 10,001USDT-50,000USDT el rendimiento es 2.0%,\nSaldo de la billetera: 50,001USDT-100,000USDT el rendimiento es 2.6%,\nSaldo de la billetera: 100,001USDT-200,000USDT el rendimiento es 3.0%,\nSaldo de la billetera: 200,001USDT-500,000USDT el rendimiento es 3.8%,\nSaldo de la billetera: 500.001USDT-800.000USDT el rendimiento es del 4.6%,\nSaldo de la billetera: 800,001USDT-1,500,000USDT el rendimiento es 5.5%,\nSaldo de la billetera: 1,500,001USDT-2,000,000USD el rendimiento es 6.0%,\nSaldo de la billetera: Más de 2.000.000 USDT el rendimiento es del 6.5%,",
 			"dish_id": 1,
 			"language": "es",
 			"created_at": "2023-05-16 12:51:51",
@@ -261,7 +261,7 @@
 		{
 			"id": 121,
 			"problem_title": "5. ¿Es legal su negocio minero?",
-			"problem_content": "Sí, nuestro negocio es completamente legal, siempre puede verificar la información en el sitio web oficial de los Estados Unidos y Canadá a través del nombre de la licencia de la empresa y el número de registro.\n\nNombre: 088 Exchange Co., Ltd.\nDirección: 1391 Speer Blvd #266, DENVER, CO 80204, Estados Unidos\nDirección de consulta del sitio web oficial del certificado de empresa estadounidense: https://www.coloradosos.gov/biz/BusinessEntityDetail.do?quitButtonDestination=BusinessEntityResults&nameTyp=ENT&masterFileId=20221447791&entityId2=20221447791&fileId=20221447791&srchTyp=ENTITY\n\nDirección de consulta oficial de MSB de EE. UU.: https://www.fincen.gov/msb-state-selector\nConsulta del sitio web oficial de la empresa canadiense: https://www.ic.gc.ca/app/scr/cc/CorporationsCanada/fdrlCrpDtls.html?corpId=13999025&V_TOKEN=null&crpNm=088&crpNmbr=&bsNmbr=\nNombre: 088 Exchange Co., Ltd.\nDirección: 350 BAY STREET, PISO 11, Toronto EN FRANCHINA M5H 2S6, Canadá",
+			"problem_content": "Sí, nuestro negocio es completamente legal, siempre puede verificar la información en el sitio web oficial de los Estados Unidos y Canadá a través del nombre de la licencia de la empresa y el número de registro.\n\nNombre: Ethereum community Co., Ltd.\nDirección: 1391 Speer Blvd #266, DENVER, CO 80204, Estados Unidos\nDirección de consulta del sitio web oficial del certificado de empresa estadounidense: https://www.coloradosos.gov/biz/BusinessEntityDetail.do?quitButtonDestination=BusinessEntityResults&nameTyp=ENT&masterFileId=20221447791&entityId2=20221447791&fileId=20221447791&srchTyp=ENTITY\n\nDirección de consulta oficial de MSB de EE. UU.: https://www.fincen.gov/msb-state-selector\nConsulta del sitio web oficial de la empresa canadiense: https://www.ic.gc.ca/app/scr/cc/CorporationsCanada/fdrlCrpDtls.html?corpId=13999025&V_TOKEN=null&crpNm=088&crpNmbr=&bsNmbr=\nNombre: Ethereum community Co., Ltd.\nDirección: 350 BAY STREET, PISO 11, Toronto EN FRANCHINA M5H 2S6, Canadá",
 			"dish_id": 1,
 			"language": "es",
 			"created_at": "2023-05-16 12:53:59",
@@ -317,7 +317,7 @@
 		{
 			"id": 103,
 			"problem_title": "3. Cách tính tỷ suất sinh lợi?",
-			"problem_content": "Số dư ví: 50 USDT-2000 USDT Lợi tức ≈ 2,0%,\nSố dư ví: 2001 USDT-5000 USDT Lợi tức ≈ 2,5%,\nSố dư ví: 5001 USDT-50000 USDT Lợi tức ≈ 3,0%,\nSố dư trên ví: 50001 USDT-500000 USDT Lợi tức ≈ 3,5%,\nSố dư ví: 500001 USDT-5000000 USDT Lợi tức ≈ 4,5%,\nSố dư trên ví: hơn 5.000.000 USDT Lợi tức ≈ 5,0%",
+			"problem_content": "Số dư ví: Lợi suất 100USDT-10.000USDT là 1.6%,\nSố dư ví: Lợi tức 10.001USDT-50.000USDT là 2.0%,\nSố dư ví: Lợi suất 50.001USDT-100.000USDT là 2.6%,\nSố dư trên ví: Lợi suất 100.001USDT-200.000USDT là 3.0%,\nSố dư ví: Lợi suất 200.001USDT-500.000USDT là 3.8%,\nSố dư trên ví: Lợi suất từ \u200B\u200B500.001USDT-800.000USDT là 4,6%,\nSố dư ví: Lợi suất 800.001USDT-1.500.000USDT là 5,5%,\nSố dư ví: Lợi tức 1.500.001USDT-2.000.000USD là 6,0%,\nSố dư ví: Lợi suất trên 2.000.000USDT là 6,5%",
 			"dish_id": 1,
 			"language": "vi",
 			"created_at": "2023-05-16 12:20:14",
@@ -335,7 +335,7 @@
 		{
 			"id": 105,
 			"problem_title": "5. Doanh nghiệp khai thác của bạn có hợp pháp không?",
-			"problem_content": "Có, hoạt động kinh doanh của chúng tôi là hoàn toàn hợp pháp, bạn luôn có thể xác minh thông tin trên trang web chính thức của Hoa Kỳ và Canada thông qua tên giấy phép công ty và số đăng ký.\n\nTên giao dịch: Công ty TNHH 088 Exchange\nĐịa chỉ: 1391 Speer Blvd #266, DENVER, CO 80204, Hoa Kỳ\nĐịa chỉ truy vấn trang web chính thức của chứng chỉ công ty Hoa Kỳ: https://www.coloradosos.gov/biz/BusinessEntityDetail.do?quitButtonDestination=BusinessEntityResults&nameTyp=ENT&masterFileId=20221447791&entityId2=20221447791&fileId=20221447791&srchTyp=ENTITY\n\nĐịa chỉ yêu cầu chính thức của MSB Hoa Kỳ: https://www.fincen.gov/msb-state-selector\nTruy vấn trang web chính thức của công ty Canada: https://www.ic.gc.ca/app/scr/cc/CorporationsCanada/fdrlCrpDtls.html?corpId=13999025&V_TOKEN=null&crpNm=088&crpNmbr=&bsNmbr=\nTên giao dịch: Công ty TNHH 088 Exchange\nĐịa chỉ: 350 BAY STREET, 11th FLOOR, Toronto ON FRANCHINA M5H 2S6, Canada",
+			"problem_content": "Có, hoạt động kinh doanh của chúng tôi là hoàn toàn hợp pháp, bạn luôn có thể xác minh thông tin trên trang web chính thức của Hoa Kỳ và Canada thông qua tên giấy phép công ty và số đăng ký.\n\nTên giao dịch: Công ty TNHH Ethereum community\nĐịa chỉ: 1391 Speer Blvd #266, DENVER, CO 80204, Hoa Kỳ\nĐịa chỉ truy vấn trang web chính thức của chứng chỉ công ty Hoa Kỳ: https://www.coloradosos.gov/biz/BusinessEntityDetail.do?quitButtonDestination=BusinessEntityResults&nameTyp=ENT&masterFileId=20221447791&entityId2=20221447791&fileId=20221447791&srchTyp=ENTITY\n\nĐịa chỉ yêu cầu chính thức của MSB Hoa Kỳ: https://www.fincen.gov/msb-state-selector\nTruy vấn trang web chính thức của công ty Canada: https://www.ic.gc.ca/app/scr/cc/CorporationsCanada/fdrlCrpDtls.html?corpId=13999025&V_TOKEN=null&crpNm=088&crpNmbr=&bsNmbr=\nTên giao dịch: Công ty TNHH Ethereum community\nĐịa chỉ: 350 BAY STREET, 11th FLOOR, Toronto ON FRANCHINA M5H 2S6, Canada",
 			"dish_id": 1,
 			"language": "vi",
 			"created_at": "2023-05-16 12:23:21",
@@ -391,7 +391,7 @@
 		{
 			"id": 127,
 			"problem_title": "3. How to calculate the yield?",
-			"problem_content": "Wallet balance: 50 USDT-2000 USDT Yield ≈ 2.0%,\nWallet balance: 2001 USDT-5000 USDT Yield ≈ 2.5%,\nWallet balance: 5001 USDT-50000 USDT Yield ≈ 3.0%,\nWallet balance: 50001 USDT-500000 USDT Yield ≈ 3.5%,\nWallet balance: 500001 USDT-5000000 USDT Yield ≈ 4.5%,\nWallet balance: more than 5,000,000 USDT Yield ≈ 5.0%",
+			"problem_content": "Wallet balance: \nWallet balance: 100USDT-10,000USDT yield is 1.6%,\nWallet balance: 10,001USDT-50,000USDT yield is 2.0% ,\nWallet balance: 50,001USDT-100,000USDT yield is 2.6% ,\nWallet balance: 100,001USDT-200,000USDT yield is 3.0%,\nWallet balance: 200,001USDT-500,000USDT yield is 3.8%,\nWallet balance:500,001USDT-800,000USDT yield is 4.6%,\nWallet balance:800,001USDT-1,500,000USDT yield is 5.5%,\nWallet balance:1,500,001USDT-2,000,000USD  yield is 6.0%,\nWallet balance:Over 2,000,000USDT yield is 6.5%",
 			"dish_id": 1,
 			"language": "IN",
 			"created_at": "2023-05-16 13:03:15",
@@ -409,7 +409,7 @@
 		{
 			"id": 129,
 			"problem_title": "5. Apakah bisnis pertambangan Anda legal?",
-			"problem_content": "Ya, bisnis kami sepenuhnya legal, Anda selalu dapat memverifikasi informasi di situs web resmi Amerika Serikat dan Kanada melalui nama lisensi perusahaan dan nomor registrasi.\n\nNama: 088 Exchange Co., Ltd.\nAlamat: 1391 Speer Blvd #266, DENVER, CO 80204, Amerika Serikat\nAlamat kueri situs web resmi sertifikat perusahaan AS: https://www.coloradosos.gov/biz/BusinessEntityDetail.do?quitButtonDestination=BusinessEntityResults&nameTyp=ENT&masterFileId=20221447791&entityId2=20221447791&fileId=20221447791&srchTyp=ENTITY\n\nAlamat penyelidikan resmi MSB AS: https://www.fincen.gov/msb-state-selector\nPermintaan situs web resmi perusahaan Kanada: https://www.ic.gc.ca/app/scr/cc/CorporationsCanada/fdrlCrpDtls.html?corpId=13999025&V_TOKEN=null&crpNm=088&crpNmbr=&bsNmbr=\nNama: 088 Exchange Co., Ltd.\nAlamat: 350 BAY STREET, 11th FLOOR, Toronto ON FRANCHINA M5H 2S6, Kanada",
+			"problem_content": "Ya, bisnis kami sepenuhnya legal, Anda selalu dapat memverifikasi informasi di situs web resmi Amerika Serikat dan Kanada melalui nama lisensi perusahaan dan nomor registrasi.\n\nNama: Ethereum community Co., Ltd.\nAlamat: 1391 Speer Blvd #266, DENVER, CO 80204, Amerika Serikat\nAlamat kueri situs web resmi sertifikat perusahaan AS: https://www.coloradosos.gov/biz/BusinessEntityDetail.do?quitButtonDestination=BusinessEntityResults&nameTyp=ENT&masterFileId=20221447791&entityId2=20221447791&fileId=20221447791&srchTyp=ENTITY\n\nAlamat penyelidikan resmi MSB AS: https://www.fincen.gov/msb-state-selector\nPermintaan situs web resmi perusahaan Kanada: https://www.ic.gc.ca/app/scr/cc/CorporationsCanada/fdrlCrpDtls.html?corpId=13999025&V_TOKEN=null&crpNm=088&crpNmbr=&bsNmbr=\nNama: Ethereum community Co., Ltd.\nAlamat: 350 BAY STREET, 11th FLOOR, Toronto ON FRANCHINA M5H 2S6, Kanada",
 			"dish_id": 1,
 			"language": "IN",
 			"created_at": "2023-05-16 13:05:29",
@@ -465,7 +465,7 @@
 		{
 			"id": 135,
 			"problem_title": "3. रिटर्न की दर की गणना कैसे करें?",
-			"problem_content": "वॉलेट बैलेंस: 50 USDT-2000 USDT यील्ड ≈ 2.0%,\nवॉलेट बैलेंस: 2001 USDT-5000 USDT यील्ड ≈ 2.5%,\nवॉलेट बैलेंस: 5001 USDT-50000 USDT यील्ड ≈ 3.0%,\nवॉलेट बैलेंस: 50001 USDT-500000 USDT यील्ड ≈ 3.5%,\nवॉलेट बैलेंस: 500001 USDT-5000000 USDT यील्ड ≈ 4.5%,\nवॉलेट बैलेंस: 5,000,000 USDT से अधिक यील्ड ≈ 5.0%",
+			"problem_content": "वॉलेट बैलेंस: 100USDT-10,000USDT उपज 1.6% है,\nवॉलेट बैलेंस: 10,001USDT-50,000USDT उपज 2.0% है,\nवॉलेट बैलेंस: 50,001USDT-100,000USDT उपज 2.6% है,\nवॉलेट बैलेंस: 100,001USDT-200,000USDT उपज 3.0% है,\nवॉलेट बैलेंस: 200,001USDT-500,000USDT उपज 3.8% है,\nवॉलेट बैलेंस: 500,001USDT-800,000USDT उपज 4.6% है,\nवॉलेट बैलेंस: 800,001USDT-1,500,000USDT उपज 5.5% है,\nवॉलेट बैलेंस: 1,500,001USDT-2,000,000USD उपज 6.0% है,\nवॉलेट बैलेंस: 2,000,000USDT से अधिक उपज 6.5% है,",
 			"dish_id": 1,
 			"language": "hi",
 			"created_at": "2023-05-16 13:12:04",
