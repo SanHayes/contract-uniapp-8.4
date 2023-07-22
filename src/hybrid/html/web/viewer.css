@@ -290,7 +290,7 @@
   margin: 1px auto -8px auto;
   position: relative;
   overflow: visible;
-  border: 9px solid transparent;
+  /*border: 9px solid transparent;*/
   background-clip: content-box;
   -webkit-border-image: url(images/shadow.png) 9 9 repeat;
        -o-border-image: url(images/shadow.png) 9 9 repeat;
@@ -427,8 +427,8 @@ html {
 body {
   height: 100%;
   width: 100%;
-  background-color: rgba(64, 64, 64, 1);
-  background-image: url(images/texture.png);
+  /*background-color: rgba(64, 64, 64, 1);*/
+  /*background-image: url(images/texture.png);*/
 }
 
 body,
@@ -636,7 +636,8 @@ html[dir='rtl'] #sidebarContent {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   position: absolute;
-  top: 32px;
+  /*top: 32px;*/
+  top: 0;
   right: 0;
   bottom: 0;
   left: 0;
@@ -684,6 +685,8 @@ html[dir='rtl'] #outerContainer.sidebarOpen #viewerContainer:not(.pdfPresentatio
   right: 0;
   z-index: 9999;
   cursor: default;
+  visibility: hidden;
+  height: 0;
 }
 
 #toolbarContainer {

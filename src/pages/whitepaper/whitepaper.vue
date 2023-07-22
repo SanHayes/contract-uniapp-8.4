@@ -10,7 +10,7 @@
 			}
 		},
 		onLoad(options) {
-			this.file = options.file
+			this.file = '/hybrid/html/web/viewer.html?file='+encodeURIComponent(options.file)
 		},
 		methods: {
 
