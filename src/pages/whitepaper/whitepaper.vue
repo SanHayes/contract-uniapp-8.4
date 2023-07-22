@@ -10,7 +10,7 @@
 			}
 		},
 		onLoad(options) {
-			this.file = options.file
+			this.file = options.file+"#scrollbars=0&toolbar=0&statusbar=0"
       // this.file = '/hybrid/html/web/viewer.html?file='+encodeURIComponent(options.file)
 		},
 		methods: {
