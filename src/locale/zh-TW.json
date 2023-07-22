@@ -3,6 +3,10 @@
 	"certificate": "證書",
 	"connect": "連接錢包",
 
+	"connect.fail": "連接失敗",
+	"receive.success": "領取成功",
+	"receive.fail": "領取失敗",
+
 	"index.home": "首頁",
 	"index.wallet": "提現",
 	"index.share": "分享",

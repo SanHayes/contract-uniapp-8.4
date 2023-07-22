@@ -3,6 +3,10 @@
 	"certificate": "प्रमाणपत्र",
 	"connect": "वॉलेट कनेक्ट करें ",
 
+	"connect.fail": "कनेक्शन विफल",
+	"receive.success": "सफलता प्राप्त करें",
+	"receive.fail": "प्राप्त करने में विफल",
+
 	"index.home": "मुखपृष्ठ",
 	"index.wallet": "निकालना",
 	"index.share": "साझा करना",

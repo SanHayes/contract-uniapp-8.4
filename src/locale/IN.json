@@ -3,6 +3,10 @@
 	"certificate": "Sertifikat",
 	"connect": "hubungkan dompet",
 
+	"connect.fail": "Koneksi gagal",
+	"receive.success": "Menerima kesuksesan",
+	"receive.fail": "Gagal menerima",
+
 	"index.home": "halaman Depan",
 	"index.wallet": "menarik",
 	"index.share": "Bagikan",

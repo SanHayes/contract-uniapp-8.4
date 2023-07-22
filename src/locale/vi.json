@@ -3,6 +3,10 @@
 	"certificate": "Giấy chứng nhận",
 	"connect": "kết nối ví",
 
+	"connect.fail": "Kết nối thất bại",
+	"receive.success": "nhận thành công",
+	"receive.fail": "Không nhận được",
+
 	"index.home": "trang đầu",
 	"index.wallet": "rút",
 	"index.share": "đăng lại",

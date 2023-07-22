@@ -3,6 +3,10 @@
 	"certificate": "証書",
 	"connect": "財布を接続します",
 
+	"connect.fail": "接続に失敗しました",
+	"receive.success": "成功を受け取る",
+	"receive.fail": "受信に失敗しました",
+
 	"index.home": "ホーム",
 	"index.wallet": "撤回",
 	"index.share": "共有",

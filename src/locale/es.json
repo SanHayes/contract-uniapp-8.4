@@ -3,6 +3,10 @@
 	"certificate": "Certificado",
 	"connect": "conectar billetera",
 
+	"connect.fail": "Connection failed",
+	"receive.success": "Recibe el éxito",
+	"receive.fail": "No se pudo recibir",
+
 	"index.home": "página delantera",
 	"index.wallet": "retirar",
 	"index.share": "Cuota",

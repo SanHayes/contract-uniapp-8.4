@@ -3,6 +3,10 @@
 	"certificate": "Certificate",
 	"connect": "Connect wallet",
 
+	"connect.fail": "Connection failed",
+	"receive.success": "Receive success",
+	"receive.fail": "Failed to receive",
+
 	"index.home": "Home",
 	"index.wallet": "Withdrawal",
 	"index.share": "Referral",
