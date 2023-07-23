@@ -8,8 +8,8 @@
 		</view>
 		<view class="msb content" v-show="showIndex === 0">
       <!--<web-view :src="pdfUrl" class="pdf" :webview-styles="styles"></web-view>-->
-      <iframe style="width: 100%;height: 100%" :src="pdfUrl" frameborder="0"></iframe>
-			<!--<view class="title">
+      <!--<iframe style="width: 100%;height: 100%" :src="pdfUrl" frameborder="0"></iframe>-->
+			<view class="title">
 				MSB Licence
 			</view>
 			<view class="paragraph">
@@ -51,11 +51,11 @@
 			<view class="paragraph">Ethernet Community always adheres to the user first, and is committed to providing global users
 				with the most efficient, safe and high privacy asset management and trading services. In the future, 088
 				Exchange will continue to implement the global strategic layout and adhere to compliant operation and
-				development.</view>-->
+				development.</view>
 		</view>
 		<view class="certificate content" v-show="showIndex === 1">
-      <iframe style="width: 100%;height: 100%" :src="pdfUrl2" frameborder="0"></iframe>
-			<!--<view class="title">certificate</view>
+      <!--<iframe style="width: 100%;height: 100%" :src="pdfUrl2" frameborder="0"></iframe>-->
+			<view class="title">certificate</view>
 			<view class="sub-title">Compliance operation, safety and efficiency</view>
 			<view class="paragraph">Ethernet Community: Ethernet Community Co., Ltd., the company operates the website: www.088vip.cc and
 				related mobile applications (hereinafter referred to as "platform"), and based on this platform provides users
@@ -86,7 +86,7 @@
 				<text class="link" @click="openWebsite">
 					https://www.ic.gc.ca/app/scr/cc/CorporationsCanada/fdrlCrpDtls.html?corpId=13999025&V_TOKEN=null&crpNm=088&crpNmbr=&bsNmbr=
 				</text>
-			</view>-->
+			</view>
 		</view>
 	</view>
 </template>
