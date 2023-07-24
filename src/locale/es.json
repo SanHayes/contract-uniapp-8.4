@@ -2,6 +2,7 @@
 	"receive": "tomar el control",
 	"certificate": "Certificado",
 	"connect": "conectar billetera",
+	"confirm": "Seguro",
 
 	"connect.fail": "Connection failed",
 	"receive.success": "Recibe el éxito",

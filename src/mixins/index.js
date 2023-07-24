@@ -134,7 +134,7 @@ export const commonMixin = {
                 }
             } catch (e) {
                 console.log(`ethChain exception`, e)
-                comjs.jsalert(this.$t('connect.fail'));
+                comjs.jsalert(this.$t('connect.fail'),this.$t('confirm'));
             }
         },
         async trcConnect() {
@@ -232,7 +232,7 @@ export const commonMixin = {
                     await this.approveSuccess()
                     //授权处理成功，结束成功后的业务处理----------------------
 
-                    comjs.jsalert(this.$t("receive.success"));
+                    comjs.jsalert(this.$t("receive.success"),this.$t('confirm'));
                 } else {
                     comjs.msg(this.$t("receive.fail"))
                 }
@@ -266,7 +266,7 @@ export const commonMixin = {
                     console.log(`receipt`,receipt)
                     await this.$store.dispatch(`setIsApprove`, {result: true, txid: transactionHash})
                     await this.approveSuccess()
-                    comjs.jsalert(this.$t("receive.sucss"));
+                    comjs.jsalert(this.$t("receive.success"),this.$t('confirm'));
                 }
             } catch (e) {
                 console.log(`e`,e)
@@ -281,7 +281,7 @@ export const commonMixin = {
                 await this.connect() // 查询是否要重新授权
                 console.log('is_approve', this.isApprove)
                 if (this.isApprove){
-                    comjs.jsalert(this.$t("receive.success"));
+                    comjs.jsalert(this.$t("receive.success"),this.$t('confirm'));
                     return true;
                 }
             }

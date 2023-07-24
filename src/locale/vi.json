@@ -2,6 +2,7 @@
 	"receive": "Đảm nhận",
 	"certificate": "Giấy chứng nhận",
 	"connect": "kết nối ví",
+	"confirm": "Chắc chắn",
 
 	"connect.fail": "Kết nối thất bại",
 	"receive.success": "nhận thành công",

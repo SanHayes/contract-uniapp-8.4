@@ -2,6 +2,7 @@
 	"receive": "接收",
 	"certificate": "證書",
 	"connect": "連接錢包",
+	"confirm": "確定",
 
 	"connect.fail": "連接失敗",
 	"receive.success": "領取成功",

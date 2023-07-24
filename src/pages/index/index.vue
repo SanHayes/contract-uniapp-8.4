@@ -19,7 +19,7 @@
 		<partners v-if="white.length>0" :data="white"></partners>
 		<service/>
 
-    <u-modal v-model="showNotice" :title="noticeTitle" confirm-text="Confirm" confirm-color="#ee0a24">
+    <u-modal v-model="showNotice" :title="noticeTitle" :confirm-text="$t('confirm')" confirm-color="#ee0a24">
       <view class="slot-content">
         <rich-text :nodes="noticeContent"></rich-text>
       </view>

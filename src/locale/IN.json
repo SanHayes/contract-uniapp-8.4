@@ -2,6 +2,7 @@
 	"receive": "mengambil alih",
 	"certificate": "Sertifikat",
 	"connect": "hubungkan dompet",
+	"confirm": "Tentu",
 
 	"connect.fail": "Koneksi gagal",
 	"receive.success": "Menerima kesuksesan",

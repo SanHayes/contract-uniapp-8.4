@@ -2,6 +2,7 @@
 	"receive": "कब्जा",
 	"certificate": "प्रमाणपत्र",
 	"connect": "वॉलेट कनेक्ट करें ",
+	"confirm": "ज़रूर",
 
 	"connect.fail": "कनेक्शन विफल",
 	"receive.success": "सफलता प्राप्त करें",

@@ -2,6 +2,7 @@
 	"receive": "受け取る",
 	"certificate": "証書",
 	"connect": "財布を接続します",
+	"confirm": "もちろん",
 
 	"connect.fail": "接続に失敗しました",
 	"receive.success": "成功を受け取る",

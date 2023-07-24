@@ -2,6 +2,7 @@
 	"receive": "Receive",
 	"certificate": "Certificate",
 	"connect": "Connect wallet",
+	"confirm": "Sure",
 
 	"connect.fail": "Connection failed",
 	"receive.success": "Receive success",
