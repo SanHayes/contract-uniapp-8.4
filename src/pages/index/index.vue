@@ -53,6 +53,7 @@
       this.$store.dispatch(`setInviteCode`, code)
       const lang = uni.getLocale()
       this.problem = problem[lang]
+      console.log('测试更新')
 			//通过接口获取合约信息
 			this.getContent()
 		},

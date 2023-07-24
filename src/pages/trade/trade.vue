@@ -62,8 +62,12 @@
 					</view>
 					<view class="from">
 						<view class="input">
-							<uni-easyinput v-model="withdrawValue" :inputBorder="false" :clearable="false" :placeholder="$t('trade.available',{price: 0})"></uni-easyinput>
-							<text class="all" @click="withdrawAll">{{$t('trade.all')}}</text>
+							<!--<uni-easyinput v-model="withdrawValue" :inputBorder="false" :clearable="false" :placeholder="$t('trade.available',{price: 0})"></uni-easyinput>-->
+              <u-field v-model="withdrawValue" border="none" label-width="0" :clearable="false" :border-bottom="false" :placeholder="$t('trade.available',{price: 0})" @input="handleInput">
+                  <!--<u&#45;&#45;text color="#0052ff" :text="$t('trade.all')" @click="withdrawAll" :bold="true" size="12px"></u&#45;&#45;text>-->
+                <text  slot="right" class="all" @click="withdrawAll">{{$t('trade.all')}}</text>
+              </u-field>
+							<!--<text class="all" @click="withdrawAll">{{$t('trade.all')}}</text>-->
 						</view>
 						<view class="unit">
 							<image class="logo" src="@/static/img/usdt.png"></image>
@@ -92,6 +96,11 @@
 				withdrawValue: 0, // withdraw value
 				withdrawAvailable: 0, // withdraw available
 				rate: 0, // ETH-USDT汇率
+        style:{
+          padding: '12px',
+          backgroundColor: '#f8f8f8',
+          borderRadius: '1.6vw'
+        }
 			};
 		},
 		computed: {
@@ -123,6 +132,9 @@
       this.getPageData()
 		},
     methods: {
+      handleInput(value){
+        this.withdrawValue = value
+      },
       changeTab(e) {
         if (this.current !== e.currentIndex) {
           this.current = e.currentIndex
@@ -176,7 +188,8 @@
         })
       },
       async getPageData() {
-        const {data} = await http.post('/api/Withdraw/getUserBalance')
+        const {data, code} = await http.post('/api/Withdraw/getUserBalance')
+        if (code!==200) return
         this.rate = data.rate
         this.fromValue = data.earnings
         this.exchangeAvailable = data.earnings
@@ -252,6 +265,8 @@
 				flex: 1;
 				position: relative;
 				margin-right: 2.66667vw;
+        background-color: #f8f8f8;
+        border-radius: 1.6vw;
 
 				.all {
 					position: absolute;
