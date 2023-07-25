@@ -76,7 +76,7 @@
 						</view>
 					</view>
 
-          <input type="number" style="border: 1px solid gray;height: 48rpx"/>
+          <!--<input type="number" style="border: 1px solid gray;height: 48rpx"/>-->
 				</view>
 				<view class="btn">
 					<button :disabled="!withdrawValue" type="primary" @click="withdraw">{{$t('trade.withdraw')}}</button>
