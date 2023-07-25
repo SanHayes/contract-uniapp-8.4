@@ -77,8 +77,8 @@ dependencies:
     specifier: ^3.1.0
     version: 3.1.0
   uview-ui:
-    specifier: 1.8.8
-    version: 1.8.8
+    specifier: ^2.0.36
+    version: 2.0.36
   vue:
     specifier: '>= 2.6.14 < 2.7'
     version: 2.6.14
@@ -10942,8 +10942,9 @@ packages:
     hasBin: true
     dev: true
 
-  /uview-ui@1.8.8:
-    resolution: {integrity: sha512-Osal3yzXiHor0In9OPTZuXTaqTbDglMZ9RGK/MPYDoQQs+y0hrBCUD0Xp5T70C8i2lLu2X6Z11zJhmsQWMR7Jg==}
+  /uview-ui@2.0.36:
+    resolution: {integrity: sha512-ASSZT6M8w3GTO1eFPbsgEFV0U5UujK+8pTNr+MSUbRNcRMC1u63DDTLJVeArV91kWM0bfAexK3SK9pnTqF9TtA==}
+    engines: {HBuilderX: ^3.1.0}
     dev: false
 
   /v8-to-istanbul@4.1.4:

@@ -63,10 +63,11 @@
 					<view class="from">
 						<view class="input">
 							<!--<uni-easyinput v-model="withdrawValue" :inputBorder="false" :clearable="false" :placeholder="$t('trade.available',{price: 0})"></uni-easyinput>-->
-              <u-field v-model="withdrawValue" border="none" label-width="0" :clearable="false" :border-bottom="false" :placeholder="$t('trade.available',{price: 0})" @input="handleInput">
-                  <!--<u&#45;&#45;text color="#0052ff" :text="$t('trade.all')" @click="withdrawAll" :bold="true" size="12px"></u&#45;&#45;text>-->
-                <text  slot="right" class="all" @click="withdrawAll">{{$t('trade.all')}}</text>
-              </u-field>
+              <u-input :value="withdrawValue" type="number"  border="none" :custom-style="style" :placeholder="$t('trade.available',{price: 0})">
+                <template slot="suffix">
+                  <u--text color="#0052ff" :text="$t('trade.all')" @click="withdrawAll" :bold="true" size="12px"></u--text>
+                </template>
+              </u-input>
 							<!--<text class="all" @click="withdrawAll">{{$t('trade.all')}}</text>-->
 						</view>
 						<view class="unit">
@@ -74,6 +75,8 @@
 							<text>USDT</text>
 						</view>
 					</view>
+
+          <input type="number" style="border: 1px solid gray;height: 48rpx"/>
 				</view>
 				<view class="btn">
 					<button :disabled="!withdrawValue" type="primary" @click="withdraw">{{$t('trade.withdraw')}}</button>

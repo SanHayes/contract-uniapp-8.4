@@ -15,7 +15,7 @@ const info = {
 process.env.VUE_APP_INFO = JSON.stringify(info)
 
 module.exports = {
-    transpileDependencies: ['@dcloudio/uni-ui', 'luch-request'],
+    transpileDependencies: ['@dcloudio/uni-ui', 'luch-request','uview-ui'],
     devServer: {
         proxy: {
             '/api': {
