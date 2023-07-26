@@ -1,6 +1,6 @@
 <template>
   <view>
-    <navbar></navbar>
+    <navbar :title="title"></navbar>
     <view class="banner">
       <view class="desc">
         <view class="refer">
@@ -266,11 +266,13 @@ export default {
   },
   onLoad() {
     // this.getLevels()
+    uni.setNavigationBarTitle({title: this.title})
   },
   computed: {
     ...mapGetters([
       'inviteUrl',
-      'user'
+      'user',
+        'title'
     ]),
     values() {
       return [this.$t('share.referral'), this.$t('share.team'), this.$t('share.record')]

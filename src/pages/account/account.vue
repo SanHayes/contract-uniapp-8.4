@@ -1,6 +1,6 @@
 <template>
 	<view class="account">
-		<navbar>
+		<navbar :title="title">
 		</navbar>
 		<view class="card">
 			<view class="row">
@@ -98,11 +98,15 @@
 		data() {
 			return {};
 		},
+    onLoad(){
+      uni.setNavigationBarTitle({title: this.title})
+    },
 		onShow() {
 		},
     computed: {
       ...mapGetters([
         'pageAccount',
+          'title'
       ]),
     },
 		methods: {

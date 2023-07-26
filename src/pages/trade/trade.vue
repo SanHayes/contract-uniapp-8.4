@@ -1,6 +1,6 @@
 <template>
 	<view class="content">
-		<navbar></navbar>
+		<navbar :title="title"></navbar>
 		<uni-segmented-control :current="current" :values="values" @clickItem="changeTab"
 			style-type="text"></uni-segmented-control>
 		<view>
@@ -89,6 +89,7 @@
 
 <script>
 	import http from '@/common/http'
+  import { mapGetters } from 'vuex'
 
 	export default {
 		data() {
@@ -107,6 +108,7 @@
 			};
 		},
 		computed: {
+      ...mapGetters(['title']),
 			values() {
 				return ['ETH', this.$t('trade.withdraw')]
 			},
@@ -125,7 +127,7 @@
 			uni.removeStorageSync('index')
 		},
     onLoad(){
-
+      uni.setNavigationBarTitle({title: this.title})
     },
 		onShow() {
 			setTimeout(() => {
