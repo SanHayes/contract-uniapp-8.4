@@ -6,7 +6,7 @@
 				"app-plus": {
 					"titleNView": false
 				},
-				"navigationBarTitleText": "Hello World",
+				"navigationBarTitleText": "",
 				"enablePullDownRefresh": false
 			}
 		}, {
