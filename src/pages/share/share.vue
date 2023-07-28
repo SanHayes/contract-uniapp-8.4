@@ -7,7 +7,7 @@
           <view class="title">{{ $t('share.refer') }}</view>
           <view class="title">{{ $t('share.earn') }}</view>
           <view class="up">
-            {{ $t('share.up', {percent: 0}) }}
+            {{ $t('share.up', {percent: levelLists.max_income}) }}
           </view>
           <view class="view" @click="shareView">{{ $t('share.view') }}</view>
         </view>
