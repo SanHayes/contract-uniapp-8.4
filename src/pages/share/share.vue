@@ -161,7 +161,7 @@
         </view>
       </view>
     </view>
-    <u-modal v-model="showModel" title="" confirm-text="Confirm" confirm-color="#ee0a24" width="90%">
+    <u-modal :show="showModel" title="" :confirm-text="$t('confirm')" confirm-color="#ee0a24" @confirm="showModel = false">
       <view class="slot-content">
         <view class="model-list">
           <view class="level">
@@ -515,9 +515,11 @@ export default {
   margin: 40rpx auto;
   display: block;
 }
-
+.slot-content{
+  width: 100%;
+}
 .model-list {
-  margin: 15rpx;
+  width: 100%;
   border: 1px solid #ddd;
   border-radius: 10rpx;
 
