@@ -198,7 +198,7 @@
         this.rate = data.rate
         this.fromValue = data.earnings
         this.exchangeAvailable = data.earnings
-        this.withdrawValue = data.withdraw
+        // this.withdrawValue = data.withdraw
         this.withdrawAvailable = data.withdraw
       },
       async exchangeAll(){
