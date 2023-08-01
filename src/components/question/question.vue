@@ -4,9 +4,9 @@
 		<view class="sub-title">{{$t('index.frequently')}}</view>
 		<view class="content">
 			<uni-collapse ref="collapse">
-				<uni-collapse-item v-for="(item,index) in data" :key="item.id" :title="item.problem_title" title-border="none">
+				<uni-collapse-item v-for="(item,index) in data" :key="item.id" :title="item.title" title-border="none">
 					<view class="problem-content">
-						<text class="text">{{item.problem_content}}</text>
+						<text class="text">{{item.content}}</text>
 					</view>
 				</uni-collapse-item>
 			</uni-collapse>

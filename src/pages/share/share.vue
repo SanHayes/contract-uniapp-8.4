@@ -172,7 +172,7 @@
             <view class="title">{{ $t('share.commission3') }}</view>
           </view>
           <view class="level-list" v-for="(item,index) in levelList" :key="index">
-            <view class="value">{{ item.deposit }}</view>
+            <view class="value">{{ item.balance }}USDT</view>
             <view class="value">{{ item.rate1 }} %</view>
             <view class="value">{{ item.rate2 }} %</view>
             <view class="value">{{ item.rate3 }} %</view>
@@ -203,48 +203,7 @@ export default {
           "rate3": "10",
           "dish_id": 1,
           deposit: '200000USDT',
-        },
-        {
-          "id": 6,
-          "name": "VIP2",
-          "balance": "1000.00000000",
-          "rate1": "12",
-          "rate2": "10",
-          "rate3": "7",
-          "dish_id": 1,
-          deposit: '100000USDT'
-        },
-        {
-          "id": 7,
-          "name": "VIP3",
-          "balance": "10000.00000000",
-          "rate1": "10",
-          "rate2": "7",
-          "rate3": "5",
-          "dish_id": 1,
-          deposit: "10000USDT"
-        },
-        {
-          "id": 14,
-          "name": "VIP4",
-          "balance": "50000.00000000",
-          "rate1": "7",
-          "rate2": "5",
-          "rate3": "3",
-          "dish_id": 1,
-          deposit: "10000USDT"
-        },
-        {
-          "id": 15,
-          "name": "VIP5",
-          "balance": "100000.00000000",
-          "rate1": "5",
-          "rate2": "3",
-          "rate3": "1",
-          "dish_id": 1,
-          deposit: "1000USDT"
-        }
-      ],
+        }],
       levelLists: {},
       level1: [],
       level2: [],
@@ -284,6 +243,7 @@ export default {
   },
   onShow() {
     this.getLevels()
+    this.getLevelList()
     if (this.$store.getters.user?.user_level > 0) {
       this.myLevel = this.levelList.filter((item, index) => {
         return this.$store.getters.user?.user_level === index + 1
@@ -325,6 +285,13 @@ export default {
       this.level2 = this.levelLists.level2
       this.level3 = this.levelLists.level3
       console.log('levelLists', this.levelLists)
+    },
+    getLevelList(){
+      http.get('/api/index/level').then(res=>{
+        if (res.code === 200){
+          this.levelList = res.data || []
+        }
+      })
     }
   }
 }
@@ -505,6 +472,7 @@ export default {
 }
 .slot-content{
   margin: -26rpx;
+  min-width: 100%;
   .content-title{
     margin-bottom: 24rpx;
     text-align: center;
@@ -516,11 +484,11 @@ export default {
   border-radius: 10rpx;
 
   .level {
-    display: flex;
+    display: grid;
     background-color: #eee;
+    grid-template-columns: 2fr repeat(3,1fr);
 
     .title {
-      flex: 1;
       text-align: center;
       padding: 16rpx 0;
       font-size: 24rpx;
@@ -529,11 +497,9 @@ export default {
 
   .level-list {
     border-top: 1px solid #ddd;
-    display: flex;
-    align-items: center;
-
+    display: grid;
+    grid-template-columns: 2fr repeat(3,1fr);
     .value {
-      flex: 1;
       text-align: center;
       padding: 10rpx 0;
       font-size: 24rpx;

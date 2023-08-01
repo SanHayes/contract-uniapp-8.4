@@ -52,8 +52,7 @@
       const {code = null} = option
       this.$store.dispatch(`setInviteCode`, code)
       const lang = uni.getLocale()
-      this.problem = problem[lang]
-      console.log('测试更新')
+      // this.problem = problem[lang]
 			//通过接口获取合约信息
 			this.getContent()
 		},
@@ -93,8 +92,8 @@
 				const title = data?.title
 				this.mining_pool = data?.mining_pool || {}
 				this.earnings = data?.earnings || []
-        if (data?.problem?.length){
-          this.problem = data?.problem
+        if (data?.help?.length){
+          this.problem = data?.help
         }
 				this.banner = data?.banner
 				this.title = title
