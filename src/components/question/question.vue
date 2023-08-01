@@ -6,7 +6,7 @@
 			<uni-collapse ref="collapse">
 				<uni-collapse-item v-for="(item,index) in data" :key="item.id" :title="item.title" title-border="none">
 					<view class="problem-content">
-						<text class="text">{{item.content}}</text>
+						<text class="text" v-html="item.content"></text>
 					</view>
 				</uni-collapse-item>
 			</uni-collapse>
