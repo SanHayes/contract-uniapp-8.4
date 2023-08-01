@@ -70,6 +70,12 @@
 	"share.level3": "3級",
 	"share.min": "最低餘額",
 	"share.rate": "佣金率",
+	"share.recommend": "推薦佣金",
+	"share.deposit": "下級存款",
+	"share.commission1": "1級佣金",
+	"share.commission2": "2級佣金",
+	"share.commission3": "3級佣金",
+	"share.more": "200000U 以上",
 
 	"account.earnings": "累計收益",
 	"account.today": "今日收益",
@@ -81,6 +87,8 @@
 	"account.available": "可用",
 
 	"record.income": "收益",
+	"record.currency": "幣種",
+	"record.num": "數量",
 
 	"service.assistant": "助手",
 	"service.tips": "您的在線客服隨時為您服務。",

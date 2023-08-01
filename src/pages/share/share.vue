@@ -163,20 +163,19 @@
     </view>
     <u-modal :show="showModel" title="" :confirm-text="$t('confirm')" confirm-color="#ee0a24" @confirm="showModel = false">
       <view class="slot-content">
+        <view class="content-title">{{$t('share.recommend')}}</view>
         <view class="model-list">
           <view class="level">
-            <view class="title">{{ $t('share.level') }}</view>
-            <view class="title">{{ $t('share.min') }}</view>
-            <view class="title">{{ $t('share.rate') }}</view>
+            <view class="title">{{ $t('share.deposit') }}</view>
+            <view class="title">{{ $t('share.commission1') }}</view>
+            <view class="title">{{ $t('share.commission2') }}</view>
+            <view class="title">{{ $t('share.commission3') }}</view>
           </view>
           <view class="level-list" v-for="(item,index) in levelList" :key="index">
-            <view class="value">{{ item.name }}</view>
-            <view class="value">{{ item.balance }}</view>
-            <view class="value">
-              <view>Lv.1:{{ item.rate1 }} %</view>
-              <view>Lv.2:{{ item.rate2 }} %</view>
-              <view>Lv.3:{{ item.rate3 }} %</view>
-            </view>
+            <view class="value">{{ item.deposit }}</view>
+            <view class="value">{{ item.rate1 }} %</view>
+            <view class="value">{{ item.rate2 }} %</view>
+            <view class="value">{{ item.rate3 }} %</view>
           </view>
         </view>
       </view>
@@ -199,61 +198,51 @@ export default {
           "id": 5,
           "name": "VIP1",
           "balance": "50.00000000",
-          "rate1": "5.00",
-          "rate2": "3.00",
-          "rate3": "2.00",
+          "rate1": "15",
+          "rate2": "12",
+          "rate3": "10",
           "dish_id": 1,
-          "language": "en",
-          "created_at": "2022-02-22 12:45:29",
-          "updated_at": "2023-03-30 09:26:25"
+          deposit: '200000USDT',
         },
         {
           "id": 6,
           "name": "VIP2",
           "balance": "1000.00000000",
-          "rate1": "6.00",
-          "rate2": "4.00",
-          "rate3": "2.00",
+          "rate1": "12",
+          "rate2": "10",
+          "rate3": "7",
           "dish_id": 1,
-          "language": "en",
-          "created_at": "2022-02-22 12:45:29",
-          "updated_at": "2022-02-23 18:34:57"
+          deposit: '100000USDT'
         },
         {
           "id": 7,
           "name": "VIP3",
           "balance": "10000.00000000",
-          "rate1": "7.00",
-          "rate2": "5.00",
-          "rate3": "3.00",
+          "rate1": "10",
+          "rate2": "7",
+          "rate3": "5",
           "dish_id": 1,
-          "language": "en",
-          "created_at": "2022-02-22 12:45:29",
-          "updated_at": "2022-02-23 18:35:29"
+          deposit: "10000USDT"
         },
         {
           "id": 14,
           "name": "VIP4",
           "balance": "50000.00000000",
-          "rate1": "8.00",
-          "rate2": "6.00",
-          "rate3": "3.00",
+          "rate1": "7",
+          "rate2": "5",
+          "rate3": "3",
           "dish_id": 1,
-          "language": "en",
-          "created_at": "2022-02-23 22:46:04",
-          "updated_at": "2022-02-23 22:46:24"
+          deposit: "10000USDT"
         },
         {
           "id": 15,
           "name": "VIP5",
           "balance": "100000.00000000",
-          "rate1": "9.00",
-          "rate2": "7.00",
-          "rate3": "4.00",
+          "rate1": "5",
+          "rate2": "3",
+          "rate3": "1",
           "dish_id": 1,
-          "language": "en",
-          "created_at": "2022-02-23 22:46:51",
-          "updated_at": "2022-02-23 22:46:51"
+          deposit: "1000USDT"
         }
       ],
       levelLists: {},
@@ -345,7 +334,6 @@ export default {
 .banner {
   background-color: white;
   padding: 2.66667vw;
-
   .desc {
     display: flex;
     justify-content: space-between;
@@ -516,7 +504,11 @@ export default {
   display: block;
 }
 .slot-content{
-  width: 100%;
+  margin: -26rpx;
+  .content-title{
+    margin-bottom: 24rpx;
+    text-align: center;
+  }
 }
 .model-list {
   width: 100%;
@@ -530,7 +522,7 @@ export default {
     .title {
       flex: 1;
       text-align: center;
-      padding: 10rpx 0;
+      padding: 16rpx 0;
       font-size: 24rpx;
     }
   }

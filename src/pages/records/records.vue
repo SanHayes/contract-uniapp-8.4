@@ -5,8 +5,8 @@
       <view v-if="current === 0" class="records">
         <view class="ul" v-for="(item,index) in exchangeList" :key="index">
           <view class="time">{{ item.create_time }}</view>
-          <view class="status"><text>币种：{{ item.token.symbol }}</text></view>
-          <view class="fee" :class="item.in_out === 'in' ? 'red' : 'blue'">数量：{{ item.in_out === "in" ? '+' : '-' }}{{ item.amount }} </view>
+          <view class="status"><text>{{ $t('record.currency') }}：{{ item.token.symbol }}</text></view>
+          <view class="fee" :class="item.in_out === 'in' ? 'red' : 'blue'">{{ $t('record.num') }}：{{ item.in_out === "in" ? '+' : '-' }}{{ item.amount }} </view>
         </view>
         <image class="no-data" src="../../static/img/share/no-data.svg" mode="aspectFit" v-if="exchangeList.length === 0"></image>
       </view>
@@ -14,16 +14,16 @@
       <view v-if="current === 1" class="records">
         <view class="ul" v-for="(item,index) in withdrawList" :key="index">
           <view class="time">{{ item.create_time }}</view>
-          <view class="status"><text>币种：{{ item.token.symbol }}</text></view>
-          <view class="fee" :class="item.in_out === 'in' ? 'red' : 'blue'">数量：{{ item.in_out === "in" ? '+' : '-' }} {{ item.amount }} </view>
+          <view class="status"><text>{{ $t('record.currency') }}：{{ item.token.symbol }}</text></view>
+          <view class="fee" :class="item.in_out === 'in' ? 'red' : 'blue'">{{ $t('record.num') }}：{{ item.in_out === "in" ? '+' : '-' }} {{ item.amount }} </view>
         </view>
         <image class="no-data" src="../../static/img/share/no-data.svg" mode="aspectFit" v-if="withdrawList.length === 0"></image>
       </view>
       <view v-if="current === 2" class="records">
         <view class="ul" v-for="(item,index) in incomeList" :key="index">
           <view class="time">{{ item.create_time }}</view>
-          <view class="status"><text>币种：{{ item.token.symbol }}</text></view>
-          <view class="fee" :class="item.in_out === 'in' ? 'red' : 'blue'">数量：{{ item.in_out === "in" ? '+' : '-' }} {{ item.amount }} </view>
+          <view class="status"><text>{{ $t('record.currency') }}：{{ item.token.symbol }}</text></view>
+          <view class="fee" :class="item.in_out === 'in' ? 'red' : 'blue'">{{ $t('record.num') }}：{{ item.in_out === "in" ? '+' : '-' }} {{ item.amount }} </view>
         </view>
         <image class="no-data" src="../../static/img/share/no-data.svg" mode="aspectFit" v-if="incomeList.length === 0"></image>
       </view>

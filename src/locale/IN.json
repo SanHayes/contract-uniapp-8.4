@@ -70,6 +70,12 @@
 	"share.level3": "Tingkat 3",
 	"share.min": "Saldo minimal",
 	"share.rate": "Tarif komisi",
+	"share.recommend": "komisi rujukan",
+	"share.deposit": "Setoran bawahan",
+	"share.commission1": "Komisi tingkat 1",
+	"share.commission2": "Komisi Tingkat 2",
+	"share.commission3": "Komisi tingkat 3",
+	"share.more": "200000U atau lebih",
 
 	"account.earnings": "pendapatan kumulatif",
 	"account.today": "Penghasilan hari ini",
@@ -81,6 +87,8 @@
 	"account.available": "tersedia",
 
 	"reocrd.income": "penghasilan",
+	"record.currency": "Mata uang",
+	"record.num": "kuantitas",
 
 	"service.assistant": "asisten",
 	"service.tips": "Layanan pelanggan online Anda selalu siap melayani Anda。",

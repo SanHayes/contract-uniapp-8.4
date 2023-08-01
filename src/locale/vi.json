@@ -70,6 +70,12 @@
 	"share.level3": "3lớp",
 	"share.min": "Số dư tối thiểu",
 	"share.rate": "Tỷ lệ hoa hồng",
+	"share.recommend": "hoa hồng giới thiệu",
+	"share.deposit": "tiền gửi cấp dưới",
+	"share.commission1": "Hoa hồng cấp 1",
+	"share.commission2": "Hoa hồng cấp 2",
+	"share.commission3": "Hoa hồng cấp 3",
+	"share.more": "200000U trở lên",
 
 	"account.earnings": "thu nhập tích lũy",
 	"account.today": "Thu nhập hôm nay",
@@ -81,6 +87,8 @@
 	"account.available": "có sẵn",
 
 	"record.income": "thu nhập = earnings",
+	"record.currency": "Tiền tệ",
+	"record.num": "Số lượng",
 
 	"service.assistant": "trợ lý",
 	"service.tips": "Dịch vụ khách hàng trực tuyến của bạn luôn phục vụ bạn。",

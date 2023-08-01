@@ -70,6 +70,12 @@
 	"share.level3": "3clase",
 	"share.min": "Balance minimo",
 	"share.rate": "porcentaje de comision",
+	"share.recommend": "comisión de referencia",
+	"share.deposit": "depósito subordinado",
+	"share.commission1": "Comisión de nivel 1",
+	"share.commission2": "Comisión de nivel 2",
+	"share.commission3": "Comisión de nivel 3",
+	"share.more": "200000U o más",
 
 	"account.earnings": "ingreso acumulado",
 	"account.today": "Ganancias hoy",
@@ -81,6 +87,8 @@
 	"account.available": "disponible",
 
 	"reocrd.income": "ingreso",
+	"record.currency": "Divisa",
+	"record.num": "cantidad",
 
 	"service.assistant": "asistente",
 	"service.tips": "Su servicio de atención al cliente en línea está siempre a su servicio。",

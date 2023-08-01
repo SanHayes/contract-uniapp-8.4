@@ -70,6 +70,12 @@
 	"share.level3": "Level 3",
 	"share.min": "Minimum Balance",
 	"share.rate": "Commission Rate",
+	"share.recommend": "Referral commission",
+	"share.deposit": "Subordinate deposit",
+	"share.commission1": "Level 1 commission",
+	"share.commission2": "Level 2 commission",
+	"share.commission3": "Level 3 commission",
+	"share.more": "200000U or more",
 
 	"account.earnings": "Accumulated earnings",
 	"account.today": "Today's earnings",
@@ -81,6 +87,8 @@
 	"account.available": "Available",
 
 	"record.income": "income",
+	"record.currency": "Currency",
+	"record.num": "quantity",
 
 	"service.assistant": "Assistant",
 	"service.tips": "Your live assistant is always at your service",

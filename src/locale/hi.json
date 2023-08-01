@@ -71,6 +71,12 @@
 	"share.level3": "स्तर 3",
 	"share.min": "न्यूनतम शेष",
 	"share.rate": "आयोग दर",
+	"share.recommend": "रेफरल कमीशन",
+	"share.deposit": "अधीनस्थ जमा",
+	"share.commission1": "लेवल 1 कमीशन",
+	"share.commission2": "स्तर 2 आयोग",
+	"share.commission3": "लेवल 3 कमीशन",
+	"share.more": "200000U या अधिक",
 
 	"account.earnings": "संचयी आय",
 	"account.today": "आज की कमाई",
@@ -82,6 +88,8 @@
 	"account.available": "उपलब्ध",
 
 	"reocrd.income": "आय",
+	"record.currency": "मुद्रा",
+	"record.num": "मात्रा",
 
 	"service.assistant": "सहायक",
 	"service.tips": "आपकी ऑनलाइन ग्राहक सेवा हमेशा आपकी सेवा में है。",
