@@ -325,4 +325,7 @@
 			border-radius: 80px;
 		}
 	}
+  ::v-deep .uni-input-input{
+    -webkit-user-select:auto;
+  }
 </style>
