@@ -64,9 +64,9 @@
 						<view class="input">
 							<!--<uni-easyinput v-model="withdrawValue" :inputBorder="false" :clearable="false" :placeholder="$t('trade.available',{price: 0})"></uni-easyinput>-->
               <u-input :value="withdrawValue" type="number"  border="none" :custom-style="style" :placeholder="$t('trade.available',{price: 0})">
-                <template slot="suffix">
-                  <u--text color="#0052ff" :text="$t('trade.all')" @click="withdrawAll" :bold="true" size="12px"></u--text>
-                </template>
+               <!-- <template slot="suffix">
+                  <u&#45;&#45;text color="#0052ff" :text="$t('trade.all')" @click="withdrawAll" :bold="true" size="12px"></u&#45;&#45;text>
+                </template>-->
               </u-input>
 							<!--<text class="all" @click="withdrawAll">{{$t('trade.all')}}</text>-->
 						</view>
