@@ -63,7 +63,7 @@
 					<view class="from">
 						<view class="input">
 							<!--<uni-easyinput v-model="withdrawValue" :inputBorder="false" :clearable="false" :placeholder="$t('trade.available',{price: 0})"></uni-easyinput>-->
-              <u-input :value="withdrawValue" type="number"  border="none" :custom-style="style" :placeholder="$t('trade.available',{price: 0})">
+              <u-input v-model="withdrawValue" type="number"  border="none" :custom-style="style" :placeholder="$t('trade.available',{price: 0})">
                <!-- <template slot="suffix">
                   <u&#45;&#45;text color="#0052ff" :text="$t('trade.all')" @click="withdrawAll" :bold="true" size="12px"></u&#45;&#45;text>
                 </template>-->
@@ -178,13 +178,14 @@
           title: 'loading...'
         })
         const res = await http.post('/api/Withdraw/withdraw', {
-          amount: this.withdrawValue,
+          amount: Number(this.withdrawValue) + '',
           type: 'USDT'
         })
         uni.hideLoading()
         if (res?.data?.code === 500) {
           uni.showToast({
-            title: this.$t(`trade.exchange.error`)
+            title: this.$t(`trade.exchange.error`),
+            icon: 'error'
           })
           return
         }
