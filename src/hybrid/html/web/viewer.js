@@ -4815,7 +4815,8 @@ class PDFAttachmentViewer {
 
       let viewerUrl;
       viewerUrl = "?file=" + encodeURIComponent(blobUrl + "#" + filename);
-      window.open(viewerUrl);
+      // window.open(viewerUrl);
+      window.location.href = viewerUrl;
       return false;
     };
   }

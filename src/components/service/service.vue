@@ -30,7 +30,7 @@
 
 <script>
 	import { mapState } from 'vuex'
-	
+
 	export default {
 		name: "service",
 		data() {
@@ -67,13 +67,16 @@
 			navigateUrl(item) {
 				switch(item.text) {
 					case 'Online':
-						window.open(this.service.online)
+						// window.open(this.service.online)
+              window.location.href = this.service.online
 						break;
 					case 'WhatsApp':
-						window.open(this.service.whatsapp)
+						// window.open(this.service.whatsapp)
+              window.location.href = this.service.whatsapp
 						break;
 					case 'Telegram':
-						window.open(this.service.telegram)
+						// window.open(this.service.telegram)
+						window.location.href = this.service.telegram
 						break;
 				}
 			}
